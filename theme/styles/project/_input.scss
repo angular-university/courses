@@ -1,0 +1,23 @@
+input {
+  $height: 28px;
+  cursor: text;
+  box-sizing: border-box;
+  background: white;
+  outline: none;
+  border: 1px solid #cccccc;
+  width: 175px;
+  height: $height;
+  line-height: $height;
+  padding-left: 3px;
+  box-shadow: inset 0 1px 3px #e6e6e6;
+  border-radius: 3px;
+}
+
+input:focus {
+  border-color: #129FEA;
+  box-shadow:  0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+.ng-touched.ng-invalid {
+  border: 1px solid $error-text;
+}

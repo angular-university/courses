@@ -46,5 +46,9 @@
 }
 
 .l-course-content {
-  margin-top: 2 * $unit;
+  margin: 47px auto;
+  max-width: 500px;
+  box-sizing: border-box;
+  padding: 50px;
+  min-height: 200px;
 }

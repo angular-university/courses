@@ -4,8 +4,10 @@
     <title>Angular Academy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet"  type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href=" ./node_modules/theme/dist/theme.css">
-
 
     <!-- IE required polyfills, in this exact order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
@@ -21,21 +23,18 @@
     <script src="https://code.angularjs.org/2.0.0-beta.15/http.dev.js"></script>
 
     <script>
-
         console.log("Bootstrapping application ...");
-
         System.import('dist/hello_world.js').catch(console.log.bind(console));
-
     </script>
 
 </head>
 
 <body>
 
-    <header class="lesson-header">
-        <img src="https://angular.io/resources/images/logos/standard/logo-nav.png">
+    <header class="lesson-header v-center-parent">
+        <img class="v-center" src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">
+        <span>Angular Academy - https://angular-academy.io </span>
     </header>
-
 
     <hello-world></hello-world>
 

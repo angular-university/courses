@@ -1,0 +1,32 @@
+
+
+.v-center-parent {
+  position: relative;
+}
+
+.v-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.h-center-parent {
+  position: relative;
+}
+
+.h-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.v-h-center-parent {
+  position: relative;
+}
+
+.v-h-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

@@ -1,4 +1,19 @@
 
 .lesson-header {
+  $height: 2*$unit;
   background: $primary;
+  color: $primary-contrast;
+  height: $height;
+  line-height: $height;
+  vertical-align: middle;
+  padding-left: 0.5 * $unit;
+
+  img {
+    height: 40px;
+  }
+
+  span {
+    font-size: $h4;
+    margin-left: 50px;
+  }
 }

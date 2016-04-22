@@ -4,12 +4,16 @@ import {bootstrap} from "angular2/platform/browser";
 
 @Component({
     selector: 'hello-world',
-    template: `<input (keyup)="model.test = input.value" #input>{{model.test}}`
+    template: `<input (keyup)="updateModel(input.value)" #input>{{model.message}}`
 })
 export class HelloWorld {
 
     model = {
-        test: 'Hello World !'
+        message: 'Hello World !'
+    }
+
+    updateModel(newMessage) {
+        this.model.message = newMessage;
     }
 
 }

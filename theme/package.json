@@ -1,0 +1,12 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "description": "Angular Academy Lessons Theme",
+  "scripts": {
+    "build": "node-sass -o dist  styles/theme.scss",
+    "watch": "nodemon -V -w styles --ext \".scss\" --exec \"npm run build\""
+  },
+  "devDependencies": {
+    "node-sass": "^3.5.3"
+  }
+}

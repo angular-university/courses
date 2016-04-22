@@ -7,19 +7,44 @@
   line-height: $height;
   vertical-align: middle;
   padding-left: 0.5 * $unit;
+  margin-bottom: 40px;
 
   img {
     height: 40px;
   }
 
-  span {
+  .title {
     font-size: $h4;
     margin-left: 50px;
   }
 
   .l-header-url {
-    float: right;
-    margin-right: 3 * $unit;
+    margin-left: 35px;
   }
 }
 
+.l-course-logo {
+  height:75px;
+  margin: 0 auto;
+  background-color: $page-background;
+  background-image: url(https://material.angularjs.org/latest/img/icons/angular-logo.svg);
+  background-repeat:  no-repeat;
+  background-position-x: center;
+  background-size: 65px;
+  background-position-y: center;
+}
+
+
+.l-course-title {
+  text-align: center;
+  font-size: $h4;
+}
+
+.l-lesson-title {
+  text-align: center;
+  font-size: $h5;
+}
+
+.l-course-content {
+  margin-top: 2 * $unit;
+}

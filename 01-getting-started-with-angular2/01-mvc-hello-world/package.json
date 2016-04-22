@@ -1,0 +1,21 @@
+{
+  "name": "01-mvc-hello-world",
+  "version": "1.0.0",
+  "description": "Hello World Angular 2 MVC",
+  "scripts": {
+    "postinstall": "typings install",
+    "watch": "nodemon -w src --exec tsc",
+    "server": "http-server -c-1 .",
+    "start": "npm-run-all -p watch server"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "nodemon": "^1.9.1",
+    "npm-run-all": "^1.7.0",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.15"
+  }
+}

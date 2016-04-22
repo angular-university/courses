@@ -10,7 +10,7 @@ export class HelloWorld {
 
     model = {
         message: 'Hello World !'
-    }
+    };
 
     updateModel(newMessage) {
         this.model.message = newMessage;

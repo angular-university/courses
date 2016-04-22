@@ -1,5 +1,5 @@
 
-.lesson-header {
+.l-header {
   $height: 2*$unit;
   background: $primary;
   color: $primary-contrast;
@@ -16,4 +16,10 @@
     font-size: $h4;
     margin-left: 50px;
   }
+
+  .l-header-url {
+    float: right;
+    margin-right: 3 * $unit;
+  }
 }
+

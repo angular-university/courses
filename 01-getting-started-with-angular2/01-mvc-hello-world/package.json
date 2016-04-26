@@ -4,7 +4,7 @@
   "description": "Hello World Angular 2 MVC",
   "scripts": {
     "postinstall": "typings install",
-    "watch": "nodemon -w src --exec tsc",
+    "watch": "nodemon --verbose --watch ./src --exec tsc --ext \".ts\"",
     "server": "http-server -c-1 .",
     "start": "npm-run-all -p watch server"
   },

@@ -25,4 +25,6 @@ If you edit any of the Typescript files inside the `src` folder, that will trigg
 
 The Typescript watch functionality (`tsc -w`) is reported to have long delays in certain versions of node. To avoid any issues, all the watching functionality is done using `nodemon` instead.
 
+# Last but not least
 
+Enjoy !

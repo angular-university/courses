@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Angular Academy Lessons Theme",
   "scripts": {
-    "build": "node-sass -o dist  styles/theme.scss",
+    "build": "node-sass -o dist  styles/angular-academy-lessons-theme.scss",
     "watch": "nodemon -V -w styles --ext \".scss\" --exec \"npm run build\""
   },
   "devDependencies": {

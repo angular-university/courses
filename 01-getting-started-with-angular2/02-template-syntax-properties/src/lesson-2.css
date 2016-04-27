@@ -21,3 +21,7 @@ input, button, .color-sample {
     display: block;
     margin-bottom: 15px;
 }
+
+input[required] {
+    border-color: red;
+}

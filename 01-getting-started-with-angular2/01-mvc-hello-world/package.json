@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hello World Angular 2 MVC",
   "scripts": {
-    "postinstall": "typings install",
+    "postinstall": "./node_modules/.bin/typings install",
     "watch": "nodemon --verbose --watch ./src --exec tsc --ext \".ts\"",
     "server": "http-server -c-1 .",
     "start": "npm-run-all -p watch server"

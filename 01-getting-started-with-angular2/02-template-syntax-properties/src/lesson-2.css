@@ -8,7 +8,6 @@
     background: darkred;
     color: white;
     padding: 5px 10px;
-    display: inline-block;
     border:1px solid gray;
     border-radius: 4px;
     width: 175px;
@@ -20,9 +19,13 @@ button[disabled] {
 
 input, button, .color-sample {
     box-sizing: border-box;
-    display: block;
     margin-bottom: 15px;
 }
+
+input, button {
+    display: block;
+}
+
 
 input[required] {
     border-color: red;

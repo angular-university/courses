@@ -5,6 +5,7 @@
 }
 
 .color-sample {
+    background: darkred;
     color: white;
     padding: 5px 10px;
     display: inline-block;

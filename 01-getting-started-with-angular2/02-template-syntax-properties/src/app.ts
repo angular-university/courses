@@ -4,7 +4,15 @@ import {bootstrap} from "angular2/platform/browser";
 
 @Component({
     selector: 'app',
-    template: `<input [style.color]="'red'">`
+    template: `
+
+        <div class="color-sample" [style.background]="'blue'">Color Sample</div>
+        
+        <button [disabled]="true">Disabled</button>
+        
+        <input [required]="true">
+                
+        `
 })
 export class App {
 

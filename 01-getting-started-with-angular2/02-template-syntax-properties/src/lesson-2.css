@@ -1,5 +1,23 @@
 
 
 .lesson-2 {
-    text-align: center;
+}
+
+.color-sample {
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    border:1px solid gray;
+    border-radius: 4px;
+    width: 175px;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+}
+
+input, button, .color-sample {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 15px;
 }

@@ -6,16 +6,29 @@ import {bootstrap} from "angular2/platform/browser";
 @Component({
     selector: 'app',
     template: `
- 
-        <div class="color-sample" [style.background]="'red'">Color Sample</div>
-        
-        <button [disabled]="true">Disabled</button> 
-        
-        <input [required]="true">
+
+            <div class="toogle-panel" [style.visibility]="visibility">Toggle Me</div>
+
+            <button (click)="toggle()">Click Me</button>
+            
+            
+
                 
         `
 })
 export class App {
+
+    visibility = 'hidden';
+
+    onClick() {
+        alert('Hello Events World !');
+    }
+
+
+    toggle() {
+        this.visibility = this.visibility === 'hidden' ? 'visible' : 'hidden';
+    }
+
 
 
 }

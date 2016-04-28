@@ -9,10 +9,10 @@ import {bootstrap} from "angular2/platform/browser";
 
             <input #input value="Hello World !">{{input.value}}
 
-            <div class="toogle-panel" [style.visibility]="visibility">Toggle Me</div>
-
             <button (click)="onClick()">Click Me</button>
 
+            <div class="toogle-panel" [style.visibility]="visibility">Toggle Me</div>
+            
             <button (click)="toggle()">Toggle</button>
             
             <button id="button">Click Me Too</button>

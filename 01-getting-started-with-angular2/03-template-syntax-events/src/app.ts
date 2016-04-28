@@ -16,8 +16,6 @@ import {bootstrap} from "angular2/platform/browser";
             <button (click)="toggle()">Toggle</button>
             
             <button id="button">Click Me Too</button>
-            
-            
                 
         `
 })

@@ -10,10 +10,6 @@ import {bootstrap} from "angular2/platform/browser";
             <input #input value="Hello World !">{{input.value}}
 
             <button (click)="onClick()">Click Me</button>
-
-            <div class="toogle-panel" [style.visibility]="visibility">Toggle Me</div>
-            
-            <button (click)="toggle()">Toggle</button>
             
             <button id="button">Click Me Too</button>
                 
@@ -21,27 +17,16 @@ import {bootstrap} from "angular2/platform/browser";
 })
 export class App {
 
-    visibility = 'visible';
-
-    constructor() {
-
-        setTimeout(() => {
-            document.querySelector('#button').addEventListener('click', () => {
-                console.log('Hello World');
-            });
-        }, 2000);
-
-    }
 
     onClick() {
         alert('Hello Events World !');
     }
 
-
-    toggle() {
-        this.visibility = this.visibility === 'hidden' ? 'visible' : 'hidden';
-    }
-
+    /*
+     document.querySelector('#button').addEventListener('click', () => {
+         console.log('Hello World');
+     });
+     */
 
 
 }

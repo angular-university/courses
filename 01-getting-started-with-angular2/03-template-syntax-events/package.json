@@ -1,5 +1,5 @@
 {
-  "name": "02-template-syntax-properties",
+  "name": "02-template-syntax-events",
   "version": "1.0.0",
   "scripts": {
     "postinstall": "typings install",

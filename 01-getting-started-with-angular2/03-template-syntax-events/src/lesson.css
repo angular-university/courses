@@ -1,7 +1,7 @@
 
 
 .lesson-2 {
-    padding-left: 100px;
+    padding-left: 70px;
 }
 
 .toogle-panel {
@@ -12,6 +12,11 @@
     border-radius: 4px;
     width: 100px;
     height: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
+input {
+    margin-top: 20px;
+    margin-right: 10px;
+}

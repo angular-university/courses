@@ -7,18 +7,33 @@ import {bootstrap} from "angular2/platform/browser";
     selector: 'app',
     template: `
 
+            <input #input value="Hello World !">{{input.value}}
+
             <div class="toogle-panel" [style.visibility]="visibility">Toggle Me</div>
 
-            <button (click)="toggle()">Click Me</button>
-            
-            
+            <button (click)="onClick()">Click Me</button>
 
+            <button (click)="toggle()">Toggle</button>
+            
+            <button id="button">Click Me Too</button>
+            
+            
                 
         `
 })
 export class App {
 
-    visibility = 'hidden';
+    visibility = 'visible';
+
+    constructor() {
+
+        setTimeout(() => {
+            document.querySelector('#button').addEventListener('click', () => {
+                console.log('Hello World');
+            });
+        }, 2000);
+
+    }
 
     onClick() {
         alert('Hello Events World !');

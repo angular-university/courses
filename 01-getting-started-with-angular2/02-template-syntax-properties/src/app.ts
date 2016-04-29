@@ -7,12 +7,8 @@ import {bootstrap} from "angular2/platform/browser";
     selector: 'app',
     template: `
  
-        <div class="color-sample" [style.background]="'red'">Color Sample</div>
+        <div class="color-sample">Color Sample</div>
         
-        <button [disabled]="true">Disabled</button> 
-        
-        <input [required]="true">
-                
         `
 })
 export class App {

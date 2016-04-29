@@ -7,8 +7,8 @@ import {bootstrap} from "angular2/platform/browser";
     selector: 'app',
     template: `
 
-            <input #input value="Hello World !">{{input.value}}
-
+            <input value="Hello World !" #input>{{input.value}}
+            
             <button (click)="onClick()">Click Me</button>
             
             <button id="button">Click Me Too</button>
@@ -18,15 +18,7 @@ import {bootstrap} from "angular2/platform/browser";
 export class App {
 
 
-    onClick() {
-        alert('Hello Events World !');
-    }
 
-    /*
-     document.querySelector('#button').addEventListener('click', () => {
-         console.log('Hello World');
-     });
-     */
 
 
 }

@@ -11,7 +11,7 @@
   "files": [
     "src/01-mvc-hello-world/hello_world.ts",
     "src/02-template-syntax-properties/lesson_2.ts",
-    "src/03-template-syntax-events/lesson_3.ts",
+    "src/04-template-syntax-events/lesson_4.ts",
     "typings/main.d.ts"
   ]
 }

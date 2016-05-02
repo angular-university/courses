@@ -3,11 +3,12 @@
 import {Component, Output, EventEmitter, Input} from "angular2/core";
 import {BLUE, RED} from "./constants";
 
+
 @Component({
     selector: 'color-picker',
     template: `
     
-    <div class="color-title" style="color: {{color}}">Pick a Color:</div>
+    <div class="color-title" style="color:{{color}}">Pick a Color:</div> 
     
     <div class="color-picker">
         <div class="color-sample color-sample-blue" (click)="choose('${BLUE}')"></div>  
@@ -19,18 +20,17 @@ import {BLUE, RED} from "./constants";
 export class ColorPicker {
 
     @Input()
-    color: string;
+    color:string;
 
     @Output("color")
     colorOutput = new EventEmitter();
 
     choose(color) {
-        this.color = color;
         this.colorOutput.emit(color);
     }
 
     reset() {
-        this.colorOutput.emit("black");
+        this.colorOutput.emit('black');
     }
 
 }

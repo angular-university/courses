@@ -1,5 +1,5 @@
 
-export const RED = '#b13138';
+export const BLUE = '#b13138';
 
-export const BLUE = '#1976d2';
+export const RED = '#1976d2';
 

@@ -1,0 +1,22 @@
+
+
+.lesson-4 {
+    padding-left: 70px;
+}
+
+.toogle-panel {
+    background: cornflowerblue;
+    color: white;
+    padding: 5px 10px;
+    border:1px solid gray;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}

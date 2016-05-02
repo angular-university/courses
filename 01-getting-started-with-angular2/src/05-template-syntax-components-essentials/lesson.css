@@ -1,29 +1,40 @@
 
-
 .lesson {
-
+    text-align: center;
+    max-width: 330px;
 }
-
 
 .color-picker {
 
 
 }
 
-
 .color-sample {
-
-
+    height: 50px;
+    width:50px;
+    border: 1px solid gray;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 10px;
 }
+
 
 .color-sample-red {
-
+    background: #1976d2;
 
 }
-
 
 
 .color-sample-blue {
+    background: #b13138;
+}
+
+
+
+.color-previewer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
 
 }
 

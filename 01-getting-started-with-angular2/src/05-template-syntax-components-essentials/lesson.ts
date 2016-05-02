@@ -10,11 +10,11 @@ import {bootstrap} from "angular2/platform/browser";
             <div>Pick a Color:</div>
 
             <div class="color-picker">
-                <div class="color-sample color-sample-red"></div>
                 <div class="color-sample color-sample-blue"></div>
+                <div class="color-sample color-sample-red"></div>                
             </div>
 
-            <div>Preview Text Color</div>
+            <div class="color-previewer">Preview Text Color</div>
 
             <button>Reset</button>
 

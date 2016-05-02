@@ -13,7 +13,7 @@ import {bootstrap} from "angular2/platform/browser";
             
             <button (click)="addListener()">Setup</button>
             
-            <button id="btn">Click Me Too</button>
+            <button id="btn">3rd Party Widget</button>
             
                 
         `

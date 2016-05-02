@@ -7,12 +7,23 @@ import {bootstrap} from "angular2/platform/browser";
     selector: 'app',
     template: `
 
+            <label>Message:</label>{{ model?.message }}
 
         `
 })
 export class App {
 
+    message = 'Hello World !';
 
+    condition = true;
+
+    model = {
+        message: 'Hello World !'
+    };
+
+    get calculatedValue() {
+        return "Calculated Value";
+    }
 
 }
 

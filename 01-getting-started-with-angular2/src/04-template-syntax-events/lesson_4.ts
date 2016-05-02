@@ -10,8 +10,7 @@ import {bootstrap} from "angular2/platform/browser";
             <input value="Hello World !" #input>{{input.value}}
 
             <button (click)="onClick()">Click Me</button>
-            
-            <button id="btn">3rd Party Widget</button>
+
         `
 })
 export class App {

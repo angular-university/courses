@@ -15,7 +15,7 @@
     "typings": "^0.8.1"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.15"
+    "angular2": "2.0.0-beta.17"
   },
   "engines": {
     "node": "4.2.1",

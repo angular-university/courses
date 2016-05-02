@@ -11,15 +11,15 @@ import {bootstrap} from "angular2/platform/browser";
             
             <button (click)="onClick()">Click Me</button>
             
-            <button id="button">Click Me Too</button>
+            <button id="btn">Click Me Too</button>
                 
         `
 })
 export class App {
 
-
-
-
+    onClick() {
+        alert("Hello !");
+    }
 
 }
 

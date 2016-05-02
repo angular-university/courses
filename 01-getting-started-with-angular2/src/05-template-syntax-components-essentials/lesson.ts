@@ -8,7 +8,7 @@ import {bootstrap} from "angular2/platform/browser";
     template: `
 
             <div>Pick a Color:</div>
-
+            
             <div class="color-picker">
                 <div class="color-sample color-sample-blue"></div>
                 <div class="color-sample color-sample-red"></div>                

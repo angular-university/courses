@@ -22,4 +22,8 @@ export class ColorPicker {
         this.color.emit(color);
     }
 
+    reset() {
+        this.color.emit("black");
+    }
+
 }

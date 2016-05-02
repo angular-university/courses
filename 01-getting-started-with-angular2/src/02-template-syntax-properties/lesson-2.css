@@ -1,0 +1,33 @@
+
+
+
+.lesson-2 {
+    padding-left: 100px;
+}
+
+.color-sample {
+    background: darkred;
+    color: white;
+    padding: 5px 10px;
+    border:1px solid gray;
+    border-radius: 4px;
+    width: 175px;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+}
+
+input, button, .color-sample {
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input, button {
+    display: block;
+}
+
+
+input[required] {
+    border-color: red;
+}

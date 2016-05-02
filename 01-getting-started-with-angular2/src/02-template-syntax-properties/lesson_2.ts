@@ -6,24 +6,20 @@ import {bootstrap} from "angular2/platform/browser";
 @Component({
     selector: 'app',
     template: `
-
-            <input value="Hello World !" #input>{{input.value}}
-
-            <button (click)="onClick()">Click Me</button>
-            
-            <button id="btn">3rd Party Widget</button>
+ 
+        <div class="color-sample" [style.background]="'red'">Color Sample</div>
+        
+        <button [disabled]="true">Disabled</button> 
+        
+        <input [required]="true">
+                
         `
 })
 export class App {
 
-    onClick() {
-        alert("Hello !");
-
-        debugger;
-    }
-
 
 }
+
 
 
 

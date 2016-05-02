@@ -9,6 +9,12 @@
 
 }
 
+.color-title {
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .color-sample {
     height: 50px;
     width:50px;
@@ -33,9 +39,11 @@
 
 
 .color-previewer {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-weight: bold;
+    font-size: 21px;
+    text-transform: uppercase;
 
 }
 

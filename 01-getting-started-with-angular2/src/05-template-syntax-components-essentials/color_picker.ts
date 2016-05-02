@@ -7,7 +7,7 @@ import {BLUE, RED} from "./constants";
     selector: 'color-picker',
     template: `
     
-    <div style="color: {{color}}">Pick a Color:</div>
+    <div class="color-title" style="color: {{color}}">Pick a Color:</div>
     
     <div class="color-picker">
         <div class="color-sample color-sample-blue" (click)="choose('${BLUE}')"></div>  

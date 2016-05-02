@@ -10,26 +10,18 @@ import {bootstrap} from "angular2/platform/browser";
             <input value="Hello World !" #input>{{input.value}}
 
             <button (click)="onClick()">Click Me</button>
-
-            <button (click)="addListener()">Setup</button>
-
-            <button id="btn">3rd Party Widget</button> 
-
+            
+            <button id="btn">3rd Party Widget</button>
         `
 })
 export class App {
 
-    addListener() {
-        document.querySelector('#btn')
-            .addEventListener('click', function() {
-                console.log('Hello World !');
-                debugger;
-            });
-    }
-
     onClick() {
         alert("Hello !");
+
+        debugger;
     }
+
 
 }
 

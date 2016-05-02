@@ -9,7 +9,9 @@
     "outDir": "dist"
   },
   "files": [
-    "src/hello_world.ts",
+    "src/01-mvc-hello-world/hello_world.ts",
+    "src/02-template-syntax-properties/lesson_2.ts",
+    "src/03-template-syntax-events/lesson_3.ts",
     "typings/main.d.ts"
   ]
 }

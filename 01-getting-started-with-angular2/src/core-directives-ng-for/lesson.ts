@@ -6,7 +6,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 @Component({ 
     selector: 'app',
     template: `
-            
+
             <table>
                 <tr *ngFor="let hero of heroes; let i = index; let isEven = even; let isOdd = odd;let isFirst = first; let isLast=last">
                     <td>{{i}}</td>
@@ -17,7 +17,6 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
                     <td>{{isLast}}</td>
                 </tr>
             </table>
-
 
         `
 })

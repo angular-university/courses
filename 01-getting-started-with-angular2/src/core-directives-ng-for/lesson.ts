@@ -7,9 +7,16 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
     selector: 'app',
     template: `
             
-            <ul *ngFor="let hero of heroes">
-                <li>{{hero}}</li>
-            </ul>
+            <table>
+                <tr *ngFor="let hero of heroes; let i = index; let isEven = even; let isOdd = odd;let isFirst = first; let isLast=last">
+                    <td>{{i}}</td>
+                    <td>{{hero}}</td>
+                    <td>{{isEven}}</td>
+                    <td>{{isOdd}}</td>
+                    <td>{{isFirst}}</td>
+                    <td>{{isLast}}</td>
+                </tr>
+            </table>
 
 
         `

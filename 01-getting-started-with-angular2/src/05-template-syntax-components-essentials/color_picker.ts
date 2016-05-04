@@ -8,7 +8,7 @@ import {BLUE, RED} from "./constants";
     selector: 'color-picker',
     template: `
     
-    <div class="color-title" style="color:{{color}}">Pick a Color:</div> 
+    <div class="color-title">Pick a Color:</div>  
     
     <div class="color-picker">
         <div class="color-sample color-sample-blue" (click)="choose('${BLUE}')"></div>  
@@ -30,7 +30,6 @@ export class ColorPicker {
     }
 
     reset() {
-        console.log("Hello !");
         this.colorOutput.emit('red');
     }
 

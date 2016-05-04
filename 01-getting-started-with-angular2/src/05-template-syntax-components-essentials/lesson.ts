@@ -10,10 +10,10 @@ import {ColorPreviewer} from "./color_previewer";
     directives: [ColorPreviewer, ColorPicker],
     template: `
             
-            <color-picker #picker [color]="color" (color)="previewer.color = $event">  
+            <color-picker #picker [color]="color" (color)="color = $event">  
             </color-picker>
                 
-            <color-previewer #previewer></color-previewer>
+            <color-previewer #previewer [color]="color"></color-previewer>
                 
             <button (click)="picker.reset()">Reset</button>
 
@@ -21,6 +21,7 @@ import {ColorPreviewer} from "./color_previewer";
 })
 export class App {
 
+    color:string;
 
 
 }

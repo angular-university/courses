@@ -3,7 +3,6 @@ import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {ColorPicker} from "./color_picker";
 import {ColorPreviewer} from "./color_previewer";
-import {RED} from "./constants";
 
 
 @Component({ 
@@ -11,10 +10,10 @@ import {RED} from "./constants";
     directives: [ColorPreviewer, ColorPicker],
     template: `
             
-            <color-picker #picker [color]="color" (color)="color = $event">  
+            <color-picker #picker [color]="color" (color)="previewer.color = $event">  
             </color-picker>
                 
-            <color-previewer #previewer [color]="color"></color-previewer>
+            <color-previewer #previewer></color-previewer>
                 
             <button (click)="picker.reset()">Reset</button>
 
@@ -22,7 +21,7 @@ import {RED} from "./constants";
 })
 export class App {
 
-    color = RED;
+
 
 }
 

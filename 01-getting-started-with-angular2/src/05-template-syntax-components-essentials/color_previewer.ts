@@ -4,8 +4,7 @@ import {Component, Input} from "@angular/core";
 @Component({
     selector: 'color-previewer',
     template: `
-                <div class="color-previewer"
-                        style="color:{{color}}"> 
+                <div class="color-previewer" [ngStyle]="{color:color}"> 
                     Preview Text Color
                 </div>
             `

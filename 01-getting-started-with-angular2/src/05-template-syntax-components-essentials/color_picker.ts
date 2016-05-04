@@ -30,7 +30,7 @@ export class ColorPicker {
     }
 
     reset() {
-        this.colorOutput.emit('red');
+        this.colorOutput.emit('black');
     }
 
 }

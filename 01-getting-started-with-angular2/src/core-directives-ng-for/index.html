@@ -18,6 +18,9 @@
     <script src="/dist/libs-bundle.js"></script>
 
     <script>
+        System.config({
+            defaultJSExtensions: true
+        });
         System.import('/dist/core-directives-ng-for/lesson.js').catch(console.log.bind(console));
     </script>
 

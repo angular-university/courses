@@ -7,13 +7,22 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
     selector: 'app',
     template: `
             
+            <ul *ngFor="let hero of heroes">
+                <li>{{hero}}</li>
+            </ul>
 
 
         `
 })
 export class App {
 
-
+    heroes = [
+        'Superman',
+        'Batman',
+        'Robin',
+        'Spiderman',
+        'Wonder Woman'
+    ];
 
 }
 

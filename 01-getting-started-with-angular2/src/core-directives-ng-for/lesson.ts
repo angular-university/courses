@@ -8,9 +8,10 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
     template: `
 
             <table>
-                <tr *ngFor="let hero of heroes; let i = index; let isEven = even; let isOdd = odd;let isFirst = first; let isLast=last">
+                <tr *ngFor="let hero of heroes; let i = index; let isEven = even; 
+                                let isOdd = odd;let isFirst = first; let isLast=last;">
                     <td>{{i}}</td>
-                    <td>{{hero}}</td>
+                    <td>{{hero.name}}</td> 
                     <td>{{isEven}}</td>
                     <td>{{isOdd}}</td>
                     <td>{{isFirst}}</td>
@@ -23,11 +24,12 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 export class App {
 
     heroes = [
-        'Superman',
-        'Batman',
-        'Robin',
-        'Spiderman',
-        'Wonder Woman'
+        {id: 1, name:'Superman'},
+        {id: 1, name:'Superman'},
+        {id: 2, name:'Batman'},
+        {id: 3, name:'Robin'},
+        {id: 4, name:'Flash'},
+        {id: 5, name:'Wonder Woman'}
     ];
 
 }

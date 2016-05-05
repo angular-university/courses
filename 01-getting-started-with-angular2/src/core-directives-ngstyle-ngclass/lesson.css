@@ -12,3 +12,7 @@ table td, table th {
     border: 1px solid gray;
     color: white;
 }
+
+.marvel.hulk {
+    background: green;
+}

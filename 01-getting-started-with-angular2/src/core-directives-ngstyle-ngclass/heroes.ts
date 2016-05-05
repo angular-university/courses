@@ -16,7 +16,7 @@ export const RED = '#1976d2';
         </thead>
         <tbody>
             <tr *ngFor="let hero of heroes; let i = index"
-                    [ngStyle]="styles">
+                    [ngClass]="classes(hero)">
                 <td>{{hero.name}}</td>
                 <td>{{i}}</td>
             </tr>
@@ -33,6 +33,13 @@ export class Heroes {
         return {
             color: 'blue',
             'text-decoration': 'underline'
+        };
+    }
+
+    classes(hero: Hero) {
+        return {
+            marvel:hero.marvel,
+            hulk: hero.name === 'Hulk'
         };
     }
 

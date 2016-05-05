@@ -12,6 +12,10 @@ export class ShowOneContainer implements AfterContentInit {
 
     triggers: ShowOneTrigger[] = [];
 
+    @ContentChildren(ShowOneTrigger)
+    items: QueryList<ShowOneTrigger>;
+
+
     @ContentChildren(ShowOne)
     items: QueryList<ShowOne>;
 

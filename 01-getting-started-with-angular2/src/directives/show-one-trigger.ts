@@ -20,7 +20,7 @@ export class ShowOneTrigger {
 
     @HostListener('click')
     click() {
-        this.showOneContainer.show(this);
+        this.showOneContainer.show(this.id);
     }
 
     

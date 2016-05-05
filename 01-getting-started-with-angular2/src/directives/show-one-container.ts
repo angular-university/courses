@@ -12,8 +12,10 @@ export class ShowOneContainer {
     @ContentChildren(ShowOne)
     items: QueryList<ShowOne>;
 
-    show(active: ShowOne) {
-        console.log(this.items.length);
+    show(id: string) {
+        this.items.forEach(item => {
+            item.active = item.id == id;
+        });
     }
 
 }

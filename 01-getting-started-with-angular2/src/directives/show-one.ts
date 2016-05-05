@@ -2,7 +2,7 @@
 
 
 
-import {Directive} from "@angular/core";
+import {Directive, HostBinding, Input} from "@angular/core";
 
 
 @Directive({
@@ -10,6 +10,17 @@ import {Directive} from "@angular/core";
 })
 export class ShowOne {
 
-    
+    @Input('showOne')
+    id:string;
+
+    active = false;
+
+
+    @HostBinding('hidden')
+    get hidden() {
+        return !this.active;
+    }
+
+
     
 }

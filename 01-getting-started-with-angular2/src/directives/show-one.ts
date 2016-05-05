@@ -6,7 +6,7 @@ import {Directive} from "@angular/core";
 
 
 @Directive({
-    selector: '[show-one]'
+    selector: '[showOne]'
 })
 export class ShowOne {
 

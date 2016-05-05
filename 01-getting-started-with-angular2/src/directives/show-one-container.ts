@@ -4,7 +4,7 @@ import {Directive} from "@angular/core";
 
 
 @Directive({
-    selector: '[show-one-container]'
+    selector: '[showOneContainer]'
 })
 export class ShowOneContainer {
 

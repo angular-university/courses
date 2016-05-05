@@ -11,23 +11,23 @@ import {ShowOneTrigger} from "./show-one-trigger";
     directives: [ShowOne, ShowOneContainer, ShowOneTrigger],
     template: `
 
-            <div class="tab-container" show-one-container> 
+            <div class="tab-container" showOneContainer> 
             
                 <ul class="tab-buttons">
-                    <li show-one-trigger="superman" class="selected">Superman</li>
-                    <li show-one-trigger="batman">Batman</li>
-                    <li show-one-trigger="flash">Flash</li>
+                    <li showOneTrigger="superman" class="selected">Superman</li>
+                    <li>Batman</li>
+                    <li>Flash</li>
                 </ul>
             
-                <div class="tab-panel" show-one="superman">
+                <div class="tab-panel">
                     <div class="logo superman"></div>
                 </div>
                 
-                <div class="tab-panel" show-one="batman">
+                <div class="tab-panel">
                     <div class="logo batman"></div>
                 </div>
                 
-                <div class="tab-panel" show-one="flash">
+                <div class="tab-panel">
                     <div class="logo flash"></div>
                 </div>
             

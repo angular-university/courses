@@ -1,7 +1,15 @@
 
-import {Component, ContentChildren, QueryList} from "@angular/core";
-import {Hero} from "./hero";
+import {Component} from "@angular/core";
 
+
+const HEROES = [
+    {id: 1, name:'Superman'},
+    {id: 1, name:'Superman'},
+    {id: 2, name:'Batman'},
+    {id: 3, name:'Robin'},
+    {id: 4, name:'Flash'},
+    {id: 5, name:'Wonder Woman'}
+];
 
 @Component({
     selector:'heroes',
@@ -21,16 +29,9 @@ import {Hero} from "./hero";
 })
 export class Heroes {
 
-     heroes = [
-     {id: 1, name:'Superman'},
-     {id: 1, name:'Superman'},
-     {id: 2, name:'Batman'},
-     {id: 3, name:'Robin'},
-     {id: 4, name:'Flash'},
-     {id: 5, name:'Wonder Woman'}
-     ];
+     heroes = HEROES;
 
-    @ContentChildren(Hero)
-    heroes: QueryList<Hero>;
+    //@ContentChildren(Hero)
+    //heroes: QueryList<Hero>;
     
 }

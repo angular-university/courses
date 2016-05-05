@@ -1,11 +1,10 @@
 
 
-
 .tab-container {
 
   $tab-border: 1px solid $secondary;
 
-  .tab-container-buttons {
+  .tab-buttons {
 
     list-style: none;
     text-align: left;
@@ -38,7 +37,7 @@
     }
   }
 
-  .tab-pane {
+  .tab-panel {
     border-left: $tab-border;
     border-right: $tab-border;
     border-bottom: $tab-border;

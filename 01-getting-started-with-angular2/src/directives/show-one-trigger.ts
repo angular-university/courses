@@ -14,14 +14,13 @@ export class ShowOneTrigger {
     id:string;
 
     constructor(private showOneContainer: ShowOneContainer) {
-        console.log('crreate trigger...');
+
     }
 
 
     @HostListener('click')
     click() {
-        console.log("Clicked ..." + this.id);
-        //this.showOneContainer.
+        this.showOneContainer.show(this);
     }
 
     

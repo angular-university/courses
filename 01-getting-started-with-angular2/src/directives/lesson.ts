@@ -15,19 +15,19 @@ import {ShowOneTrigger} from "./show-one-trigger";
             
                 <ul class="tab-buttons">
                     <li showOneTrigger="superman" class="selected">Superman</li>
-                    <li>Batman</li>
-                    <li>Flash</li>
+                    <li showOneTrigger="batman" >Batman</li>
+                    <li showOneTrigger="flash" >Flash</li>
                 </ul>
             
-                <div class="tab-panel">
+                <div class="tab-panel" showOne="superman">
                     <div class="logo superman"></div>
                 </div>
                 
-                <div class="tab-panel">
+                <div class="tab-panel" showOne="batman">
                     <div class="logo batman"></div>
                 </div>
                 
-                <div class="tab-panel">
+                <div class="tab-panel" showOne="flash">
                     <div class="logo flash"></div>
                 </div>
             

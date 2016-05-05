@@ -3,16 +3,14 @@
     text-align: left;
 }
 
-table td, table th {
-    padding: 5px 8px;
-}
 
-.marvel {
-    background: #b13138;
-    border: 1px solid gray;
+.toggle-panel {
+    background: #d00000;
     color: white;
-}
-
-.marvel.hulk {
-    background: green;
+    padding: 5px 10px;
+    border:1px solid gray;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 20px;
 }

@@ -21,7 +21,6 @@ import {Hero} from "./hero";
 })
 export class Heroes {
 
-    /*
      heroes = [
      {id: 1, name:'Superman'},
      {id: 1, name:'Superman'},
@@ -29,7 +28,7 @@ export class Heroes {
      {id: 3, name:'Robin'},
      {id: 4, name:'Flash'},
      {id: 5, name:'Wonder Woman'}
-     ];*/
+     ];
 
     @ContentChildren(Hero)
     heroes: QueryList<Hero>;

@@ -13,6 +13,7 @@ export class ShowOne {
     @Input('showOne')
     id:string;
 
+    @Input()
     active = false;
 
     @HostBinding('hidden')

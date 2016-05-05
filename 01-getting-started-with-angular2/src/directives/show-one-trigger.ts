@@ -12,9 +12,10 @@ export class ShowOneTrigger {
     @Input('showOneTrigger')
     id:string;
 
+    @Input()
     active = false;
 
-    constructor(private showOneContainer: ShowOneContainer) {
+    constructor(private showOneContainer: ShowOneContainer) { 
         showOneContainer.add(this);
     }
 

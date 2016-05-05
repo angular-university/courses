@@ -15,7 +15,7 @@ export class ShowOneTrigger {
     active = false;
 
     constructor(private showOneContainer: ShowOneContainer) {
-        showOneContainer.triggers.push(this);
+        showOneContainer.add(this);
     }
 
     @HostBinding('class.selected')

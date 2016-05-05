@@ -29,3 +29,10 @@
     background-image: url('/images/superman.png');
 }
 
+.batman {
+    background-image: url('/images/batman.jpg');
+}
+
+.flash {
+    background-image: url('/images/flash.svg');
+}

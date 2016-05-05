@@ -17,16 +17,15 @@
 
 .logo {
     background-repeat: no-repeat;
-    background-size: 50px;
+    background-size: 80px;
     background-position-x: center;
     background-position-y: center;
     height: 50px;
-    width: 50px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
 .superman {
-    background-image: url(https://material.angularjs.org/latest/img/icons/angular-logo.svg);
+    background-image: url('/images/superman.png');
 }
 

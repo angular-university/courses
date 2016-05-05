@@ -1,10 +1,10 @@
 
 .lesson {
 
-
+    text-align: left;
 
 }
 
-table td {
-    padding: 5px;
+table td, table th {
+    padding: 5px 8px;
 }

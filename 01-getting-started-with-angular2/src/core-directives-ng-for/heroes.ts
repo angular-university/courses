@@ -4,25 +4,29 @@ import {Component} from "@angular/core";
 
 const HEROES = [
     {id: 1, name:'Superman'},
-    {id: 1, name:'Superman'},
     {id: 2, name:'Batman'},
+    {id: 5, name:'BatGirl'},
     {id: 3, name:'Robin'},
-    {id: 4, name:'Flash'},
-    {id: 5, name:'Wonder Woman'}
+    {id: 4, name:'Flash'}
 ];
 
 @Component({
     selector:'heroes',
     template: `
             <table>
+                <thead>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Even</th>
+                    <th>Odd</th>
+                    
+                </thead>
                 <tr *ngFor="let hero of heroes; let i = index; let isEven = even; 
                                 let isOdd = odd;let isFirst = first; let isLast=last;trackBy:hero?.id">
                     <td>{{i}}</td>
                     <td>{{hero.name}}</td> 
                     <td>{{isEven}}</td>
                     <td>{{isOdd}}</td>
-                    <td>{{isFirst}}</td>
-                    <td>{{isLast}}</td>
                 </tr>
             </table>
 `

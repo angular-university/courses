@@ -13,8 +13,8 @@ import {Heroes} from "./heroes";
             <heroes>
                 <hero id="1" name="Superman"></hero>
                 <hero id="2" name="Batman"></hero>
-                <hero id="3" name="Wonder Woman"></hero>
-                <hero id="3" name="Green Lantern"></hero>
+                <hero id="3" name="Batgirl"></hero>
+                <hero id="3" name="Robin"></hero>
                 <hero id="4" name="Flash"></hero>
             </heroes>
 

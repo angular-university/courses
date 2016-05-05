@@ -1,0 +1,48 @@
+
+
+
+.tab-container {
+
+  $tab-border: 1px solid $secondary;
+
+  .tab-container-buttons {
+
+    list-style: none;
+    text-align: left;
+    margin-bottom: 0;
+    padding: 7px 0 0 10px;
+    background: $primary;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    li {
+      display: inline-block;
+      color: white;
+      background: $primary-tint-1;
+      font-size: $h6;
+      padding: 2px 20px;
+      cursor: pointer;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-top: $tab-border;
+      border-left: $tab-border;
+      border-right: $tab-border;
+      margin-right: 5px;
+
+      &.selected {
+        background: white;
+        color:$text;
+        border-bottom: 1px solid white;
+      }
+
+    }
+  }
+
+  .tab-pane {
+    border-left: $tab-border;
+    border-right: $tab-border;
+    border-bottom: $tab-border;
+  }
+
+}
+

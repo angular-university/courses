@@ -11,5 +11,5 @@ export class Hero {
 
     @Input()
     name:string;
-
+    
 }

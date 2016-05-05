@@ -18,6 +18,7 @@
     "src/05-template-syntax-components-essentials/lesson.ts",
     "src/core-directives-ng-for/lesson.ts",
     "src/core-directives-ngstyle-ngclass/lesson.ts",
-    "src/core-directives-ngif/lesson.ts"
+    "src/core-directives-ngif/lesson.ts",
+    "src/directives/lesson.ts"
   ]
 }

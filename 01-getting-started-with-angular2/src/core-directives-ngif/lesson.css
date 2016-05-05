@@ -1,0 +1,18 @@
+
+.lesson {
+    text-align: left;
+}
+
+table td, table th {
+    padding: 5px 8px;
+}
+
+.marvel {
+    background: #b13138;
+    border: 1px solid gray;
+    color: white;
+}
+
+.marvel.hulk {
+    background: green;
+}

@@ -2,6 +2,9 @@
 import {Component, ContentChildren, QueryList} from "@angular/core";
 import {Hero} from "./hero";
 
+export const BLUE = '#b13138';
+export const RED = '#1976d2';
+
 
 @Component({
     selector:'heroes',
@@ -15,7 +18,6 @@ import {Hero} from "./hero";
             <tr *ngFor="let hero of heroes; let i = index">
                 <td>{{hero.name}}</td>
                 <td>{{i}}</td>
-
             </tr>
         </tbody>
     </table>

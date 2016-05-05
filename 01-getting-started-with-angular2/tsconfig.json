@@ -16,6 +16,7 @@
     "src/03-template-syntax-interpolation/lesson.ts",
     "src/04-template-syntax-events/lesson_4.ts",
     "src/05-template-syntax-components-essentials/lesson.ts",
-    "src/core-directives-ng-for/lesson.ts"
+    "src/core-directives-ng-for/lesson.ts",
+    "src/core-directives-ngstyle-ngclass/lesson.ts"
   ]
 }

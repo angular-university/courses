@@ -15,7 +15,8 @@ export const RED = '#1976d2';
             <th>Index</th>
         </thead>
         <tbody>
-            <tr *ngFor="let hero of heroes; let i = index">
+            <tr *ngFor="let hero of heroes; let i = index"
+                    [ngStyle]="styles">
                 <td>{{hero.name}}</td>
                 <td>{{i}}</td>
             </tr>
@@ -27,5 +28,12 @@ export class Heroes {
 
      @ContentChildren(Hero)
      heroes: QueryList<Hero>;
+
+    get styles() {
+        return {
+            color: 'blue',
+            'text-decoration': 'underline'
+        };
+    }
 
 }

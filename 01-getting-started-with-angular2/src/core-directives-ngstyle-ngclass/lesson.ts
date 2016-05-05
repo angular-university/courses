@@ -11,7 +11,7 @@ import {Heroes} from "./heroes";
     template: `
 
             <heroes>
-                <hero id="1" [name]="'Superman'" ></hero>
+                <hero id="1" name="Superman"></hero>
                 <hero id="2" [name]="'Batman'"></hero>
                 <hero id="3" [name]="'Spiderman'" marvel="true"></hero>
                 <hero id="4" name="Batgirl"></hero>

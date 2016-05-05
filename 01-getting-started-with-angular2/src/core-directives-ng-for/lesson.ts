@@ -16,6 +16,7 @@ import {Heroes} from "./heroes";
                 <hero id="3" name="Batgirl"></hero>
                 <hero id="3" name="Robin"></hero>
                 <hero id="4" name="Flash"></hero>
+                <hero id="5" name="Green Lantern"></hero>
             </heroes>
 
         `

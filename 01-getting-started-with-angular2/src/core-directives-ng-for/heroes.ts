@@ -1,5 +1,6 @@
 
-import {Component} from "@angular/core";
+import {Component, ContentChildren, QueryList} from "@angular/core";
+import {Hero} from "./hero";
 
 
 const HEROES = [
@@ -13,29 +14,24 @@ const HEROES = [
 @Component({
     selector:'heroes',
     template: `
-            <table>
-                <thead>
-                    <th>Index</th>
-                    <th>Name</th>
-                    <th>Even</th>
-                    <th>Odd</th>
-                    
-                </thead>
-                <tr *ngFor="let hero of heroes; let i = index; let isEven = even; 
-                                let isOdd = odd;let isFirst = first; let isLast=last;trackBy:hero?.id">
-                    <td>{{i}}</td>
-                    <td>{{hero.name}}</td> 
-                    <td>{{isEven}}</td>
-                    <td>{{isOdd}}</td>
-                </tr>
-            </table>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Index</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hero of heroes; let i = index">
+                <td>{{hero.name}}</td>
+                <td>{{i}}</td>
+
+            </tr>
+        </tbody>
+    </table>
 `
 })
 export class Heroes {
 
-     heroes = HEROES;
+     @ContentChildren(Hero)
+     heroes: QueryList<Hero>;
 
-    //@ContentChildren(Hero)
-    //heroes: QueryList<Hero>;
-    
 }

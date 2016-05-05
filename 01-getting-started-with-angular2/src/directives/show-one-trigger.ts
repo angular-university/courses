@@ -18,16 +18,14 @@ export class ShowOneTrigger {
         showOneContainer.add(this);
     }
 
-    @HostBinding('class.selected')
-    get selected() {
-        return this.active;
-    }
-
-
     @HostListener('click')
     click() {
         this.showOneContainer.show(this.id);
     }
 
-    
+    @HostBinding('class.selected')
+    get selected() {
+        return this.active;
+    }
+
 }

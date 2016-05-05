@@ -12,10 +12,6 @@ export class ShowOneContainer implements AfterContentInit {
 
     triggers: ShowOneTrigger[] = [];
 
-    @ContentChildren(ShowOneTrigger)
-    items: QueryList<ShowOneTrigger>;
-
-
     @ContentChildren(ShowOne)
     items: QueryList<ShowOne>;
 
@@ -29,12 +25,8 @@ export class ShowOneContainer implements AfterContentInit {
     }
 
     show(id: string) {
-        this.items.forEach(item => {
-            item.active = item.id == id;
-        });
-        this.triggers.forEach(trigger => {
-            trigger.active = trigger.id == id;
-        });
+        this.items.forEach(item => item.active = item.id == id);
+        this.triggers.forEach(trigger =>  trigger.active = trigger.id == id);
     }
 
 }

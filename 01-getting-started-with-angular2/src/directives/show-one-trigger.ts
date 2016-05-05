@@ -1,6 +1,6 @@
 
 
-import {Directive, HostListener, Input} from "@angular/core";
+import {Directive, HostListener, HostBinding, Input} from "@angular/core";
 import {ShowOneContainer} from "./show-one-container";
 
 
@@ -9,12 +9,18 @@ import {ShowOneContainer} from "./show-one-container";
 })
 export class ShowOneTrigger {
 
-
     @Input('showOneTrigger')
     id:string;
 
-    constructor(private showOneContainer: ShowOneContainer) {
+    active = false;
 
+    constructor(private showOneContainer: ShowOneContainer) {
+        showOneContainer.triggers.push(this);
+    }
+
+    @HostBinding('class.selected')
+    get selected() {
+        return this.active;
     }
 
 

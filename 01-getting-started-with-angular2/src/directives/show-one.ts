@@ -15,12 +15,9 @@ export class ShowOne {
 
     active = false;
 
-
     @HostBinding('hidden')
     get hidden() {
         return !this.active;
     }
-
-
     
 }

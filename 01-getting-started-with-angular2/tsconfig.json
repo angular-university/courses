@@ -19,6 +19,7 @@
     "src/core-directives-ng-for/lesson.ts",
     "src/core-directives-ngstyle-ngclass/lesson.ts",
     "src/core-directives-ngif/lesson.ts",
-    "src/directives/lesson.ts"
+    "src/directives/lesson.ts",
+    "src/introduction-to-pipes/lesson.ts"
   ]
 }

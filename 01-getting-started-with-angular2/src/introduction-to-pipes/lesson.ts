@@ -1,17 +1,12 @@
 
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-
-
-const HEROES = [
-    {id: 1, name:'Superman'},
-    {id: 2, name:'Batman'},
-    {id: 3, name:'Iron Man'}
-];
+import {SortPipe} from "./sort.pipe";
 
 
 @Component({ 
     selector: 'app',
+    pipes: [SortPipe],
     template: `
 
             <div class="pipe-example">
@@ -44,7 +39,11 @@ const HEROES = [
 
             <div class="pipe-example">
                 <label>Currency Pipe: {{ amount | currency:'USD':true:'2.1-2' }}</label>
-            </div>                
+            </div>
+                            
+            <div class="pipe-example">
+                <label>Custom Pipe: {{ data | sort:'DESC'}}</label>
+            </div>                              
             
         `
 })
@@ -60,6 +59,8 @@ export class App {
     percentage = 0.0234;
 
     amount = 12.1234;
+
+    data = ['A', 'B', 'H', 'C'];
 
 }
 

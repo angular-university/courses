@@ -66,9 +66,3 @@ export class App {
 
 bootstrap(App);
 
-
-/*
-
-    import {PercentPipe, CurrencyPipe} from './number_pipe';
-
- */

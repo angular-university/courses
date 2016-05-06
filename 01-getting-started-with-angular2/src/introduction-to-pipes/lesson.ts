@@ -26,6 +26,10 @@ const HEROES = [
                 <label>Slice Pipe: {{ message | slice:0:5 }}</label>
             </div>            
 
+            <div class="pipe-example">
+                <label>Replace Pipe: {{ message | replace:'World':'Angular 2 World' }}</label>
+            </div>            
+
 
         `
 })

@@ -39,7 +39,7 @@ const HEROES = [
             </div>            
 
             <div class="pipe-example">
-                <label>Percent Pipe: {{ percentage | percent:'2' }}</label>
+                <label>Percent Pipe: {{ percentage | percent:'2.1-2' }}</label>
             </div>                  
             
         `
@@ -53,7 +53,7 @@ export class App {
 
     pi = 3.14159265359;
 
-    percentage = 0.1234;
+    percentage = 0.0234;
 
 }
 

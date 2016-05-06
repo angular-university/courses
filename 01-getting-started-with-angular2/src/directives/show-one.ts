@@ -8,7 +8,7 @@ import {Directive, HostBinding, Input} from "@angular/core";
 })
 export class ShowOne {
 
-    @Input('showOne')
+    @Input("showOne")
     id:string;
 
     @Input()
@@ -18,5 +18,7 @@ export class ShowOne {
     get hidden() {
         return !this.active;
     }
+
+
     
 }

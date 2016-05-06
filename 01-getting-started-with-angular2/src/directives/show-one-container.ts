@@ -14,14 +14,14 @@ export class ShowOneContainer {
 
     @ContentChildren(ShowOne)
     items: QueryList<ShowOne>;
-    
+
     add(trigger: ShowOneTrigger) {
         this.triggers.push(trigger);
     }
 
-    show(id: string) {
+    show(id:string) {
         this.items.forEach(item => item.active = item.id == id);
-        this.triggers.forEach(trigger =>  trigger.active = trigger.id == id);
+        this.triggers.forEach(
+            (trigger:ShowOneTrigger) =>  trigger.active = trigger.id == id);
     }
-
 }

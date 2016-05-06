@@ -14,13 +14,13 @@ import {ShowOneTrigger} from "./show-one-trigger";
     <div class="tab-container" showOneContainer> 
     
         <ul class="tab-buttons">
-            <li showOneTrigger="superman" [active]="true">Superman</li>
-            <li showOneTrigger="batman" >Batman</li>
-            <li showOneTrigger="flash" >Flash</li>
+            <li showOneTrigger="superman" [active]="true">Superman</li> 
+            <li showOneTrigger="batman">Batman</li>
+            <li showOneTrigger="flash">Flash</li>
         </ul>
     
-        <div class="tab-panel" showOne="superman" [active]="true">
-            <div class="logo superman"></div>
+        <div class="tab-panel" showOne="superman" [active]="true"> 
+            <div class="logo superman"></div> 
         </div>
         
         <div class="tab-panel" showOne="batman">
@@ -36,7 +36,7 @@ import {ShowOneTrigger} from "./show-one-trigger";
         `
 })
 export class App {
-    
+
 }
 
 bootstrap(App);

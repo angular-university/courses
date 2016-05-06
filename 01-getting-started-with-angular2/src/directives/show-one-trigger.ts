@@ -7,15 +7,15 @@ import {ShowOneContainer} from "./show-one-container";
 @Directive({
     selector: '[showOneTrigger]'
 })
-export class ShowOneTrigger {
+export class ShowOneTrigger { 
 
-    @Input('showOneTrigger')
-    id:string;
+    @Input("showOneTrigger")
+    id: string;
 
     @Input()
     active = false;
-
-    constructor(private showOneContainer: ShowOneContainer) { 
+    
+    constructor(private showOneContainer: ShowOneContainer) {
         showOneContainer.add(this);
     }
 
@@ -28,5 +28,5 @@ export class ShowOneTrigger {
     get selected() {
         return this.active;
     }
-
+    
 }

@@ -33,6 +33,10 @@ const HEROES = [
             <div class="pipe-example">
                 <label>Date Pipe: {{ date | date:'yyyy-MMM-dd' }}</label>
             </div>
+
+            <div class="pipe-example">
+                <label>Number Formatting: {{ pi | number:'5.1-2' }}</label>
+            </div>            
             
         `
 })
@@ -43,6 +47,7 @@ export class App {
 
     date = new Date();
 
+    pi = 3.14159265359;
 
 }
 
@@ -51,9 +56,6 @@ bootstrap(App);
 
 /*
 
-    import {DatePipe} from './date_pipe';
     import {DecimalPipe, PercentPipe, CurrencyPipe} from './number_pipe';
-
-    
 
  */

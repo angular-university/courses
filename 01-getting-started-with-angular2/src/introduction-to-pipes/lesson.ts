@@ -16,7 +16,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
             </div>            
 
             <div class="pipe-example">
-                <label>Lowercase Pipe: {{ message   }}</label>
+                <label>Lowercase Pipe: {{ message }}</label>
             </div>            
 
 

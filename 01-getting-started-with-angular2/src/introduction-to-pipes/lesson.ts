@@ -30,7 +30,10 @@ const HEROES = [
                 <label>Replace Pipe: {{ message | replace:'World':'Angular 2 World' }}</label>
             </div>            
 
-
+            <div class="pipe-example">
+                <label>Date Pipe: {{ date | date:'yyyy-MMM-dd' }}</label>
+            </div>
+            
         `
 })
 export class App {
@@ -38,8 +41,19 @@ export class App {
 
     message = 'Hello World !';
 
+    date = new Date();
+
 
 }
 
 bootstrap(App);
 
+
+/*
+
+    import {DatePipe} from './date_pipe';
+    import {DecimalPipe, PercentPipe, CurrencyPipe} from './number_pipe';
+
+    
+
+ */

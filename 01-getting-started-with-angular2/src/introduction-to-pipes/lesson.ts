@@ -37,6 +37,10 @@ const HEROES = [
             <div class="pipe-example">
                 <label>Number Formatting: {{ pi | number:'5.1-2' }}</label>
             </div>            
+
+            <div class="pipe-example">
+                <label>Percent Pipe: {{ percentage | percent:'2' }}</label>
+            </div>                  
             
         `
 })
@@ -49,6 +53,8 @@ export class App {
 
     pi = 3.14159265359;
 
+    percentage = 0.1234;
+
 }
 
 bootstrap(App);
@@ -56,6 +62,6 @@ bootstrap(App);
 
 /*
 
-    import {DecimalPipe, PercentPipe, CurrencyPipe} from './number_pipe';
+    import {PercentPipe, CurrencyPipe} from './number_pipe';
 
  */

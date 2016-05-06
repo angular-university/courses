@@ -41,6 +41,10 @@ const HEROES = [
             <div class="pipe-example">
                 <label>Percent Pipe: {{ percentage | percent:'2.1-2' }}</label>
             </div>                  
+
+            <div class="pipe-example">
+                <label>Currency Pipe: {{ amount | currency:'USD':true:'2.1-2' }}</label>
+            </div>                
             
         `
 })
@@ -54,6 +58,8 @@ export class App {
     pi = 3.14159265359;
 
     percentage = 0.0234;
+
+    amount = 12.1234;
 
 }
 

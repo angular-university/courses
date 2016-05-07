@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+
+</head>
+<body>
+
+<app></app>
+
+</body>
+<script src="node_modules/zone.js/dist/zone.js"></script>
+<script src="node_modules/reflect-metadata/Reflect.js"></script>
+<script src="node_modules/systemjs/dist/system.js"></script>
+
+<script src="system.config.js"></script>
+<script src="dist/bundle.js"></script>
+
+<script>
+    System.import('app').catch(console.log.bind(console));
+</script>
+
+</html>

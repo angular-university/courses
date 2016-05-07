@@ -7,11 +7,12 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
     selector: 'app',
     template: `
  
-        <div class="color-sample" [style.background]="'red'">Color Sample</div>
+        <div class="color-sample" [style.background]="'red'">
+        Color Sample</div>
         
         <button [disabled]="true">Disabled</button> 
         
-        <input [required]="true">
+        <input [required]="true" value="Hello World !">
                 
         `
 })

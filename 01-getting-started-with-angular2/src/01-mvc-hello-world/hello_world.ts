@@ -4,12 +4,12 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 
 @Component({
     selector: 'hello-world',
-    template: ``
+    template: `<input #input (keydown)="updateModel(input.value)">{{model.message}}`
 })
 export class HelloWorld {
 
     model = {
-        message: ''
+        message: 'Hello World !'
     };
 
     updateModel(newMessage) {

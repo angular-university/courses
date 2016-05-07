@@ -13,7 +13,7 @@ export class HelloWorld {
     };
 
     updateModel(newMessage) {
-        this.model.message = newMessage;
+        this.model.message = '';
     }
 
 }

@@ -5,7 +5,7 @@
     "postinstall": "./node_modules/.bin/typings install",
     "libs-bundle": "node libs-bundle.js",
     "app-bundle": "node app-bundle.js",
-    "build-ts": "./node_modules/.bin/tsc || true",
+    "build-ts": "./node_modules/.bin/tsc",
     "build-lib": "npm-run-all libs-bundle",
     "watch": " ./node_modules/.bin/nodemon -V -w src --ext \".ts\" --exec \"npm run build-ts\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",

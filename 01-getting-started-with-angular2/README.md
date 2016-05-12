@@ -9,8 +9,6 @@ The installation should take a few minutes. When its done, you can build the pro
     npm start
 
 
-Once the server is running, you can access the lessons page via the following url:
-
-    [localhost:8080](localhost:8080)
+Once the server is running, you can access the lessons page via the following url: [localhost:8080](localhost:8080)
 
 

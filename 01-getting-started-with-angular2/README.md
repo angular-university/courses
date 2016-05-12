@@ -12,3 +12,6 @@ The installation should take a few minutes. When its done, you can build the pro
 Once the server is running, you can access the lessons page via the following url: [http://localhost:8080](http://localhost:8080)
 
 
+Note: For Udemy students, this code is available also at the following location - https://github.com/angular-academy/courses/tree/master/01-getting-started-with-angular2
+
+

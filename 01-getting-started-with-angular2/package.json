@@ -6,7 +6,7 @@
     "libs-bundle": "node libs-bundle.js",
     "app-bundle": "node app-bundle.js",
     "build-ts": "./node_modules/.bin/tsc",
-    "build-lib": "npm-run-all libs-bundle",
+    "build-lib": "./node_modules/.bin/npm-run-all libs-bundle",
     "watch": " ./node_modules/.bin/nodemon -V -w src --ext \".ts\" --exec \"npm run build-ts\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",
     "start": "./node_modules/.bin/npm-run-all build-ts build-lib  -p watch serve "

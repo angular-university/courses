@@ -9,7 +9,7 @@
     "build-lib": "npm-run-all libs-bundle",
     "watch": " ./node_modules/.bin/nodemon -V -w src --ext \".ts\" --exec \"npm run build-ts\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",
-    "start": "npm-run-all build-ts build-lib  -p watch serve "
+    "start": "./node_modules/.bin/npm-run-all build-ts build-lib  -p watch serve "
   },
   "devDependencies": {
     "http-server": "^0.9.0",

@@ -17,7 +17,10 @@
     <script src="/dist/libs-bundle.js"></script>
 
     <script>
-        System.import('/dist/01-mvc-hello-world/hello_world.js').catch(console.log.bind(console));
+        System.config({
+            defaultJSExtensions: true
+        });
+        System.import('/dist/components-inputs-and-outputs/main').catch(console.log.bind(console));
     </script>
 
 </head>

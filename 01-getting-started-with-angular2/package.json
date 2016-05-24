@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "postinstall": "./node_modules/.bin/typings install",
+    "clean": "rimraf dist",
     "libs-bundle": "node libs-bundle.js",
     "app-bundle": "node app-bundle.js",
     "build-ts": "./node_modules/.bin/tsc",
     "build-lib": "./node_modules/.bin/npm-run-all libs-bundle",
     "watch": "./node_modules/.bin/nodemon -V -w src --ext \".ts\" --exec \"npm run build-ts\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",
-    "start": "./node_modules/.bin/npm-run-all build-ts build-lib  -p watch serve "
+    "start": "./node_modules/.bin/npm-run-all clean build-ts build-lib  -p watch serve "
   },
   "devDependencies": {
     "http-server": "^0.9.0",
@@ -17,7 +18,8 @@
     "npm-run-all": "^1.8.0",
     "systemjs-builder": "^0.15.16",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "typings": "^0.8.1",
+    "rimraf": "~2.5.2"
   },
   "dependencies": {
     "@angular/common": "^2.0.0-rc.1",

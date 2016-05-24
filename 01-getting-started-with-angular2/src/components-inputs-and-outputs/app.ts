@@ -4,7 +4,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 import {SearchBox} from "./search-box.component";
 
 @Component({
-    selector:'main',
+    selector:'app',
     directives: [SearchBox],
     template: ` <search-box></search-box>`
 })

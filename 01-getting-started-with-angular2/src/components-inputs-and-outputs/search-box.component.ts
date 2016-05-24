@@ -6,8 +6,5 @@ import {Component} from "@angular/core";
     template: `<input placeholder="Search"><button>Clear</button>`
 })
 export class SearchBox {
-
-
-
-
+    
 }

@@ -3,13 +3,13 @@ import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 
 @Component({
-    selector:'hello-world',
-    template: `<h1>Hello World !</h1>`
+    selector:'main',
+    template: ``
 })
-export class HelloWorld {
+export class Main {
 
 
 
 }
 
-bootstrap(HelloWorld);
+bootstrap(Main);

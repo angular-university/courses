@@ -1,18 +1,13 @@
 
 import {Component, Input, EventEmitter, Output} from "@angular/core";
 
-
 declare const module;
-
-console.log(module);
-
 
 @Component({
     selector: 'search-box',
-    template: `<input placeholder="{{text}}" #box
-       (keydown.enter)="onSearch(box.value)">
-
-        <button class="btn-clear" (click)="clear(box)">Clear</button>`
+    moduleId: module.id,
+    templateUrl: 'search-box.component.html',
+    styleUrls: ['search-box.component.css'] 
 })
 export class SearchBox {
 

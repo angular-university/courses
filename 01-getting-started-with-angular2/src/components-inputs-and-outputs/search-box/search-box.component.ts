@@ -9,9 +9,10 @@ console.log(module);
 
 @Component({
     selector: 'search-box',
-    moduleId: module.id,
-    styleUrls: ['search-box.component.css'],
-    templateUrl: 'search-box.component.html'
+    template: `<input placeholder="{{text}}" #box
+       (keydown.enter)="onSearch(box.value)">
+
+        <button class="btn-clear" (click)="clear(box)">Clear</button>`
 })
 export class SearchBox {
 

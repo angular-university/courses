@@ -22,6 +22,6 @@
     "src/core-directives-ngif/lesson.ts",
     "src/directives/lesson.ts",
     "src/introduction-to-pipes/lesson.ts",
-    "src/exercise-color-picker/app.ts"
+    "src/exercise-color-sample/app.ts"
   ]
 }

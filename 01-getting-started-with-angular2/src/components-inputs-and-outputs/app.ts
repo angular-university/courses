@@ -7,7 +7,7 @@ import {SearchBox} from "./search-box.component";
 @Component({
     selector:'app',
     directives: [SearchBox],
-    template: `<search-box></search-box>`
+    template: `<search-box text="Type Your Search Here"></search-box>`
 })
 export class App {
 

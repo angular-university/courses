@@ -10,6 +10,7 @@ console.log(module);
 @Component({
     selector: 'search-box',
     moduleId: module.id,
+    styleUrls: ['search-box.component.css'],
     templateUrl: 'search-box.component.html'
 })
 export class SearchBox {

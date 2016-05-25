@@ -5,7 +5,8 @@ import {Component, Input, EventEmitter, Output} from "@angular/core";
     selector: 'search-box',
     template: `<input placeholder="{{text}}" #box
                     (keydown.enter)="onSearch(box.value)"> 
-               <button (click)="clear(box)">Clear</button>`
+               <button (click)="clear(box)">Clear
+               </button>`
 })
 export class SearchBox {
 

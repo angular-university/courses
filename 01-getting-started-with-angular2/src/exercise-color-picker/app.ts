@@ -5,7 +5,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 
 @Component({
     selector:'app',
-    template: `<div class="color-sample" style="color:red"></div>
+    template: `<div class="color-sample"></div>
                 <input placeholder="Type Your Color Here">`
 })
 export class App {

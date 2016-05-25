@@ -1,7 +1,7 @@
 
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {SearchBox} from "./search-box.component";
+import {SearchBox} from "./search-box/search-box.component";
 
 
 @Component({

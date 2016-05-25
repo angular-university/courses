@@ -6,9 +6,13 @@
     "clean": "rimraf dist",
     "libs-bundle": "node libs-bundle.js",
     "app-bundle": "node app-bundle.js",
+    "copy-css": "./node_modules/.bin/copyfiles -u 1 './src/**/*.component.css' dist",
+    "copy-html": "./node_modules/.bin/copyfiles -u 1 './src/**/*.component.html' dist",
+    "copy":"npm-run-all copy-css copy-html",
+    "build": "npm-run-all build-ts copy",
     "build-ts": "./node_modules/.bin/tsc",
     "build-lib": "./node_modules/.bin/npm-run-all libs-bundle",
-    "watch": "./node_modules/.bin/nodemon -V -w src --ext \".ts\" --exec \"npm run build-ts\"",
+    "watch": "./node_modules/.bin/nodemon -V -w src --ext \".ts,.css,.html\" --exec \"npm run build\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",
     "start": "./node_modules/.bin/npm-run-all clean build-ts build-lib  -p watch serve "
   },
@@ -19,7 +23,8 @@
     "systemjs-builder": "^0.15.16",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
-    "rimraf": "~2.5.2"
+    "rimraf": "~2.5.2",
+    "copyfiles": "~0.2.1"
   },
   "dependencies": {
     "@angular/common": "^2.0.0-rc.1",

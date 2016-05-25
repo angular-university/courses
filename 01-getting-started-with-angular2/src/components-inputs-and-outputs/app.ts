@@ -12,8 +12,7 @@ import {SearchBox} from "./search-box/search-box.component";
                </search-box>`
 })
 export class App {
-
-
+    
     onSearch(text) {
         alert(`From App Component: ${text}`);
     }

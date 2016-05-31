@@ -15,7 +15,7 @@
     "watch": "./node_modules/.bin/nodemon -V -w src --ext \".ts,.css,.html\" --exec \"npm run build\"",
     "serve": "./node_modules/.bin/http-server -c-1 .",
     "start": "./node_modules/.bin/npm-run-all clean build-ts build-lib  -p watch serve ",
-    "start-lessons-server": "ts-node ./src/lessons-server/server.ts"
+    "start-lessons-server": "ts-node ./lessons-server.ts"
   },
   "devDependencies": {
     "copyfiles": "~0.2.1",

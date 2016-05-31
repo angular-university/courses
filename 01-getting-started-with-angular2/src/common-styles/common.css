@@ -1,2 +1,10 @@
 
+.lesson {
+    margin: 0 auto;
+    max-width: 550px;
+}
 
+.lessons-list {
+    padding: 15px 10px;
+    display: table-cell;
+}

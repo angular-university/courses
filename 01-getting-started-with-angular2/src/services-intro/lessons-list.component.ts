@@ -3,9 +3,9 @@ import {Component, Input} from "@angular/core";
 
 
 @Component({
-    selector:'lessons-list',
+    selector:'lessons-list',   
     template: `
-            <table class="card card-strong">
+            <table class="lessons-list card card-strong">
                 <tr *ngFor="let lesson of lessons">
                     <td>
                         {{lesson.description}}    

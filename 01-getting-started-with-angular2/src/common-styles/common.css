@@ -1,10 +1,19 @@
 
 .lesson {
-    margin: 0 auto;
+    margin: 25px auto 0 auto;
     max-width: 550px;
 }
 
 .lessons-list {
-    padding: 15px 10px;
+    padding: 10px 10px 0 10px;
     display: table-cell;
+}
+
+.lessons-list tr {
+    border-bottom: 1px solid darkgray;
+    cursor: pointer;
+}
+
+.lessons-list td {
+    padding-bottom: 5px;
 }

@@ -17,3 +17,8 @@
 .lessons-list td {
     padding-bottom: 5px;
 }
+
+.lesson-logo {
+    height: 20px;
+    margin-right: 10px;
+}

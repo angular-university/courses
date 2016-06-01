@@ -24,7 +24,7 @@ export class LessonsService {
     }
 
     createLesson(description) {
-        console.log("saving lesson ...");
+        console.log("creating lesson ...");
         const lesson = {description};
         this.lessons.push(lesson);
         this.http.post('/lessons', JSON.stringify(lesson), xhrHeaders())
@@ -32,7 +32,17 @@ export class LessonsService {
                 () => {},
                 err => console.error(err)
             );
+    }
 
+    delete(lesson) {
+        console.log("deleting lesson ...");
+        const index = this.lessons.find(item => item.url === lesson.url);
+        this.lessons.splice(index, 1);
+        this.http.delete('/lessons', xhrHeaders())
+            .subscribe(
+                () => {},
+                err => console.error(err)
+            );
     }
     
 }

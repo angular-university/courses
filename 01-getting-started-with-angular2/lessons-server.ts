@@ -24,10 +24,12 @@ app.route('/lessons')
     })
     .put((req, res) => {
         var json = req.body;
+        this.lessons.find(lesson => lesson.);
 
     })
     .delete((req,res) => {
         console.log('removing todo with id = ' + req.query.id);
+        // implement as an exercise
 
     })
     .post((req, res) => {

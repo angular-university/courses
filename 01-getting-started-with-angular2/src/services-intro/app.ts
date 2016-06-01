@@ -27,7 +27,7 @@ export class App {
     }
 
     saveLesson(description) {
-        console.log(description);
+        this.lessonsService.saveLesson(description);
     }
 
 }

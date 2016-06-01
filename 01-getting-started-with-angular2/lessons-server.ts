@@ -32,6 +32,7 @@ app.route('/lessons')
     })
     .post((req, res) => {
         lessons.push(req.body);
+        res.status(200).send();
     });
 
 var server = app.listen(8080, function() {

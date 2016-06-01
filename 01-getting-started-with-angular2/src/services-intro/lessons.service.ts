@@ -19,13 +19,19 @@ export class LessonsService {
             .map(res => res.json())
             .subscribe(
                 lessons => this.lessons = lessons,
-                console.error
+                err => console.error(err)
             );
     }
 
     saveLesson(description) {
-        this.http.post('/lessons', JSON.stringify({description}), xhrHeaders())
-            .map(res => res.json());
+        console.log("saving lesson ...");
+        const lesson = {description};
+        this.lessons.push(lesson);
+        this.http.post('/lessons', JSON.stringify(lesson), xhrHeaders())
+            .subscribe(
+                () => {},
+                err => console.error(err)
+            );
 
     }
     

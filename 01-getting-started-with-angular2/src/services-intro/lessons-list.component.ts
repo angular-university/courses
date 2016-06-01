@@ -1,6 +1,6 @@
 
 import {Component, Input} from "@angular/core";
-import {LessonsService} from './lessons.service';
+import {LessonsService} from "./lessons.service";
 
 
 @Component({
@@ -9,7 +9,8 @@ import {LessonsService} from './lessons.service';
             <table class="lessons-list card card-strong">
                 <tr *ngFor="let lesson of lessons">
                     <td>
-                        <img class="lesson-logo" src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">  
+                        <img class="lesson-logo" 
+                        src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">  
                     </td>
                     <td>
                         {{lesson.description}}    

@@ -13,12 +13,21 @@ import 'rxjs/Rx';
     selector:'app',
     providers: [LessonsService],
     directives: [LessonsList],
-    template: `<lessons-list [lessons]="lessonsService.lessons"></lessons-list>`
+    template: `
+        
+        <input class="add-lesson" placeholder="Add Lesson" (keyup.enter)="saveLesson(input.value)" #input>
+
+        <lessons-list [lessons]="lessonsService.lessons"></lessons-list>
+        `
 })
 export class App {
 
     constructor(private lessonsService: LessonsService) {
 
+    }
+
+    saveLesson(description) {
+        console.log(description);
     }
 
 }

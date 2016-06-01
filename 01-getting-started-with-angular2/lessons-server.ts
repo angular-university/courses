@@ -31,8 +31,7 @@ app.route('/lessons')
 
     })
     .post((req, res) => {
-        //todos.push(req.body);
-
+        lessons.push(req.body);
     });
 
 var server = app.listen(8080, function() {

@@ -27,7 +27,7 @@ export class App {
     }
 
     saveLesson(description) {
-        this.lessonsService.saveLesson(description);
+        this.lessonsService.createLesson(description);
     }
 
 }

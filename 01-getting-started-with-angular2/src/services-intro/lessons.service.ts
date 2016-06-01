@@ -23,7 +23,7 @@ export class LessonsService {
             );
     }
 
-    saveLesson(description) {
+    createLesson(description) {
         console.log("saving lesson ...");
         const lesson = {description};
         this.lessons.push(lesson);

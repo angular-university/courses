@@ -4,7 +4,7 @@ declare const require;
 var express = require('express');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
-
+import {lessonsData} from "./src/services-intro/lessons";
 
 
 
@@ -17,7 +17,7 @@ app.use(bodyParser.text());
 
 app.route('/lessons')
     .get((req, res) => {
-
+        res.status(200).json(lessonsData);
     })
     .put((req, res) => {
         var json = req.body;

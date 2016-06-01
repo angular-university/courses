@@ -3,7 +3,10 @@ import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {LessonsList} from './lessons-list.component';
 import {LessonsService} from './lessons.service';
+import {HTTP_PROVIDERS} from "@angular/http";
 import {lessonsData} from "./lessons";
+
+import 'rxjs/Rx';
 
 
 @Component({
@@ -20,4 +23,6 @@ export class App {
 
 }
 
-bootstrap(App);
+bootstrap(App, [
+    ...HTTP_PROVIDERS
+]);

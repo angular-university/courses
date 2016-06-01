@@ -1,7 +1,7 @@
 
 .lesson {
     margin: 25px auto 0 auto;
-    max-width: 550px;
+    max-width: 350px;
 }
 
 .lessons-list {
@@ -24,6 +24,6 @@
 }
 
 .add-lesson {
-    width: 300px;
+    width: 350px;
     margin-bottom: 15px;
 }

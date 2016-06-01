@@ -22,15 +22,12 @@ app.route('/lessons')
     .get((req, res) => {
         res.status(200).json(lessons);
     })
-    .put((req, res) => {
-        var json = req.body;
-        this.lessons.find(lesson => lesson.);
-
-    })
     .delete((req,res) => {
-        console.log('removing todo with id = ' + req.query.id);
-        // implement as an exercise
-
+        console.log("deleting lesson ...");
+        var lesson = req.body;
+        const index = lessons.indexOf(lesson);
+        lessons.splice(index, 1);
+        res.status(200).send();
     })
     .post((req, res) => {
         lessons.push(req.body);

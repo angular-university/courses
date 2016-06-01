@@ -36,7 +36,7 @@ export class LessonsService {
 
     delete(lesson) {
         console.log("deleting lesson ...");
-        const index = this.lessons.find(item => item.url === lesson.url);
+        const index = this.lessons.indexOf(lesson);
         this.lessons.splice(index, 1);
         this.http.delete('/lessons', xhrHeaders())
             .subscribe(

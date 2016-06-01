@@ -15,9 +15,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 
 
+const lessons = lessonsData;
+
+
 app.route('/lessons')
     .get((req, res) => {
-        res.status(200).json(lessonsData);
+        res.status(200).json(lessons);
     })
     .put((req, res) => {
         var json = req.body;

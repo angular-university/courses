@@ -52,7 +52,7 @@ export const lessonsData = [
         description:'Components Exercise Solution Inside',
         duration: '2:08',
         tags:"BEGINNER"
-    },
+    }/*,
     {
         url: 'angular2-mvc-hello-world-controllers-and-templates',
         description:'MVC Hello World - Controllers and Templates',
@@ -132,5 +132,5 @@ export const lessonsData = [
         duration: '3:00',
         url: 'introduction-to-angular2-running-the-lessons',
         tags:"BEGINNER"
-    }
+    }*/
 ];

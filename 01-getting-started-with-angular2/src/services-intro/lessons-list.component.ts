@@ -16,7 +16,7 @@ import {LessonsService} from "./lessons.service";
                         {{lesson.description}}    
                     </td>
                     <td>
-                        <button (click)="lessonsService.delete(lesson)">Delete</button>
+                        <button (click)="lessonsService.delete(lesson.id)">Delete</button>
                     </td>
                 </tr>
            </table>

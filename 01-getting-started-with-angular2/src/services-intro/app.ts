@@ -2,35 +2,29 @@
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {LessonsList} from "./lessons-list.component";
-import {LessonsService} from "./lessons.service";
 import {HTTP_PROVIDERS} from "@angular/http";
 import "rxjs/Rx";
+import {LessonsService} from "./lessons.service";
 
 
 @Component({
     selector:'app',
-    providers: [LessonsService],
-    directives: [LessonsList],
+    directives: [LessonsList], 
     template: `
 
-        <input class="add-lesson" placeholder="Add Lesson" (keyup.enter)="saveLesson(input.value)" #input>
+        <input class="add-lesson" placeholder="Add Lesson"
+            (keyup.enter)="lessonsService.createLesson(input.value)" #input>
 
         <lessons-list [lessons]="lessonsService.lessons"></lessons-list>
 
         `
 })
 export class App {
-
+    
     constructor(private lessonsService: LessonsService) {
 
     }
 
-    saveLesson(description) {
-        this.lessonsService.createLesson(description);
-    }
-
 }
 
-bootstrap(App, [
-    ...HTTP_PROVIDERS
-]);
+bootstrap(App, [LessonsService, ...HTTP_PROVIDERS]);

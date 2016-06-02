@@ -1,7 +1,6 @@
 
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {lessonsData} from "./lessons";
 import {xhrHeaders} from "./xhr-headers";
 
 
@@ -34,11 +33,13 @@ export class LessonsService {
             );
     }
 
-    delete(lesson) {
+    delete(lessonId) {
         console.log("deleting lesson ...");
-        const index = this.lessons.indexOf(lesson);
+        const index = this.lessons.findIndex(
+            lesson => lesson.id === lessonId
+        );
         this.lessons.splice(index, 1);
-        this.http.delete('/lessons', xhrHeaders())
+        this.http.delete(`/lessons/${lessonId}`, xhrHeaders())
             .subscribe(
                 () => {},
                 err => console.error(err)

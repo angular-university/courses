@@ -7,7 +7,6 @@ var _ = require('lodash');
 import {lessonsData} from "./src/services-intro/lessons";
 
 
-
 var app = express();
 
 app.use(express.static('.'));
@@ -22,15 +21,19 @@ app.route('/lessons')
     .get((req, res) => {
         res.status(200).json(lessons);
     })
-    .delete((req,res) => {
-        console.log("deleting lesson ...");
-        var lesson = req.body;
-        const index = lessons.indexOf(lesson);
-        lessons.splice(index, 1);
-        res.status(200).send();
-    })
     .post((req, res) => {
         lessons.push(req.body);
+        res.status(200).send();
+    });
+
+app.route('/lessons/:lessonId')
+    .delete((req,res) => {
+        const lessonId = req.params.lessonId;
+        console.log("deleting lesson ", lessonId);
+        const index = _.find(lessons,
+            lesson => lesson.id === lessonId
+        );
+        lessons.splice(index, 1);
         res.status(200).send();
     });
 

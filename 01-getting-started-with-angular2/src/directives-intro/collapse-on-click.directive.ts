@@ -2,9 +2,9 @@
 import {Directive, HostBinding, HostListener, Input, Output, EventEmitter} from "@angular/core";
 
 @Directive({
-    selector: '[collapsible]'
+    selector: '[collapse-on-click]'
 }) 
-export class Collapsible {
+export class CollapseOnClick {
 
     @Input("collapsed")
     isCollapsed = false;

@@ -1,11 +1,13 @@
 
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
+import {Collapsible} from "./collapsible.directive";
 
 
 
 @Component({
     selector:'app',
+    directives: [Collapsible],
     template: `
         
         <div collapsible class="card card-strong"> 

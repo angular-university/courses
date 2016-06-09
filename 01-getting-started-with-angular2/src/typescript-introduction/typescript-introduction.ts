@@ -1,6 +1,6 @@
 
 
-const hello = "Hello World !";
+var hello = "Hello World !";
 
 if (hello) {
     console.log(hello);
@@ -13,41 +13,15 @@ console.log(message);
 
 
 
-function printMessage(message, callback) {
+function printMessage(message:string,
+                      callback: Function) {
     console.log(message);
     callback();
 }
 
 
-printMessage(message, () => { 
+printMessage(message, () => {
     console.log('callback was called ...');
 });
 
-
-interface LandAnimal {
-    run();
-}
-
-
-class Animal  {
-
-
-}
-
-class Turtle extends Animal implements LandAnimal {
-
-    run() {
-        console.log("turtles run slowly ...");
-    }
-
-}
-
-
-class Cheetah extends Animal implements LandAnimal {
-
-    run() {
-        console.log("a cheetah runs fast ...");
-    }
-
-}
 

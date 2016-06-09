@@ -19,7 +19,7 @@ function printMessage(message, callback) {
 }
 
 
-printMessage(message, () => {
+printMessage(message, () => { 
     console.log('callback was called ...');
 });
 
@@ -29,12 +29,12 @@ interface LandAnimal {
 }
 
 
-abstract class Mammal implements LandAnimal {
+class Animal  {
+
 
 }
 
-
-class Turtle extends Mammal implements LandAnimal {
+class Turtle extends Animal implements LandAnimal {
 
     run() {
         console.log("turtles run slowly ...");
@@ -43,12 +43,11 @@ class Turtle extends Mammal implements LandAnimal {
 }
 
 
-class Cheetah extends Mammal implements LandAnimal {
+class Cheetah extends Animal implements LandAnimal {
 
     run() {
         console.log("a cheetah runs fast ...");
     }
-
 
 }
 

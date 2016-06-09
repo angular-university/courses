@@ -17,7 +17,6 @@ export class SearchBox {
     @Output()
     search = new EventEmitter();
 
-
     clear(box) {
         box.value = '';
     }

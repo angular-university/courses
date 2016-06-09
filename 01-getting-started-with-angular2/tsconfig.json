@@ -24,6 +24,7 @@
     "src/introduction-to-pipes/lesson.ts",
     "src/exercise-color-sample/app.ts",
     "src/services-intro/app.ts",
-    "src/directives-intro/app.ts"
+    "src/directives-intro/app.ts",
+    "src/typescript-introduction/typescript-introduction.ts"
   ]
 }

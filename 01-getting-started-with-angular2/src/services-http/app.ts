@@ -5,7 +5,9 @@ import {LessonsList} from "./lessons-list.component";
 import {HTTP_PROVIDERS} from "@angular/http";
 import "rxjs/Rx";
 import {LessonsService} from "./lessons.service";
+import {initObservable} from "./init-observable";
 
+declare const Rx;
 
 @Component({
     selector:'app',
@@ -23,7 +25,10 @@ export class App {
     
     constructor(private lessonsService: LessonsService) {
 
+        initObservable();
+
     }
+
 
 }
 

@@ -8,19 +8,24 @@ import {LessonsService} from "./lessons.service";
 import {initObservable} from "./init-observable";
 import {Observable} from "rxjs/Observable";
 import {Lesson} from './lesson';
+import {ObservableReference} from "./obs-ref.directive";
 
 declare const Rx;
 
 @Component({
     selector:'app',
-    directives: [LessonsList], 
+    directives: [LessonsList, ObservableReference],
     template: `
 
-        <input class="add-lesson" placeholder="Add Lesson"
-            (keyup.enter)="createLesson(input.value)" #input>
+        <div obs-ref [obs]="lessons$ | async"  #lessons="obsRef" >
 
-        <lessons-list [lessons]=" lessons$ | async"></lessons-list>
+            <input class="add-lesson" placeholder="Add Lesson" (keyup.enter)="createLesson(input.value)" #input>
+            
+            <div>Total Lessons: {{ lessons.val?.length }}</div>
 
+            <lessons-list [lessons]="lessons.val"></lessons-list>
+        
+        </div>
         `
 })
 export class App {

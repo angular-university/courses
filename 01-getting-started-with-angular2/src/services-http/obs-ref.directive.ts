@@ -3,7 +3,7 @@ import {Directive, Input} from "@angular/core";
 
 @Directive({
     selector:'[obs-ref]',
-    exportAs: 'obsRef'
+    exportAs: 'obsVal'
 })
 export class ObservableReference {
 

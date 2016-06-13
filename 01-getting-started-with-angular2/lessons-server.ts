@@ -19,6 +19,7 @@ const lessons = lessonsData;
 
 app.route('/lessons')
     .get((req, res) => {
+        //res.status(500).send();
         res.status(200).json(lessons);
     })
     .post((req, res) => {

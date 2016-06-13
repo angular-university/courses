@@ -7,15 +7,18 @@ declare function fetch(url:string);
 
 export function initObservable() {
 
-    var keys$ = Observable.fromEvent(document, 'keyup')
-                    .do((keyUp:KeyboardEvent) => console.log(keyUp.key));
+    const lessonsPromise = fetch('/lessons').then(res => res.json());
 
-    keys$.subscribe();
+    const lessons$ = Observable.fromPromise(lessonsPromise);
 
 
-    fetch('/lessons')
-        .then(res => res.json())
-        .then(lessons => console.log(lessons));
+    lessons$.subscribe(
+        lessons => console.log("new lessons:",lessons),
+
+        error => console.error("error retrieving lessons!",error),
+
+        () => console.log("completed!")
+    );
 
 }
 

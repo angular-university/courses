@@ -6,6 +6,8 @@ import {HTTP_PROVIDERS} from "@angular/http";
 import "rxjs/Rx";
 import {LessonsService} from "./lessons.service";
 import {initObservable} from "./init-observable";
+import {Observable} from "rxjs/Observable";
+import {Lesson} from './lesson';
 
 declare const Rx;
 
@@ -15,19 +17,28 @@ declare const Rx;
     template: `
 
         <input class="add-lesson" placeholder="Add Lesson"
-            (keyup.enter)="lessonsService.createLesson(input.value)" #input>
+            (keyup.enter)="createLesson(input.value)" #input>
 
-        <lessons-list [lessons]="lessonsService.lessons"></lessons-list>
+        <lessons-list [lessons]=" lessons$ | async"></lessons-list>
 
         `
 })
 export class App {
     
+    lessons$: Observable<Lesson>;
+    
     constructor(private lessonsService: LessonsService) {
 
         initObservable();
 
+        this.lessons$ = lessonsService.loadLessons();
+
     }
+
+    createLesson(description) {
+        this.lessonsService.createLesson(description);
+    }
+
 
 
 }

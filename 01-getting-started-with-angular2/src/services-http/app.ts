@@ -26,7 +26,7 @@ import {Lesson} from "./lesson";
 })
 export class App {
 
-    lessons$: Observable<Lesson>;
+    lessons$: Observable<Lesson[]>;
 
     constructor(private lessonsService: LessonsService) {
 

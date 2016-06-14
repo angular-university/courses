@@ -68,10 +68,18 @@ app.route('/delayedlessons')
     .get((req, res) => {
         
         setTimeout(() => {
+
+            var filtered = lessons;
+
+            if (req.query.search) {
+                console.log(req.query.search);
+                filtered = filtered.filter(
+                    lesson => lesson.description.indexOf(req.query.search) != - 1);
+            }
+
+            res.status(200).json(filtered);
             
-            res.status(200).json(lessons);
-            
-        }, 5000);
+        }, 1000);
         
     });
 

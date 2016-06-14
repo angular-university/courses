@@ -29,8 +29,14 @@ export class LessonsService {
         return this.http.get('/flakylessons').map(res => res.json());
     }
 
-    loadDelayedLessons() {
-        return this.http.get('/delayedlessons').map(res => res.json());
+    loadDelayedLessons(search = "") {
+
+        console.log(`searching for ${search}`);
+
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('search', search);
+
+        return this.http.get('/delayedlessons', {search:params}).map(res => res.json());        
     }
 
     createLesson(description) {

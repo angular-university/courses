@@ -1,6 +1,6 @@
 
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, URLSearchParams} from "@angular/http";
 import {xhrHeaders} from "./xhr-headers";
 import {Lesson} from "./lesson";
 import {Observable} from "rxjs/Observable";
@@ -14,9 +14,16 @@ export class LessonsService {
 
     }
 
-    loadLessons(): Observable<Lesson[]> {
-        return this.http.get('/lessons').map(res => res.json());
+    loadLessons(search = ""): Observable<Lesson[]> {
+
+        console.log(`searching for ${search}`);
+
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('search', search);
+
+        return this.http.get('/lessons', {search:params}).map(res => res.json());
     }
+
 
     loadFlakyLessons() {
         return this.http.get('/flakylessons').map(res => res.json());

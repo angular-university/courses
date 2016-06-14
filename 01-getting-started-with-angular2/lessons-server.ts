@@ -19,7 +19,16 @@ const lessons = lessonsData;
 
 app.route('/lessons')
     .get((req, res) => {
-        res.status(200).json(lessons);
+        
+        var filtered = lessons;
+        
+        if (req.query.search) {
+            console.log(req.query.search);
+            filtered = filtered.filter(
+                lesson => lesson.description.indexOf(req.query.search) != - 1);
+        }
+        
+        res.status(200).json(filtered);
     })
     .post((req, res) => {
         lessons.push(req.body);

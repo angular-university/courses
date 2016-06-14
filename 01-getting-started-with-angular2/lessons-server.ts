@@ -44,13 +44,26 @@ app.route('/flakylessons')
         const num = Math.round(Math.random() * 10);
 
         if (num % 2 == 0) {
-            //res.status(500).send();
             res.status(200).json(lessons);
         }
         else {
             res.status(500).send();
         }
 
+    });
+
+
+
+
+app.route('/delayedlessons')
+    .get((req, res) => {
+        
+        setTimeout(() => {
+            
+            res.status(200).json(lessons);
+            
+        }, 5000);
+        
     });
 
 

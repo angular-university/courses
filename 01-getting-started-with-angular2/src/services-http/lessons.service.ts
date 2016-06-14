@@ -22,6 +22,9 @@ export class LessonsService {
         return this.http.get('/flakylessons').map(res => res.json());
     }
 
+    loadDelayedLessons() {
+        return this.http.get('/delayedlessons').map(res => res.json());
+    }
 
     createLesson(description) {
 

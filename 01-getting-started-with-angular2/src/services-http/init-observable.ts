@@ -7,51 +7,38 @@ declare function fetch(url:string);
 
 export function initObservable() {
 
-    const mouse$ = Observable.fromEvent(document, 'mousemove')
-                    .filter((move: MouseEvent) => move.clientY >= 200);
+    const click$ = Observable.fromEvent(document,'click');
 
-/*
-    mouse$.subscribe(
-        (move: MouseEvent) => console.log(move)
+    const mouse$ = Observable.fromEvent(document,'mousemove')
+        .filter((move:MouseEvent) => move.clientY >=200);
+
+
+    const combined$ = Observable.combineLatest(mouse$, click$);
+
+    combined$.subscribe(
+        combined => console.log(combined[0])
     );
-*/
-
-    const click$ = Observable.fromEvent(document, 'click');
-
-/*
-    click$.subscribe(
-        () => console.log("mouse clicked ")
-    );
-*/
-
-
-    const filteredClicks$ =  Observable.combineLatest(mouse$, click$);
-
-    filteredClicks$.subscribe(
-        value => console.log(value[0])
-    );
-
 }
 
-
 /*
-*     // mouse move
+*      // mouse clicks
 *
-*     |------(x,Y)----(x,y)------(x,y)
-*
-*     // mouse move bellow 200
-*
-*     |--------------------------(x,y)------...
+*      |------------------------x---------------------x-------....
 *
 *
-*     // mouse click
+*      // mouse move
 *
-*     |------------------------------------x-----------
+*      |--(x,y)--(x,y)--(x,y)--(x,y)--(x,y)-(x,y)-(x,y)-(x,y)-(x,y)....
 *
 *
-*     // filteredClicks$
+*      // mouse move bellow 200
 *
-*     |----------------------------[(x,y),click]-------
+*      |----------------(x,y)---------(x,y)----...
+*
+*
+*      // combined
+*
+*      |-------------------------(x,y)---.....
 *
 *
 * */

@@ -19,7 +19,6 @@ const lessons = lessonsData;
 
 app.route('/lessons')
     .get((req, res) => {
-        //res.status(500).send();
         res.status(200).json(lessons);
     })
     .post((req, res) => {
@@ -37,6 +36,25 @@ app.route('/lessons/:lessonId')
         lessons.splice(index, 1);
         res.status(200).send();
     });
+
+
+app.route('/flakylessons')
+    .get((req, res) => {
+
+        const num = Math.round(Math.random() * 10);
+
+        if (num % 2 == 0) {
+            //res.status(500).send();
+            res.status(200).json(lessons);
+        }
+        else {
+            res.status(500).send();
+        }
+
+    });
+
+
+
 
 var server = app.listen(8080, function() {
     console.log("Server running at http://localhost:" + server.address().port);

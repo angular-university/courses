@@ -18,6 +18,8 @@ import {Lesson} from "./lesson";
 
             <input class="add-lesson" placeholder="Add Lesson" 
                 (keyup.enter)="createLesson(input.value)" #input>
+                
+                <button (click)="chain()">Chain</button>
 
             <lessons-list [lessons]="lessons$ | async"></lessons-list>
 
@@ -37,6 +39,29 @@ export class App {
 
     createLesson(description) {
         this.lessonsService.createLesson(description);
+    }
+
+    chain() {
+
+        const lesson = "Lesson 1";
+
+        const lesson2 = "Lesson2";
+
+        const chain$ = this.lessonsService.createLesson(lesson)
+            .switchMap(results => {
+                console.log('result', results);
+                return this.lessonsService.createLesson(lesson2)
+            })
+            .switchMap((results2) => {
+                console.log(results2);
+                return this.lessonsService.loadLessons();
+            })
+            .cache();
+
+
+        chain$.subscribe();
+
+
     }
 
 }

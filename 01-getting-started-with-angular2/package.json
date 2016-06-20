@@ -27,12 +27,12 @@
     "typings": "^0.8.1"
   },
   "dependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/http": "^2.0.0-rc.1",
-    "@angular/platform-browser": "^2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+    "@angular/common": "^2.0.0-rc.2",
+    "@angular/compiler": "^2.0.0-rc.2",
+    "@angular/core": "^2.0.0-rc.2",
+    "@angular/http": "^2.0.0-rc.2",
+    "@angular/platform-browser": "^2.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.2",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "lodash": "^4.13.1",

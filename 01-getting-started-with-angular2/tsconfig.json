@@ -26,6 +26,7 @@
     "src/services-intro/app.ts",
     "src/directives-intro/app.ts",
     "src/typescript-introduction/typescript-introduction.ts",
-    "src/services-http/app.ts"
+    "src/services-http/app.ts",
+    "src/template-driven-forms/app.ts"
   ]
 }

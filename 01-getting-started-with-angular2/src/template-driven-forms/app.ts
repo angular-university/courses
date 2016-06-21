@@ -19,7 +19,7 @@ import {Lesson} from './lesson';
                 </p>
                 <p>
                     <label>Duration (in sec.):</label>
-                    <input type="number" [(ngModel)]="lesson.duration" name="duration" required pattern="[0-9]+">
+                    <input [(ngModel)]="lesson.duration" name="duration" required pattern="[0-9]+">
                 </p>
                 <p>
                     <label>Description:</label>

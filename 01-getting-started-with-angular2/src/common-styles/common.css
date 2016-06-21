@@ -79,3 +79,8 @@
     background-position-y: center;
 }
 
+.ng-touched.ng-invalid {
+    border: 2px solid #ff2118;
+}
+
+

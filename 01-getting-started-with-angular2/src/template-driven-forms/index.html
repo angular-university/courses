@@ -41,11 +41,14 @@
                 '@angular/platform-browser-dynamic': {
                     main: 'index'
                 },
+                '@angular/forms': {
+                    main: 'index'
+                },
                 'rxjs': {
                     main: "Rx"
                 },
                 'app': {
-                    main: 'services-intro/app'
+                    main: 'template-driven-forms/app'
                 }
             }
         });
@@ -57,13 +60,13 @@
 <body>
 
     <header class="l-header v-center-parent">
-        <img class="v-center" src="//material.angularjs.org/latest/img/icons/angular-logo.svg">
+        <img class="v-center" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
     </header>
 
     <main class="l-main">
 
-        <div class="l-course-logo"></div>
-        <div class="l-course-title">Really Understanding Angular 2 - The Fundamentals</div>
+        <div class="course-logo"></div>
+        <div class="l-course-title">Angular 2 For Beginners</div>
 
         <div class="lesson">
             <app></app>

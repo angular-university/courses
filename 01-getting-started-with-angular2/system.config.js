@@ -20,6 +20,9 @@ System.config({
         '@angular/platform-browser-dynamic': {
             main: 'index'
         },
+        '@angular/forms': {
+            main: 'index'
+        },
         'rxjs': {
             main: "Rx"
         },

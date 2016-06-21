@@ -1,8 +1,9 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic"; 
-import {HTTP_PROVIDERS} from "@angular/http";
-import "rxjs/Rx";
+import {bootstrap} from "@angular/platform-browser-dynamic";
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
+
+
 
 
 @Component({
@@ -19,4 +20,30 @@ export class App {
 
 }
 
-bootstrap(App, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bootstrap(App, [
+    disableDeprecatedForms(),
+    provideForms()]);

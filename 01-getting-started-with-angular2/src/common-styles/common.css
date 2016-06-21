@@ -66,3 +66,16 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+
+.course-logo {
+    height: 75px;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    background-image: url(https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 65px;
+    background-position-y: center;
+}
+

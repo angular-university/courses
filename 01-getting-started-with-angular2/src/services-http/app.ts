@@ -59,6 +59,8 @@ export class App {
             .cache();
 
 
+        this.lessons$ = chain$;
+
         chain$.subscribe();
 
 

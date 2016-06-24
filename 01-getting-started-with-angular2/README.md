@@ -3,7 +3,7 @@ Angular university lessons code.
 
 # Installation pre-requisites
 
-The playground has minimal dependencies, but you still need node and npm installed on your machine. 
+This project has minimal dependencies, you only need node and npm installed on your machine. 
 These are some tutorials to install node in different operating systems. 
 
 *Make sure to install the latest version of Node 6*

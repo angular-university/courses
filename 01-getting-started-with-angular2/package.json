@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "npm run clean && http-server -c-1 ."
+    "start": "npm run clean && ts-node lessons-server.ts"
   },
   "devDependencies": {
     "http-server": "^0.9.0",

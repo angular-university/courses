@@ -3,9 +3,9 @@
     //map tells the System loader where to look for things
     var map = {
 
-        '@angular': 'node_modules/@angular', // sufficient if we didn't pin the version
-        '@angular/router': 'node_modules/@angular/router' ,
-        '@angular/forms': 'node_modules/@angular/forms',
+        '@angular': '/node_modules/@angular', // sufficient if we didn't pin the version
+        '@angular/router': '/node_modules/@angular/router' ,
+        '@angular/forms': '/node_modules/@angular/forms',
         'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
         'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6',
         'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
@@ -31,7 +31,7 @@
 
     // Add map entries for each angular package
     ngPackageNames.forEach(function (pkgName) {
-        map['@angular/' + pkgName] = 'node_modules/@angular/' + pkgName;
+        map['@angular/' + pkgName] = '/node_modules/@angular/' + pkgName;
     });
 
     // Add package entries for angular packages

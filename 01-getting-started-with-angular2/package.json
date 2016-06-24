@@ -1,9 +1,10 @@
 {
-  "name": "Angular 2 For Beginners - Course Lessons",
+  "name": "angular2-for-beginnners",
+  "description":"Angular 2 For Beginners - Course Lessons",
   "version": "1.0.0",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "http-server -c-1 ."
+    "start": "npm run clean && http-server -c-1 ."
   },
   "devDependencies": {
     "http-server": "^0.9.0",

@@ -10,15 +10,27 @@
     <link rel="stylesheet" href="https://angular-academy.s3-us-west-1.amazonaws.com/styles/angular-academy-lessons-theme-v1.css">
     <link rel="stylesheet" href="lesson-4.css">
 
-    <script src="/node_modules/zone.js/dist/zone.js"></script>
-    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="/node_modules/systemjs/dist/system.js"></script>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
+
+    <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
 
     <script src="/system.config.js"></script>
-    <script src="/dist/libs-bundle.js"></script>
 
     <script>
-        System.import('/dist/04-template-syntax-events/lesson_4.js').catch(console.log.bind(console));
+
+        document.SYSTEMJS_CONFIG.map.app = '.';
+
+        document.SYSTEMJS_CONFIG.packages.app = {main: 'app.ts', defaultExtension: 'ts'};
+
+        System.config(document.SYSTEMJS_CONFIG);
+
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+
     </script>
 
 </head>

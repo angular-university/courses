@@ -1,5 +1,5 @@
 # Angular 2 For Begginners Lessons Code
-A playground for Getting Started with Angular 2.
+The lessons code for Angular 2 For Beginners.
 
 # Installation pre-requisites
 

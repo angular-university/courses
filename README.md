@@ -16,7 +16,7 @@ These are some tutorials to install node in different operating systems.
 
 First clone or download as a Zip file using the green "Clone Or Download" button on the top right of the document.
 
-Then change directory to the folder 01-getting-started-with-angular2.
+Then change directory to the folder 01-getting-started-with-angular2, where you will find a small node project with a `package.json`.
 
 On the command line run the following:
 
@@ -28,7 +28,7 @@ This should take a couple of minutes. If there are issues, please post the compl
 
 To start the server, run the following command:
 
-npm start
+    npm start
 
 If you now go to [http://localhost:8080](http://localhost:8080), there should be a running application there. Again please do not hesitate to post a question in Udemy if its not.
 

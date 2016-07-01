@@ -15,7 +15,7 @@ import {Lesson} from './lesson';
             <form #f="ngForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
                 <p>
                     <label>Title:</label>
-                    <input  [(ngModel)]="lesson.title" name="title" required minlength="30" maxlength="50" #title="ngForm">
+                    <input  [(ngModel)]="lesson.title" name="title" required minlength="30" maxlength="50" #title="ngModel">
                     <span *ngIf="title?.errors?.required">Title is mandatory</span>
                 <p>
                     <label>Duration (in sec.):</label>

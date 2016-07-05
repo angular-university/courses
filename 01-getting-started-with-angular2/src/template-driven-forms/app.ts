@@ -16,9 +16,9 @@ import {Lesson} from './lesson';
                 <p>
                     <label>Title:</label>
                     <input  [(ngModel)]="lesson.title" name="title" required minlength="30" maxlength="50" #title="ngModel">
-                    <span *ngIf="title?.errors?.required">Title is mandatory</span>
+                    <div class="field-error-message" *ngIf="title?.errors?.required">Title is mandatory</div>
                 <p>
-                    <label>Duration (in sec.):</label>
+                    <label>Duration:</label>
                     <input [(ngModel)]="lesson.duration" name="duration" required pattern="[0-9]+">
                 </p>
                 <p>

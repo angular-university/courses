@@ -84,3 +84,14 @@
 }
 
 
+form label {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.field-error-message {
+
+}

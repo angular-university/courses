@@ -98,3 +98,12 @@ form label {
     font-size: 16px;
     color: #a10000;
 }
+
+form textarea {
+    width: 170px;
+}
+
+form button[type='submit'] {
+    float: right;
+    margin-right: 75px;
+}

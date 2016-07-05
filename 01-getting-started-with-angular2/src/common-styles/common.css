@@ -103,6 +103,13 @@ form textarea {
     width: 170px;
 }
 
+form input[type='radio'] {
+    box-shadow: none;
+    width: 20px;
+    vertical-align: bottom;
+    margin-left: 10px;
+}
+
 form button[type='submit'] {
     float: right;
     margin-right: 75px;

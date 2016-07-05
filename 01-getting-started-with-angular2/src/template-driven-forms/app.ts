@@ -27,6 +27,11 @@ import {Lesson} from './lesson';
                     <textarea [(ngModel)]="lesson.description" name="description" required minlength="150"></textarea>
                 </p>
                 <p>
+                    <label>Level:</label>
+                     <input type="radio" name="level" [(ngModel)]="beginner" value="beginner">Beginner
+                     <input type="radio" name="level" [(ngModel)]="advanced" value="advanced">Advanced
+                </p>
+                <p>
                     <button type="submit" [disabled]="false">Create Lesson</button>
                 </p>
             </form>                        

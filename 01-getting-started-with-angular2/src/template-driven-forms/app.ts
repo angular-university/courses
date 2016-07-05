@@ -28,13 +28,20 @@ import {Lesson} from './lesson';
                 </p>
                 <p>
                     <label>Level:</label>
-                     <input type="radio" name="level" [(ngModel)]="beginner" value="beginner">Beginner
-                     <input type="radio" name="level" [(ngModel)]="advanced" value="advanced">Advanced
+                     <input type="radio" name="level" [(ngModel)]="level" value="beginner">Beginner
+                     <input type="radio" name="level" [(ngModel)]="level" value="advanced">Advanced
                 </p>
                 <p>
                     <button type="submit" [disabled]="false">Create Lesson</button>
                 </p>
-            </form>                        
+                
+            </form>
+            
+            <div class="form-value">
+                {{ f.value | json }}            
+            </div>
+                                    
+            
 
         `
 })
@@ -42,6 +49,8 @@ export class App {
     
 
     lesson = new Lesson("Title goes here",0,  "Description goes here");
+
+    level:string;
     
     
     createLesson(title) {

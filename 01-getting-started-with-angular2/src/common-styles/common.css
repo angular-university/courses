@@ -114,3 +114,7 @@ form button[type='submit'] {
     float: right;
     margin-right: 75px;
 }
+
+.form-value {
+    margin-top: 80px;
+}

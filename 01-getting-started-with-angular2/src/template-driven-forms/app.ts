@@ -37,13 +37,14 @@ import {Lesson, StudentLevel} from './lesson';
                 
             </form>
             
-            <h3>Form Value:</h3>
+            
             <div class="form-value">
+                <h3>Form Value:</h3>
                 {{ f.value | json }}            
             </div>
             
-            <h3>Lesson Value:</h3>
             <div class="form-value">
+                <h3>Lesson Value:</h3>
                 {{ lesson | json }}            
             </div>            
 

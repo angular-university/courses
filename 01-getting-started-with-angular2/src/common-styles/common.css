@@ -93,5 +93,8 @@ form label {
 }
 
 .field-error-message {
-
+    text-align: right;
+    padding-right: 68px;
+    font-size: 16px;
+    color: #a10000;
 }

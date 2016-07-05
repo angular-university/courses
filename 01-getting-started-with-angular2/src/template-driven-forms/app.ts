@@ -2,7 +2,7 @@
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {disableDeprecatedForms, provideForms} from '@angular/forms';
-import {Lesson} from './lesson';
+import {Lesson, StudentLevel} from './lesson';
 
 
 
@@ -28,8 +28,8 @@ import {Lesson} from './lesson';
                 </p>
                 <p>
                     <label>Level:</label>
-                     <input type="radio" name="level" [(ngModel)]="level" value="beginner">Beginner
-                     <input type="radio" name="level" [(ngModel)]="level" value="advanced">Advanced
+                     <input type="radio" name="level" [(ngModel)]="lesson.level" value="BEGINNER">Beginner
+                     <input type="radio" name="level" [(ngModel)]="lesson.level" value="ADVANCED">Advanced
                 </p>
                 <p>
                     <button type="submit" [disabled]="false">Create Lesson</button>
@@ -37,21 +37,26 @@ import {Lesson} from './lesson';
                 
             </form>
             
+            <h3>Form Value:</h3>
             <div class="form-value">
                 {{ f.value | json }}            
             </div>
-                                    
             
+            <h3>Lesson Value:</h3>
+            <div class="form-value">
+                {{ lesson | json }}            
+            </div>            
 
         `
 })
 export class App {
-    
 
-    lesson = new Lesson("Title goes here",0,  "Description goes here");
+    lesson = new Lesson("Title goes here",0,  "Description goes here", StudentLevel.BEGINNER);
 
-    level:string;
-    
+
+    constructor() {
+        const level = StudentLevel.ADVANCED;
+    }
     
     createLesson(title) {
         debugger;

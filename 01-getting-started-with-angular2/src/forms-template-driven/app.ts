@@ -14,7 +14,7 @@ import {DurationValidator} from "./validate-duration.directive";
 
             <h3 [ngStyle]="{color: !f.valid  ? 'red' : 'black'}">Create Lesson Form - Template Driven</h3>
             
-            <form #f="ngForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
+            <form #f="ngForm" (ngSubmit)="createLesson()" autocomplete="off" novalidate>
             
                 <fieldset ngModelGroup="summary" #summary="ngModelGroup">
                     <legend [ngStyle]="{color: !summary.valid && !summary.pristine ? 'red' : 'black'}">Summary</legend>
@@ -71,7 +71,7 @@ export class App {
         const level = StudentLevel.ADVANCED;
     }
     
-    createLesson(title) {
+    createLesson() {
         debugger;
     }
 

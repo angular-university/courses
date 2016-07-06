@@ -132,3 +132,9 @@ form button[type='submit'] {
     color: white;
     font-weight: bold;
 }
+
+.lesson-button[disabled] {
+    background: grey;
+    color: white;
+    cursor: not-allowed;
+}

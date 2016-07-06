@@ -77,7 +77,9 @@ export class App {
             .filter(() => this.myForm.valid)
             .map(value => new Lesson(value.title, value.duration, value.description, StudentLevel.BEGINNER))
             .do(lesson => console.log("Valid Lesson:", lesson))
-            .subscribe();
+            .subscribe(
+                lesson => 
+            );
 
 
     }

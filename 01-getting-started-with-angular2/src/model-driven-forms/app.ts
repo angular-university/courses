@@ -51,7 +51,7 @@ import {validateDuration} from "./validateDuration";
 })
 export class App {
 
-    lesson = new Lesson("Title goes here",0,  "Description goes here", StudentLevel.BEGINNER);
+    lesson = new Lesson("Title goes here",0,  "Description goes here","Transcript goes here", StudentLevel.BEGINNER);
 
     myForm: FormGroup;
 
@@ -76,7 +76,7 @@ export class App {
         this.myForm.valueChanges
             .do(value => console.log("Form Value:", value))
             .filter(() => this.myForm.valid)
-            .map(value => new Lesson(value.title, value.duration, value.description, StudentLevel.BEGINNER))
+            .map(value => new Lesson(value.title, value.duration, value.description,null, StudentLevel.BEGINNER))
             .do(lesson => console.log("Valid Lesson:", lesson))
             .subscribe(
                 lesson => this.lesson = lesson

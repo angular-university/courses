@@ -10,7 +10,8 @@ export class Lesson {
 
     id:string;
 
-    constructor(public title:string, duration:number, public description:string, private _level:StudentLevel) {
+    constructor(public title:string, duration:number, public description:string,
+                 public transcript:string, private _level:StudentLevel) {
 
     }
 

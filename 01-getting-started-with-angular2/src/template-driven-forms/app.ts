@@ -1,13 +1,15 @@
 
-import {Component} from "@angular/core";
+import {Component, forwardRef} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms} from '@angular/forms';
+import {disableDeprecatedForms, provideForms, NG_VALIDATORS} from '@angular/forms';
 import {Lesson, StudentLevel} from './lesson';
+import {DurationValidator} from "./validate-duration.directive";
 
 
 
 @Component({
     selector:'app',
+    directives: [DurationValidator],
     template: `
 
             <h3>Create Lesson Form - Template Driven</h3>
@@ -23,7 +25,7 @@ import {Lesson, StudentLevel} from './lesson';
                         <div class="field-error-message" *ngIf="title?.errors?.minlength">min 5 chars</div>
                     <p>
                         <label>Duration:</label>
-                        <input [(ngModel)]="lesson.duration" name="duration" required pattern="[0-9]+">
+                        <input [(ngModel)]="lesson.duration" name="duration" duration>
                     </p>
                     <p>
                         <label>Level:</label>
@@ -41,7 +43,7 @@ import {Lesson, StudentLevel} from './lesson';
                     </p>
                     <p>
                         <label>Transcript:</label>
-                        <textarea [(ngModel)]="lesson.description" name="description" required minlength="150"></textarea>
+                        <textarea [(ngModel)]="lesson.trancript" name="description" required minlength="150"></textarea>
                     </p>                    
                     <p>
                         <label>Level:</label>
@@ -72,7 +74,7 @@ import {Lesson, StudentLevel} from './lesson';
 })
 export class App {
 
-    lesson = new Lesson("Title goes here",0,  "Description goes here", StudentLevel.BEGINNER);
+    lesson = new Lesson("Title goes here",0,  "Description goes here", "Transcript goes here", StudentLevel.BEGINNER);
 
 
     constructor() {
@@ -104,11 +106,12 @@ export class App {
 
 
 
-
-
-
-
-
 bootstrap(App, [
     disableDeprecatedForms(),
-    provideForms()]);
+    provideForms(),
+    {
+        provide: NG_VALIDATORS,
+        useExisting: DurationValidator,
+        multi: true
+    }
+]);

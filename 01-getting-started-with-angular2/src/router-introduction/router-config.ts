@@ -1,8 +1,10 @@
 
 import {RouterConfig } from '@angular/router';
+import {AllLessons} from "./all-lessons.component";
+import {Stats} from "./stats.component";
 
 
 export const routes: RouterConfig = [
-    { path: 'crisis-center', component: null },
-    { path: 'heroes', component: null }
+    { path: 'stats', component: Stats },
+    { path: 'all-lessons', component: AllLessons },
 ];

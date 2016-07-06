@@ -1,7 +1,8 @@
 
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms, FormGroup, FormControl, REACTIVE_FORM_DIRECTIVES, Validators} from '@angular/forms';
+import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
+    REACTIVE_FORM_DIRECTIVES, Validators, FormBuilder} from '@angular/forms';
 import {Lesson, StudentLevel} from './lesson';
 
 
@@ -52,12 +53,19 @@ export class App {
 
     myForm: FormGroup;
 
-    constructor() {
+    constructor(fb: FormBuilder) {
 
-        this.myForm = new FormGroup({
+/*        this.myForm = new FormGroup({
             title: new FormControl('Initial Title', [Validators.required, Validators.minLength(5)]),
             duration: new FormControl(0, [Validators.required, Validators.pattern('[0-9]+')]),
             description: new FormControl("", Validators.required)
+        });*/
+
+
+        this.myForm = fb.group({
+            title: ['Initial Value', [Validators.required, Validators.minLength(5)]],
+            duration: [0, [Validators.required, Validators.pattern('[0-9]+')]],
+            description: ["", [Validators.required]]
         });
 
     }

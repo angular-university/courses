@@ -5,6 +5,7 @@ import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
     REACTIVE_FORM_DIRECTIVES, Validators, FormBuilder} from '@angular/forms';
 import {Lesson, StudentLevel} from './lesson';
 import "rxjs/Rx";
+import {validateDuration} from "./validateDuration";
 
 
 
@@ -23,7 +24,7 @@ import "rxjs/Rx";
                     <div class="field-error-message" *ngIf="myForm.controls.title.errors?.minlength">min 5 chars</div>
                 <p>
                     <label>Duration:</label>
-                    <input required pattern="[0-9]+" [formControl]="duration">
+                    <input [formControl]="duration">
                 </p>
                      
                 <p>
@@ -54,7 +55,7 @@ export class App {
 
     myForm: FormGroup;
 
-    duration = new FormControl(0, [Validators.required, Validators.pattern('[0-9]+')]);
+    duration = new FormControl(0, [validateDuration]);
 
     constructor(fb: FormBuilder) {
 

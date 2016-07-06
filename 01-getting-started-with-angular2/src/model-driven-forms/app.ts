@@ -78,7 +78,7 @@ export class App {
             .map(value => new Lesson(value.title, value.duration, value.description, StudentLevel.BEGINNER))
             .do(lesson => console.log("Valid Lesson:", lesson))
             .subscribe(
-                lesson => 
+                lesson => this.lesson = lesson
             );
 
 

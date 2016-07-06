@@ -41,10 +41,14 @@ import {confirmPassword} from "./confirmPassword";
                 
             </form>
             
-            
-            <div class="form-value">
+            <div class="debug">
                 <h3>Form Value:</h3>
-                {{ f.value | json }}            
+                {{ myForm.value | json }}            
+            </div>
+            
+            <div class="debug">
+                <h3>Lesson Value:</h3>
+                {{ lesson | json }}            
             </div>
             
         `

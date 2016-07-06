@@ -49,16 +49,15 @@ import {DurationValidator} from "./validate-duration.directive";
                 
             </form>
             
-            
-            <div class="form-value">
+            <div class="debug">
                 <h3>Form Value:</h3>
-                {{ f.value | json }}            
+                {{ myForm.value | json }}            
             </div>
             
-            <div class="form-value">
+            <div class="debug">
                 <h3>Lesson Value:</h3>
                 {{ lesson | json }}            
-            </div>            
+            </div>         
 
         `
 })

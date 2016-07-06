@@ -6,24 +6,18 @@ import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
 import {Lesson, StudentLevel} from './lesson';
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
-import {NumberField} from "./number-field.component";
 
 
 
 @Component({
     selector:'app',
-    directives: [REACTIVE_FORM_DIRECTIVES, NumberField],
+    directives: [REACTIVE_FORM_DIRECTIVES],
     template: `
 
             <h3>Model Driven Forms</h3>
             
             <form [formGroup]="myForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
-            
-               <div class="form-field">
-                    <label>Id:</label>
-                    <number-field required formControlName="id"></number-field>
-                </div>            
-            
+                        
                <div class="form-field">
                     <label>Title:</label>
                     <input  required minlength="5" formControlName="title">
@@ -39,17 +33,17 @@ import {NumberField} from "./number-field.component";
                     <textarea required formControlName="description"></textarea>
                 </div>            
                 <div class="form-field">
-                    <button class="lesson-button" type="submit">Create Lesson</button>
+                    <button class="lesson-button" type="submit" [disabled]="!myForm.valid">Create Lesson</button>
                 </div>
             </form>
             
             
-            <div class="form-value">
+            <div class="debug">
                 <h3>Form Value:</h3>
                 {{ myForm.value | json }}            
             </div>
             
-            <div class="form-value">
+            <div class="debug">
                 <h3>Lesson Value:</h3>
                 {{ lesson | json }}            
             </div>            
@@ -93,8 +87,8 @@ export class App {
 
     }
     
-    createLesson(title) {
-        debugger;
+    createLesson() {
+        console.log(this.myForm.value);
     }
 
 }

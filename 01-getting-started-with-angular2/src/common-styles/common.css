@@ -119,8 +119,14 @@ form button[type='submit'] {
     margin-right: 75px;
 }
 
-.form-value {
-    margin-top: 30px;
+.debug {
+    clear: both;
+    font-size: 14px;
+}
+
+.debug h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .form-field {

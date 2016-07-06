@@ -22,7 +22,7 @@ import {Lesson, StudentLevel} from './lesson';
                     <div class="field-error-message" *ngIf="myForm.controls.title.errors?.minlength">min 5 chars</div>
                 <p>
                     <label>Duration:</label>
-                    <input required pattern="[0-9]+" formControlName="duration">
+                    <input required pattern="[0-9]+" [formControl]="duration">
                 </p>
                      
                 <p>
@@ -53,6 +53,8 @@ export class App {
 
     myForm: FormGroup;
 
+    duration = new FormControl(0, [Validators.required, Validators.pattern('[0-9]+')]);
+
     constructor(fb: FormBuilder) {
 
 /*        this.myForm = new FormGroup({
@@ -64,7 +66,7 @@ export class App {
 
         this.myForm = fb.group({
             title: ['Initial Value', [Validators.required, Validators.minLength(5)]],
-            duration: [0, [Validators.required, Validators.pattern('[0-9]+')]],
+            duration: this.duration,
             description: ["", [Validators.required]]
         });
 

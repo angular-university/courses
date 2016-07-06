@@ -6,17 +6,24 @@ import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
 import {Lesson, StudentLevel} from './lesson';
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
+import {NumberField} from "./number-field.component";
 
 
 
 @Component({
     selector:'app',
-    directives: [REACTIVE_FORM_DIRECTIVES],
+    directives: [REACTIVE_FORM_DIRECTIVES, NumberField],
     template: `
 
             <h3>Model Driven Forms</h3>
             
             <form [formGroup]="myForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
+            
+               <div class="form-field">
+                    <label>Id:</label>
+                    <number-field required formControlName="id"></number-field>
+                </div>            
+            
                <div class="form-field">
                     <label>Title:</label>
                     <input  required minlength="5" formControlName="title">
@@ -67,6 +74,7 @@ export class App {
 
 
         this.myForm = fb.group({
+            id: [0,Validators.required],
             title: ['Initial Value', [Validators.required, Validators.minLength(5)]],
             duration: this.duration,
             description: ["", []]

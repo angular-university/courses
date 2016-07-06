@@ -44,7 +44,7 @@ import {DurationValidator} from "./validate-duration.directive";
                 </fieldset>                
             
                 <p>
-                    <button type="submit">Create Lesson</button>
+                    <button class="lesson-button" type="submit">Create Lesson</button>
                 </p>
                 
             </form>

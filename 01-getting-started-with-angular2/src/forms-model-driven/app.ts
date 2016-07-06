@@ -32,7 +32,7 @@ import {validateDuration} from "./validateDuration";
                     <textarea required formControlName="description"></textarea>
                 </div>            
                 <div class="form-field">
-                    <button type="submit">Create Lesson</button>
+                    <button class="lesson-button" type="submit">Create Lesson</button>
                 </div>
             </form>
             

@@ -126,3 +126,9 @@ form button[type='submit'] {
 .form-field {
     margin-bottom: 15px;
 }
+
+.lesson-button {
+    background: #1976d2;
+    color: white;
+    font-weight: bold;
+}

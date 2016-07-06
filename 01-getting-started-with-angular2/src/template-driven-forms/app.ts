@@ -18,7 +18,7 @@ import {Lesson, StudentLevel} from './lesson';
                     <legend [ngStyle]="{color: !summary.valid && !summary.pristine ? 'red' : 'black'}">Summary</legend>
                    <p>
                         <label>Title:</label>
-                        <input  [(ngModel)]="lesson.title" name="title" required minlength="5" maxlength="20" #title="ngModel">
+                        <input  [(ngModel)]="lesson.title" name="title" required minlength="5" #title="ngModel">
                         <div class="field-error-message" *ngIf="title?.errors?.required">field is mandatory</div>
                         <div class="field-error-message" *ngIf="title?.errors?.minlength">min 5 chars</div>
                     <p>

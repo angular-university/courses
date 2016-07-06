@@ -52,7 +52,7 @@ import {Lesson, StudentLevel} from './lesson';
                 </fieldset>                
             
                 <p>
-                    <button type="submit" [disabled]="false">Create Lesson</button>
+                    <button type="submit">Create Lesson</button>
                 </p>
                 
             </form>

@@ -1,7 +1,7 @@
 
-import {Component, forwardRef} from "@angular/core";
+import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms, NG_VALIDATORS} from '@angular/forms';
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
 import {Lesson, StudentLevel} from './lesson';
 import {DurationValidator} from "./validate-duration.directive";
 
@@ -12,45 +12,35 @@ import {DurationValidator} from "./validate-duration.directive";
     directives: [DurationValidator],
     template: `
 
-            <h3>Create Lesson Form - Template Driven</h3>
+            <h3 [ngStyle]="{color: !f.valid  ? 'red' : 'black'}">Create Lesson Form - Template Driven</h3>
             
             <form #f="ngForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
             
                 <fieldset ngModelGroup="summary" #summary="ngModelGroup">
                     <legend [ngStyle]="{color: !summary.valid && !summary.pristine ? 'red' : 'black'}">Summary</legend>
-                   <p>
+                    <div class="form-field">
                         <label>Title:</label>
                         <input  [(ngModel)]="lesson.title" name="title" required minlength="5" #title="ngModel">
                         <div class="field-error-message" *ngIf="title?.errors?.required">field is mandatory</div>
                         <div class="field-error-message" *ngIf="title?.errors?.minlength">min 5 chars</div>
-                    <p>
+                    </div>
+                    <div class="form-field">
                         <label>Duration:</label>
                         <input [(ngModel)]="lesson.duration" name="duration" duration>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-field">
                         <label>Level:</label>
                          <input type="radio" name="level" [(ngModel)]="lesson.level" value="BEGINNER">Beginner
                          <input type="radio" name="level" [(ngModel)]="lesson.level" value="ADVANCED">Advanced
-                    </p>
-                         
+                    </div>     
                 </fieldset>
                 
                 <fieldset ngModelGroup="text">
                     <legend>Long Text Fields</legend>
-                    <p>
+                    <div class="form-field">
                         <label>Description:</label>
-                        <textarea [(ngModel)]="lesson.description" name="description" required minlength="150"></textarea>
-                    </p>
-                    <p>
-                        <label>Transcript:</label>
-                        <textarea [(ngModel)]="lesson.trancript" name="description" required minlength="150"></textarea>
-                    </p>                    
-                    <p>
-                        <label>Level:</label>
-                         <input type="radio" name="level" [(ngModel)]="lesson.level" value="BEGINNER">Beginner
-                         <input type="radio" name="level" [(ngModel)]="lesson.level" value="ADVANCED">Advanced
-                    </p>
-                         
+                        <textarea [(ngModel)]="lesson.description" name="description" required></textarea>
+                    </div>                    
                 </fieldset>                
             
                 <p>
@@ -74,7 +64,7 @@ import {DurationValidator} from "./validate-duration.directive";
 })
 export class App {
 
-    lesson = new Lesson("Title goes here",0,  "Description goes here", "Transcript goes here", StudentLevel.BEGINNER);
+    lesson = new Lesson("Title goes here",0,  "", "", StudentLevel.BEGINNER);
 
 
     constructor() {
@@ -108,10 +98,5 @@ export class App {
 
 bootstrap(App, [
     disableDeprecatedForms(),
-    provideForms(),
-    {
-        provide: NG_VALIDATORS,
-        useExisting: DurationValidator,
-        multi: true
-    }
+    provideForms()
 ]);

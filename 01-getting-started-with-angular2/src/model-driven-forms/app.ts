@@ -17,23 +17,23 @@ import {validateDuration} from "./validateDuration";
             <h3>Model Driven Forms</h3>
             
             <form [formGroup]="myForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
-               <p>
+               <div class="form-field">
                     <label>Title:</label>
                     <input  required minlength="5" formControlName="title">
                     <div class="field-error-message" *ngIf="myForm.controls.title.errors?.required">field is mandatory</div>
                     <div class="field-error-message" *ngIf="myForm.controls.title.errors?.minlength">min 5 chars</div>
-                <p>
+                </div>
+                <div class="form-field">
                     <label>Duration:</label>
                     <input [formControl]="duration">
-                </p>
-                     
-                <p>
+                </div> 
+                <div class="form-field">
                     <label>Description:</label>
                     <textarea required formControlName="description"></textarea>
-                </p>            
-                <p>
+                </div>            
+                <div class="form-field">
                     <button type="submit">Create Lesson</button>
-                </p>
+                </div>
             </form>
             
             

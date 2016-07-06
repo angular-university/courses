@@ -99,6 +99,10 @@ form label {
     color: #a10000;
 }
 
+form fieldset {
+    margin-bottom: 20px;
+}
+
 form textarea {
     width: 170px;
 }
@@ -116,5 +120,9 @@ form button[type='submit'] {
 }
 
 .form-value {
-    margin-top: 60px;
+    margin-top: 30px;
+}
+
+.form-field {
+    margin-bottom: 15px;
 }

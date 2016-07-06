@@ -4,6 +4,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
     REACTIVE_FORM_DIRECTIVES, Validators, FormBuilder} from '@angular/forms';
 import {Lesson, StudentLevel} from './lesson';
+import "rxjs/Rx";
 
 
 
@@ -27,7 +28,7 @@ import {Lesson, StudentLevel} from './lesson';
                      
                 <p>
                     <label>Description:</label>
-                    <textarea required minlength="150" formControlName="description"></textarea>
+                    <textarea required formControlName="description"></textarea>
                 </p>            
                 <p>
                     <button type="submit">Create Lesson</button>
@@ -67,8 +68,17 @@ export class App {
         this.myForm = fb.group({
             title: ['Initial Value', [Validators.required, Validators.minLength(5)]],
             duration: this.duration,
-            description: ["", [Validators.required]]
+            description: ["", []]
         });
+
+
+        this.myForm.valueChanges
+            .do(value => console.log("Form Value:", value))
+            .filter(() => this.myForm.valid)
+            .map(value => new Lesson(value.title, value.duration, value.description, StudentLevel.BEGINNER))
+            .do(lesson => console.log("Valid Lesson:", lesson))
+            .subscribe();
+
 
     }
     

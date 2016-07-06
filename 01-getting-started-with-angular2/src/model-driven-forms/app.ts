@@ -18,8 +18,8 @@ import {Lesson, StudentLevel} from './lesson';
                <p>
                     <label>Title:</label>
                     <input  required minlength="5" formControlName="title">
-                    <div class="field-error-message">field is mandatory</div>
-                    <div class="field-error-message">min 5 chars</div>
+                    <div class="field-error-message" *ngIf="myForm.controls.title.errors?.required">field is mandatory</div>
+                    <div class="field-error-message" *ngIf="myForm.controls.title.errors?.minlength">min 5 chars</div>
                 <p>
                     <label>Duration:</label>
                     <input required pattern="[0-9]+" formControlName="duration">

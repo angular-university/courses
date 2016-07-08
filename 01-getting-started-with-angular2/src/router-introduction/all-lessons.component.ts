@@ -1,11 +1,29 @@
 
-
 import {Component} from "@angular/core";
+import {Lesson} from "./lesson";
+import {Observable} from "rxjs/Observable";
+import {LessonsList} from "./lessons-list.component"; 
+import {LessonsService} from "./lessons.service";
+
+
 
 @Component({
     selector: 'all-lessons',
-    template: `<h1>All Lessons</h1>`
+    directives: [LessonsList],
+    template: `
+
+        <lessons-list [lessons]="lessons$ | async"></lessons-list>
+
+    `
 })
 export class AllLessons {
-    
+
+    lessons$: Observable<Lesson[]>;
+
+    constructor(private lessonsService: LessonsService) {
+
+        this.lessons$ = lessonsService.loadLessons();
+
+    }
+
 }

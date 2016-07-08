@@ -5,6 +5,12 @@ import {Stats} from "./stats.component";
 
 
 export const routes: RouterConfig = [
-    { path: 'stats', component: Stats },
-    { path: 'all-lessons', component: AllLessons },
+    {
+        path: '',
+        component: AllLessons
+    },
+    {
+        path: 'stats',
+        component: Stats
+    }
 ];

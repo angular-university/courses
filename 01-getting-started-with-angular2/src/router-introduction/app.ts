@@ -12,6 +12,9 @@ import {routes} from "./router-config";
 
             <h1>Hello Router World !</h1>
             
+            
+            <router-outlet></router-outlet>
+            
         `
 })
 export class App {

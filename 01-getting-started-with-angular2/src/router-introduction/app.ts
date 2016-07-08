@@ -9,8 +9,9 @@ import {routes} from "./router-config";
     selector:'app',
     directives: [ROUTER_DIRECTIVES],
     template: `
-
-            <h1>Hello Router World !</h1>
+            
+            <a [routerLink]="['lessons']">Lessons</a>
+            <a [routerLink]="['stats']">Stats</a>
             
             
             <router-outlet></router-outlet>

@@ -144,3 +144,7 @@ form button[type='submit'] {
     color: white;
     cursor: not-allowed;
 }
+
+.top-menu {
+    margin-bottom: 50px;
+}

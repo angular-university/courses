@@ -11,12 +11,14 @@ import {HTTP_PROVIDERS} from "@angular/http";
     selector:'app',
     directives: [ROUTER_DIRECTIVES],
     template: `
-            
-            <a [routerLink]="['lessons']">Lessons</a>
-            <a [routerLink]="['stats']">Stats</a>
-            
+
+            <div class="top-menu">
+                <a [routerLink]="['lessons']">Lessons</a>
+                <a [routerLink]="['stats']">Stats</a>            
+            </div>
+
             <router-outlet></router-outlet>
-            
+
         `
 })
 export class App {

@@ -25,7 +25,7 @@ import {validateDuration} from "./validateDuration";
     <form [formGroup]="myForm" autocomplete="off" novalidate>
        <div class="form-field">
             <label>Title:</label>
-            <input formControlName="title">
+            <input formControlName="title" required>
             <div class="field-error-message" 
                 *ngIf="myForm.controls.title.errors?.required">
                 field is mandatory
@@ -33,7 +33,7 @@ import {validateDuration} from "./validateDuration";
         </div>
         <div class="form-field">
             <label>Duration:</label>
-            <input formControlName="duration">
+            <input [formControl]="duration">
         </div> 
         <div class="form-field">
             <label>Description:</label>
@@ -70,10 +70,8 @@ export class App {
 
         this.myForm = fb.group({
             title: ['This is the title', [
-                    Validators.required,
                     Validators.minLength(5)]
                 ],
-            duration: this.duration,
             description: ['description goes here',[Validators.required]]
         });
 

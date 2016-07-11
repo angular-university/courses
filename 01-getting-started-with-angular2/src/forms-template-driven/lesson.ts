@@ -6,12 +6,16 @@ export enum StudentLevel {
 }
 
 
+
 export class Lesson {
 
-    id:string;
+    public id:string;
 
-    constructor(public title:string, duration:number, public description:string,
-                public transcript:string,  private _level:StudentLevel) {
+    constructor(
+        public title = "", 
+        public duration = 0,
+        public description = "",
+        private _level = StudentLevel.BEGINNER) {
 
     }
 
@@ -19,5 +23,10 @@ export class Lesson {
         console.log("setting lesson level...");
         this._level = StudentLevel[level];
     }
+
+    get level() {
+        return StudentLevel[this._level];
+    }
+
 
 }

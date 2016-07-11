@@ -79,11 +79,6 @@
     background-position-y: center;
 }
 
-.ng-touched.ng-invalid {
-    border: 2px solid #ff2118;
-}
-
-
 form label {
     width: 100px;
     display: inline-block;
@@ -148,3 +143,10 @@ form button[type='submit'] {
 .top-menu {
     margin-bottom: 30px;
 }
+
+
+.ng-dirty.ng-invalid {
+    border: 2px solid #ff2118;
+}
+
+

@@ -3,10 +3,12 @@ import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {disableDeprecatedForms, provideForms} from "@angular/forms";
 import {Lesson, StudentLevel} from "./lesson";
+import {DurationValidator} from "./validate-duration.directive";
 
 
 @Component({
     selector:'app',
+    directives: [DurationValidator],
     template: `
  
     <h3>Create Lesson Form - Template Driven</h3>
@@ -25,7 +27,7 @@ import {Lesson, StudentLevel} from "./lesson";
             </div>
             <div class="form-field">
                 <label>Duration:</label>
-                <input name="duration" [(ngModel)]="lesson.duration" pattern="[0-9]+">
+                <input name="duration" [(ngModel)]="lesson.duration" duration>
             </div>
             <div class="form-field">
                 <label>Level:</label>

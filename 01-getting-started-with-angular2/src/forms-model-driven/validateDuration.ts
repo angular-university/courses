@@ -1,15 +1,17 @@
 
-import {FormControl} from '@angular/forms';
+import {FormControl} from "@angular/forms";
 
 
 export function validateDuration(ctrl: FormControl) {
 
-    const valid = ctrl.value && parseInt(ctrl.value) && parseInt(ctrl.value) < 10;
+    const numValue = parseInt(ctrl.value);
 
+    const valid = numValue && numValue < 10;
 
     return valid ? null : {
         validateDuration: {
             valid:false
         }
     };
+
 }

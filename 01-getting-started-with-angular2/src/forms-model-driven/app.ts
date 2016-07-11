@@ -1,12 +1,18 @@
 
 import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms, FormGroup, FormControl,
-    REACTIVE_FORM_DIRECTIVES, Validators, FormBuilder} from '@angular/forms';
-import {Lesson, StudentLevel} from './lesson';
+import {
+    disableDeprecatedForms,
+    provideForms,
+    FormGroup,
+    FormControl,
+    REACTIVE_FORM_DIRECTIVES,
+    Validators,
+    FormBuilder
+} from "@angular/forms";
+import {Lesson, StudentLevel} from "./lesson";
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
-
 
 
 @Component({
@@ -14,81 +20,72 @@ import {validateDuration} from "./validateDuration";
     directives: [REACTIVE_FORM_DIRECTIVES],
     template: `
 
-            <h3>Model Driven Forms</h3>
-            
-            <form [formGroup]="myForm" (ngSubmit)="createLesson(title)" autocomplete="off" novalidate>
-                        
-               <div class="form-field">
-                    <label>Title:</label>
-                    <input  required minlength="5" formControlName="title">
-                    <div class="field-error-message" *ngIf="myForm.controls.title.errors?.required">field is mandatory</div>
-                    <div class="field-error-message" *ngIf="myForm.controls.title.errors?.minlength">min 5 chars</div>
-                </div>
-                <div class="form-field">
-                    <label>Duration:</label>
-                    <input [formControl]="duration">
-                </div> 
-                <div class="form-field">
-                    <label>Description:</label>
-                    <textarea required formControlName="description"></textarea>
-                </div>            
-                <div class="form-field">
-                    <button class="lesson-button" type="submit" [disabled]="!myForm.valid">Create Lesson</button>
-                </div>
-            </form>
-            
-            
-            <div class="debug">
-                <h3>Form Value:</h3>
-                {{ myForm.value | json }}            
+    <h3>Model Driven Forms</h3>
+    
+    <form [formGroup]="myForm" autocomplete="off" novalidate>
+       <div class="form-field">
+            <label>Title:</label>
+            <input formControlName="title">
+            <div class="field-error-message" 
+                *ngIf="myForm.controls.title.errors?.required">
+                field is mandatory
             </div>
-            
-            <div class="debug">
-                <h3>Lesson Value:</h3>
-                {{ lesson | json }}            
-            </div>            
+        </div>
+        <div class="form-field">
+            <label>Duration:</label>
+            <input formControlName="duration">
+        </div> 
+        <div class="form-field">
+            <label>Description:</label>
+            <textarea formControlName="description"></textarea>
+        </div>            
+        <div class="form-field">
+            <button class="lesson-button" type="submit">Create Lesson</button>
+        </div>
+    </form>
+    
+    <div class="debug">
+        <h3>Lesson Value:</h3>
+        {{ lesson | json }}
+    </div>    
+          
 
         `
 })
 export class App {
 
-    lesson = new Lesson("Title goes here",0,  "Description goes here","Transcript goes here", StudentLevel.BEGINNER);
-
     myForm: FormGroup;
 
-    duration = new FormControl(0, [validateDuration]);
+    duration = new FormControl(10, [validateDuration]);
+
+    lesson = new Lesson(
+        "Title goes here",
+        0,
+        "Description goes here",
+        "Transcript goes here",
+        StudentLevel.BEGINNER
+    );
 
     constructor(fb: FormBuilder) {
 
-/*        this.myForm = new FormGroup({
-            title: new FormControl('Initial Title', [Validators.required, Validators.minLength(5)]),
-            duration: new FormControl(0, [Validators.required, Validators.pattern('[0-9]+')]),
-            description: new FormControl("", Validators.required)
-        });*/
-
-
         this.myForm = fb.group({
-            id: [0,Validators.required],
-            title: ['Initial Value', [Validators.required, Validators.minLength(5)]],
+            title: ['This is the title', [
+                    Validators.required,
+                    Validators.minLength(5)]
+                ],
             duration: this.duration,
-            description: ["", []]
+            description: ['description goes here',[Validators.required]]
         });
 
-
         this.myForm.valueChanges
-            .do(value => console.log("Form Value:", value))
             .filter(() => this.myForm.valid)
-            .map(value => new Lesson(value.title, value.duration, value.description,null, StudentLevel.BEGINNER))
-            .do(lesson => console.log("Valid Lesson:", lesson))
+            .map(value => new Lesson(value.title, value.duration,
+                value.description,"",StudentLevel.BEGINNER))
+            .do(formValue => console.log("Valid Form Value:", formValue))
             .subscribe(
                 lesson => this.lesson = lesson
             );
 
-
-    }
-    
-    createLesson() {
-        console.log(this.myForm.value);
     }
 
 }

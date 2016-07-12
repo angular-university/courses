@@ -64,7 +64,7 @@ import {DurationValidator} from "./validate-duration.directive";
 export class App {
 
     lesson = new Lesson(
-        "",
+        "Hello World !",
         10,
         "description goes here",
         StudentLevel.BEGINNER

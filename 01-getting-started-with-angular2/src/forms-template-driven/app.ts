@@ -68,7 +68,7 @@ export class App {
         10,
         "description goes here",
         StudentLevel.BEGINNER
-    )
+    );
 
     createLesson(form) {
         console.log("Lesson Value:", this.lesson, form);

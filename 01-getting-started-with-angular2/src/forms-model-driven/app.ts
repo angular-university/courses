@@ -74,7 +74,9 @@ export class App {
     constructor(fb: FormBuilder, http:Http) {
 
         this.myForm = fb.group({
-            title: ['This is the title', [Validators.minLength(5), checkIfTitleExists]
+            title: ['This is the title', [
+                    Validators.minLength(5),
+                checkIfTitleExists.bind(undefined, http) ]
                 ],
             description: ['description goes here',[Validators.required]]
         });

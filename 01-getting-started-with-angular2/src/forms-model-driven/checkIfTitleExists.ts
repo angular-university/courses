@@ -11,6 +11,7 @@ export function checkIfTitleExists(http:Http, ctrl: FormControl): Observable<any
     search.set('search', ctrl.value);
 
     return http.get('/lessons', {search:search})
+            .do(() => console.log('request sent ...'))
             .map(res => {
 
                 const lesson = res.json();

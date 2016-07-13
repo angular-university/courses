@@ -13,7 +13,7 @@ import {
 import {Lesson, StudentLevel} from "./lesson";
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
-
+import {checkIfTitleExists} from './checkIfTitleExists';
 
 @Component({
     selector:'app',
@@ -27,8 +27,12 @@ import {validateDuration} from "./validateDuration";
             <label>Title:</label>
             <input formControlName="title" required>
             <div class="field-error-message" 
-                *ngIf="myForm.controls.title.errors?.required">
+                *ngIf="myForm.controls.title.dirty && myForm.controls.title.errors?.required">
                 field is mandatory
+            </div>
+            <div class="field-error-message" 
+                *ngIf="myForm.controls.title.dirty && myForm.controls.title.errors?.titleExists">
+                This title already exists !
             </div>
         </div>
         <div class="form-field">
@@ -45,8 +49,8 @@ import {validateDuration} from "./validateDuration";
     </form>
     
     <div class="debug">
-        <h3>Lesson Value:</h3>
-        {{ lesson | json }}
+        <h3>Title Errors:</h3>
+        {{ myForm.controls.title?.errors | json }}
     </div>    
           
 
@@ -69,8 +73,7 @@ export class App {
     constructor(fb: FormBuilder) {
 
         this.myForm = fb.group({
-            title: ['This is the title', [
-                    Validators.minLength(5)]
+            title: ['This is the title', [Validators.minLength(5), checkIfTitleExists]
                 ],
             description: ['description goes here',[Validators.required]]
         });

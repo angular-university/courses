@@ -14,6 +14,7 @@ import {Lesson, StudentLevel} from "./lesson";
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
 import {checkIfTitleExists} from './checkIfTitleExists';
+import {HTTP_PROVIDERS, Http} from "@angular/http";
 
 @Component({
     selector:'app',
@@ -70,7 +71,7 @@ export class App {
         StudentLevel.BEGINNER
     );
 
-    constructor(fb: FormBuilder) {
+    constructor(fb: FormBuilder, http:Http) {
 
         this.myForm = fb.group({
             title: ['This is the title', [Validators.minLength(5), checkIfTitleExists]
@@ -117,4 +118,5 @@ export class App {
 
 bootstrap(App, [
     disableDeprecatedForms(),
-    provideForms()]);
+    provideForms(),
+    ...HTTP_PROVIDERS]);

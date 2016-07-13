@@ -4,6 +4,13 @@ import {HTTP_PROVIDERS, Http, URLSearchParams} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
 
+/*
+*
+* Asynchronous validators with Observables are still being worked on by the Angular Team.
+*
+* This will the subject of a future lesson.
+*
+* */
 
 export function checkIfTitleExists(http:Http, ctrl: FormControl): Observable<any> {
 

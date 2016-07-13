@@ -75,8 +75,7 @@ export class App {
 
         this.myForm = fb.group({
             title: ['This is the title', [
-                    Validators.minLength(5),
-                checkIfTitleExists.bind(undefined, http) ]
+                    Validators.minLength(5) ]
                 ],
             description: ['description goes here',[Validators.required]]
         });

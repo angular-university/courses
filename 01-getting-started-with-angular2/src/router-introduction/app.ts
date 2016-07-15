@@ -31,7 +31,7 @@ export class App {
 
 
 bootstrap(App, [
-    provideRouter(routes, {enableTracing: true}),
+    provideRouter(routes, {enableTracing:true}),
     LessonsService,
     ...HTTP_PROVIDERS
 ]);

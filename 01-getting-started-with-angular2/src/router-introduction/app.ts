@@ -12,12 +12,26 @@ import {HTTP_PROVIDERS} from "@angular/http";
     directives: [ROUTER_DIRECTIVES],
     template: `
 
-            <div class="top-menu">
-                <a [routerLink]="['lessons']">Lessons</a>
-                <a [routerLink]="['stats']">Stats</a>            
-            </div>
+    <header class="l-header v-center-parent">
+        <img class="v-center" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+            <ul class="top-menu">
+                <li><a [routerLink]="['lessons']">Lessons</a></li>         
+            </ul>        
+    </header>
+
+    <main class="l-main">
+
+        <div class="course-logo"></div>
+        <div class="lesson lesson-forms">
 
             <router-outlet></router-outlet>
+
+        </div>
+
+
+    </main>
+
+
 
         `
 })

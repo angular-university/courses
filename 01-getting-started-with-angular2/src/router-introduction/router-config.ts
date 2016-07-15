@@ -13,9 +13,5 @@ export const routes: RouterConfig = [
     {
         path: 'lessons',
         component: AllLessons
-    },
-    {
-        path: 'stats',
-        component: Stats
     }
 ];

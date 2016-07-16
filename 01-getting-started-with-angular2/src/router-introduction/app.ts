@@ -3,8 +3,6 @@ import {Component} from "@angular/core";
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {ROUTER_DIRECTIVES, provideRouter} from "@angular/router";
 import {routes} from "./router-config";
-import {LessonsService} from "./lessons.service";
-import {HTTP_PROVIDERS} from "@angular/http";
 
 
 @Component({
@@ -43,7 +41,5 @@ export class App {
 
 
 bootstrap(App, [
-    provideRouter(routes, {enableTracing:true}),
-    LessonsService,
-    ...HTTP_PROVIDERS
+    provideRouter(routes, {enableTracing:true})
 ]);

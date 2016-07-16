@@ -85,6 +85,8 @@ app.route('/delayedlessons')
 
 
 function redirectRouterLessonUnmatched(req, res) {
+    //res.redirect("index.html");
+
     res.sendFile("index.html", { root: './src/router-introduction' });
 }
 

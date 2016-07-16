@@ -11,8 +11,6 @@ import {LessonsService} from "./lessons.service";
     directives: [LessonsList],
     template: `
 
-        <h1>The Next YouTube ;-)</h1>
-
         <img class="youtube-logo card card-strong" 
             src="https://i.ytimg.com/vi/s5y-4EpmfRQ/maxresdefault.jpg">
         

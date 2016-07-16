@@ -1,6 +1,5 @@
 
 import {Component, Input} from "@angular/core";
-import {LessonsService} from "./lessons.service";
 
 
 @Component({
@@ -16,7 +15,7 @@ import {LessonsService} from "./lessons.service";
                         {{lesson.description}}    
                     </td>
                     <td>
-                        <button (click)="lessonsService.delete(lesson.id)">Delete</button>
+                        <button>View</button>
                     </td>
                 </tr>
            </table>
@@ -28,13 +27,6 @@ export class LessonsList {
 
     @Input()
     lessons = [];
-    
-    
-    constructor(private lessonsService: LessonsService) {
-        
-    }
-    
-    
-    
+
 
 }

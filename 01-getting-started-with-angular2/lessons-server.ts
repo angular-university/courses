@@ -84,11 +84,11 @@ app.route('/delayedlessons')
     });
 
 
-function redirectUnmatched(req, res) {
-    res.sendfile("/src/router-introduction/index.html");
+function redirectRouterLessonUnmatched(req, res) {
+    res.sendFile("index.html", { root: './src/router-introduction' });
 }
 
-app.use(redirectUnmatched);
+app.use(redirectRouterLessonUnmatched);
 
 var server = app.listen(8080, function() {
     console.log("Server running at http://localhost:" + server.address().port);

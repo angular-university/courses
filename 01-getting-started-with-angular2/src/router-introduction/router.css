@@ -1,0 +1,16 @@
+
+.l-header {
+    height: 58px;
+}
+
+.top-menu {
+    margin-left: 50px;
+}
+
+.top-menu li {
+    box-shadow: none !important;
+}
+
+.l-sample-app {
+    text-align: center;
+}

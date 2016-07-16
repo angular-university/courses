@@ -154,3 +154,7 @@ form button[type='submit'] {
     max-height: 100px;
     border-radius: 4px;
 }
+
+.lessons-list {
+    text-align: left;
+}

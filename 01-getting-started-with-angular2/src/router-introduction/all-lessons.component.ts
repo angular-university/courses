@@ -2,15 +2,16 @@
 import {Component} from "@angular/core";
 import {Lesson} from "./lesson";
 import {Observable} from "rxjs/Observable";
-import {LessonsList} from "./lessons-list.component"; 
+import {LessonsList} from "./lessons-list.component";
 import {LessonsService} from "./lessons.service";
-
 
 
 @Component({
     selector: 'all-lessons',
     directives: [LessonsList],
     template: `
+
+        <h1>All Lessons</h1>
 
         <lessons-list [lessons]="lessons$ | async"></lessons-list>
 

@@ -177,6 +177,9 @@ table.courses-list tr td {
     padding: 5px 0;
 }
 
+table.courses-list tr td.description {
+    padding-right: 15px;
+}
 
 table.courses-list tr td:first-child {
     padding-left: 15px;

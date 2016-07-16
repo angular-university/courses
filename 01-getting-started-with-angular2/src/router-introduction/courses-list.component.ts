@@ -11,7 +11,7 @@ import {Component, Input} from "@angular/core";
                         <img class="lesson-logo" 
                         src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">  
                     </td>
-                    <td>
+                    <td class="description">
                         {{course.description}}    
                     </td>
                     <td>

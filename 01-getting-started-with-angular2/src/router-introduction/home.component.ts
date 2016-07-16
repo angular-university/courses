@@ -1,9 +1,7 @@
 
 import {Component} from "@angular/core";
-import {Lesson} from "./lesson";
-import {Observable} from "rxjs/Observable";
 import {LessonsList} from "./lessons-list.component";
-import {LessonsService} from "./lessons.service";
+import {lessonsData} from "./lessonsData";
 
 
 @Component({
@@ -16,7 +14,7 @@ import {LessonsService} from "./lessons.service";
         
         <div class="home-screen">
             <h2>Latest Lessons</h2>
-            <lessons-list [lessons]="lessons$ | async"></lessons-list>        
+            <lessons-list [lessons]="lessons"></lessons-list>        
         </div>
 
 
@@ -24,12 +22,7 @@ import {LessonsService} from "./lessons.service";
 })
 export class Home {
 
-    lessons$: Observable<Lesson[]>;
+    lessons = lessonsData.lessons;
 
-    constructor(private lessonsService: LessonsService) {
-
-        this.lessons$ = lessonsService.loadLessons();
-
-    }
 
 }

@@ -158,3 +158,7 @@ form button[type='submit'] {
 .lessons-list {
     text-align: left;
 }
+
+.home-screen {
+    margin-top: 50px;
+}

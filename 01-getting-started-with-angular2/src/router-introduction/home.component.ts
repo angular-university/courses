@@ -7,7 +7,7 @@ import {LessonsService} from "./lessons.service";
 
 
 @Component({
-    selector: 'all-lessons',
+    selector: 'home',
     directives: [LessonsList],
     template: `
 

@@ -1,11 +1,9 @@
 
 import {Component} from "@angular/core";
-import {LessonsList} from "./lessons-list.component";
 
 
 @Component({
-    selector: 'all-lessons',
-    directives: [LessonsList],
+    selector: 'courses',
     template: `
 
         <h1>Courses</h1>
@@ -15,9 +13,6 @@ import {LessonsList} from "./lessons-list.component";
 export class Courses {
 
 
-    constructor() {
 
-
-    }
 
 }

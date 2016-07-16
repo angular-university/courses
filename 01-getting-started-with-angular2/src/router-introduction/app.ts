@@ -17,7 +17,7 @@ import {HTTP_PROVIDERS} from "@angular/http";
             src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
         <ul class="top-menu disable-link-styles">
             <li><a routerLink href="home">Home</a></li>
-            <li><div routerLink target="courses">Courses</div></li>
+            <li><div routerLink="courses">Courses</div></li>
             <li><a [routerLink]="['lessons']">All Lessons</a></li>
         </ul>        
     </header>

@@ -162,3 +162,26 @@ form button[type='submit'] {
 .home-screen {
     margin-top: 50px;
 }
+
+.courses-list {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+
+table.courses-list tr {
+    border-bottom: 1px solid darkgray;
+}
+
+table.courses-list tr td {
+    padding: 5px 0;
+}
+
+
+table.courses-list tr td:first-child {
+    padding-left: 15px;
+}
+
+table.courses-list tr td:last-child {
+    padding-right: 15px;
+}

@@ -5,7 +5,7 @@ import {Component, Input} from "@angular/core";
 @Component({
     selector:'courses-list',
     template: `
-            <table class="lessons-list card card-strong">
+            <table class="courses-list card card-strong">
                 <tr *ngFor="let course of courses">
                     <td>
                         <img class="lesson-logo" 

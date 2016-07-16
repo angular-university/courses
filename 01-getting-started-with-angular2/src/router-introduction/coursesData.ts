@@ -9,7 +9,7 @@ export const coursesData = {
         },
         {
             id:2,
-            description: "Angular 2 HTTP and Services"
+            description: "Angular 2 HTTP"
         },
         {
             id:3,
@@ -25,7 +25,7 @@ export const coursesData = {
         },
         {
             id:6,
-            description: "Progressive Web Apps in Angular 2"
+            description: "Progressive Web Apps"
         }
     ]
 

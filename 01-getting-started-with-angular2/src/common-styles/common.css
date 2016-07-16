@@ -149,6 +149,9 @@ form button[type='submit'] {
     border: 2px solid #ff2118;
 }
 
+.l-header img {
+    cursor: pointer;
+}
 
 .youtube-logo {
     max-height: 100px;

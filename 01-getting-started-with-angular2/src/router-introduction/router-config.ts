@@ -1,17 +1,26 @@
 
-import {RouterConfig } from '@angular/router';
+import {RouterConfig} from "@angular/router";
 import {AllLessons} from "./all-lessons.component";
-import {Stats} from "./stats.component";
+import {Home} from "./home.component";
+import {Courses} from "./courses.component";
 
 
 export const routes: RouterConfig = [
     {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'lessons'
+        path: 'home',
+        component: Home
+    },
+    {
+        path: 'courses',
+        component: Courses
     },
     {
         path: 'lessons',
         component: AllLessons
-    }
+    },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
 ];

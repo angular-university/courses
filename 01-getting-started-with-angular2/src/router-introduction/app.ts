@@ -22,17 +22,17 @@ import {HTTP_PROVIDERS} from "@angular/http";
 
     <main class="l-main l-sample-app">
 
-        <img class="youtube-logo card card-strong" src="https://i.ytimg.com/vi/s5y-4EpmfRQ/maxresdefault.jpg">
+        <img class="youtube-logo card card-strong" 
+            src="https://i.ytimg.com/vi/s5y-4EpmfRQ/maxresdefault.jpg">
+        
         <div class="lesson lesson-forms">
-
+        
             <router-outlet></router-outlet>
 
         </div>
 
 
     </main>
-
-
 
         `
 })
@@ -41,8 +41,6 @@ export class App {
 
 
 }
-
-
 
 
 bootstrap(App, [

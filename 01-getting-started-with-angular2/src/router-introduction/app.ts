@@ -4,6 +4,7 @@ import {bootstrap} from "@angular/platform-browser-dynamic";
 import {provideRouter, ROUTER_DIRECTIVES} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
+import {CanCourseDetailActivate} from "./course-detail-activate.guard";
 
 
 @Component({
@@ -55,7 +56,8 @@ export class App {
 
 bootstrap(App, [
     provideRouter(routeConfig),
-    CanCourseDetailDeactivate
+    CanCourseDetailDeactivate,
+    CanCourseDetailActivate
 ]);
 
 

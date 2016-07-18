@@ -191,3 +191,13 @@ table.courses-list tr td:first-child {
 table.courses-list tr td:last-child {
     padding-right: 15px;
 }
+
+ul.top-menu > li > a.menu-active {
+    color: #ee1c1b;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-button {
+    margin-bottom: 20px;
+}

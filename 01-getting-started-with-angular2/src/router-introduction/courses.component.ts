@@ -9,6 +9,7 @@ import {CoursesList} from "./courses-list.component";
     template: `
 
         <h1>Courses</h1>
+
         <courses-list [courses]="courses"></courses-list>
 
     `

@@ -21,7 +21,7 @@ export class CanCourseDetailActivate implements CanActivate {
             subject.next(!course.pro);
             subject.complete();
 
-        },1000);
+        });
 
         return subject;
 

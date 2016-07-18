@@ -16,6 +16,9 @@ import {Subscription} from "rxjs/Rx";
             <h2>{{description}} id = {{courseId}}</h2>
             <button [routerLink]="['/courses',previous()]" class="nav-button">Previous</button>
             <button [routerLink]="['/courses', next()]" class="nav-button">Next</button>
+              
+            <input (keyup)="dirty = true" placeholder="Edit Description">
+                        
             <lessons-list [lessons]="lessons"></lessons-list>        
         </div>
         
@@ -33,11 +36,17 @@ export class CourseDetail implements OnDestroy {
     paramsSub: Subscription;
     queryParamsSub: Subscription;
 
+    dirty = false;
+
+
 
     constructor(router: Router, route:ActivatedRoute) {
 
         this.paramsSub = route.params.subscribe(
-            params =>this.courseId = parseInt(params['id'])
+            params =>{
+                this.courseId = parseInt(params['id']);
+                this.dirty = false;
+            }
         );
 
         this.queryParamsSub = router.routerState.queryParams.subscribe(

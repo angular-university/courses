@@ -3,6 +3,7 @@
 import {RouterConfig} from "@angular/router";
 import {CourseDetail} from "./course-detail.component";
 import {Courses} from "./courses.component";
+import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 
 
 export const coursesRouterConfig: RouterConfig = [
@@ -15,7 +16,8 @@ export const coursesRouterConfig: RouterConfig = [
             },
             {
                 path: ':id',
-                component: CourseDetail
+                component: CourseDetail,
+                canDeactivate: [CanCourseDetailDeactivate]
             }
         ]
     }

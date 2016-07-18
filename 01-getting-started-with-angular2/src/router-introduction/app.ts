@@ -40,6 +40,8 @@ import {CanCourseDetailActivate} from "./course-detail-activate.guard";
     <div class="lesson lesson-forms">
     
         <router-outlet></router-outlet>
+        
+        <router-outlet name="playlist"></router-outlet>
 
     </div>
 

@@ -22,8 +22,8 @@ import {routeConfig} from "./router-config";
     
         <div class="main-container">
 
-            <h1>Dashboard</h1>
-
+            <router-outlet></router-outlet>
+    
         </div>
     
     </div>

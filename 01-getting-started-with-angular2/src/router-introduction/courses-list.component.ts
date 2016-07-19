@@ -8,8 +8,7 @@ import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from "@angular/router";
     directives: [ROUTER_DIRECTIVES],
     template: `
             <table class="courses-list card card-strong">
-                <tr class="course-summary" *ngFor="let course of courses" 
-                    (click)="showCourseOnPlayList(course)">
+                <tr class="course-summary" *ngFor="let course of courses" >
                     <td>
                         <img class="lesson-logo" 
                         src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">  
@@ -43,11 +42,7 @@ export class CoursesList {
 
     }
 
-    showCourseOnPlayList(course) {
 
-        this.router.navigateByUrl(`/courses(playlist:playlist)`);
-
-    }
     
 
 }

@@ -37,12 +37,17 @@ import {CanCourseDetailActivate} from "./course-detail-activate.guard";
 
   <main class="l-main l-sample-app">
     
-    <div class="lesson lesson-forms">
+    <div>
     
-        <router-outlet></router-outlet>
-        
-        <router-outlet name="playlist"></router-outlet>
-
+        <div class="main-container">
+            <div class="list">
+                <router-outlet></router-outlet>            
+            </div>
+            <div class="list">
+                <router-outlet name="playlist"></router-outlet>
+            </div>
+        </div>
+    
     </div>
 
   </main>

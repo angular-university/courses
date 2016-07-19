@@ -10,8 +10,10 @@ import {LessonsList} from "./lessons-list.component";
     directives: [LessonsList],
     template: `
 
-        <h1>Playlist</h1>
-        <lessons-list [lessons]="lessons"></lessons-list>
+        <div class="playlist">
+            <h1>Playlist</h1>
+            <lessons-list [lessons]="lessons"></lessons-list>        
+        </div>
 
     `
 })

@@ -201,3 +201,20 @@ ul.top-menu > li > a.menu-active {
 .nav-button {
     margin-bottom: 20px;
 }
+
+.playlist {
+    float: right;
+}
+
+.main-container {
+
+}
+
+.main-container .list {
+    display: inline-block;
+    max-width: 400px;
+    vertical-align: top;
+    margin-right: 50px;
+}
+
+

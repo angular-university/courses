@@ -18,7 +18,7 @@ export class CanCourseDetailActivate implements CanActivate {
 
             const course = coursesData.courses[index];
 
-            subject.next(!course.pro);
+            subject.next(course ? !course.pro : true);
             subject.complete();
 
         });

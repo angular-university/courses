@@ -5,6 +5,7 @@ import {CourseDetail} from "./course-detail.component";
 import {Courses} from "./courses.component";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 import {CanCourseDetailActivate} from "./course-detail-activate.guard";
+import {Playlist} from "./playlist.component";
 
 
 export const coursesRouterConfig: RouterConfig = [
@@ -13,14 +14,20 @@ export const coursesRouterConfig: RouterConfig = [
         children: [
             {
                 path: '',
-                component: Courses
+                component: Courses,
+                pathMatch: 'full'
             },
             {
                 path: ':id',
-                component: CourseDetail,
                 canActivate: [CanCourseDetailActivate],
-                canDeactivate: [CanCourseDetailDeactivate]
+                canDeactivate: [CanCourseDetailDeactivate],
+                component: CourseDetail
             }
         ]
+    },
+    {
+        path: 'playlist',
+        component: Playlist,
+        outlet: 'playlist'
     }
 ];

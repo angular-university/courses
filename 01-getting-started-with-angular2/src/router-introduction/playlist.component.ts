@@ -3,6 +3,7 @@
 import {Component} from "@angular/core";
 import {lessonsData} from "./lessonsData";
 import {LessonsList} from "./lessons-list.component";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {LessonsList} from "./lessons-list.component";
     template: `
 
         <div class="playlist">
-            <h1>Playlist</h1>
+            <h1>{{description}}</h1>
             <lessons-list [lessons]="lessons"></lessons-list>        
         </div>
 
@@ -19,7 +20,17 @@ import {LessonsList} from "./lessons-list.component";
 })
 export class Playlist {
 
+    description:string;
 
     lessons = lessonsData.lessons;
+
+
+    constructor(route: ActivatedRoute) {
+
+        route.params.subscribe(
+            params => this.description = params['description']
+        );
+
+    }
 
 }

@@ -45,7 +45,7 @@ import {CanCourseDetailActivate} from "./course-detail-activate.guard";
             </div>
             <div class="list">
                 <router-outlet name="playlist"></router-outlet>
-            </div>
+            </div>        
         </div>
     
     </div>

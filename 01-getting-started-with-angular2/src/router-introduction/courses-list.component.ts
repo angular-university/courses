@@ -8,7 +8,8 @@ import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from "@angular/router";
     directives: [ROUTER_DIRECTIVES],
     template: `
             <table class="courses-list card card-strong">
-                <tr class="course-summary" *ngFor="let course of courses" >
+                <tr class="course-summary" *ngFor="let course of courses" 
+                    (click)="showCoursePlayList(course)">
                     <td>
                         <img class="lesson-logo" 
                         src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">  
@@ -17,10 +18,12 @@ import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from "@angular/router";
                         {{course.description}}    
                     </td>
                     <td>
-                        <button (click)="openCourse(course)">View</button>
+                        <button (click)="openCourse(course, $event)">View</button>
                     </td>
                 </tr>
            </table>
+           
+           <router-outlet name="chat"></router-outlet>
 
         `
 })
@@ -36,12 +39,20 @@ export class CoursesList {
     }
 
 
-    openCourse(course) {
+    openCourse(course, $event) {
 
-        this.router.navigate([course.id], {relativeTo: this.route});
+        this.router.navigateByUrl(`/courses/${course.id}`);
+        $event.stopPropagation();
 
     }
 
+    showCoursePlayList(course) {
+
+        this.router.navigateByUrl(
+        `/courses(playlist:playlist;description=${course.description})`
+        );
+
+    }
 
     
 

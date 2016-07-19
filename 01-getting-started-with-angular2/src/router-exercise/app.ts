@@ -22,8 +22,15 @@ import {routeConfig} from "./router-config";
     
         <div class="main-container">
 
-            <router-outlet></router-outlet>
-    
+            <h1>Dashboard</h1>
+            <p>click on a checkbox to include a section</p>        
+        
+            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-1.png">
+        
+            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-2.png">
+            
+            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-3.png">
+
         </div>
     
     </div>

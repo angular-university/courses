@@ -225,3 +225,10 @@ ul.top-menu > li > a.menu-active {
 .chat {
 
 }
+
+img.dashboard-section  {
+    display: block;
+    max-height: 300px;
+    margin: 0 auto 50px auto;
+
+}

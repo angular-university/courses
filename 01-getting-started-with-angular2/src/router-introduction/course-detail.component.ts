@@ -13,10 +13,12 @@ import {Subscription} from "rxjs/Rx";
     template: `
 
         <div>
-            <h2>{{description}} id = {{courseId}}</h2>
-            <button [routerLink]="['/courses',previous()]" class="nav-button">Previous</button>
-            <button [routerLink]="['/courses', next()]" class="nav-button">Next</button>              
-            <input (keyup)="dirty = true" placeholder="Edit Description">
+            <h2>{{description}} Course id = {{courseId}}</h2>
+            <div class="nav-fields">
+                <button [routerLink]="['/courses',previous()]" class="nav-button">Previous</button>
+                <button [routerLink]="['/courses', next()]" class="nav-button">Next</button>              
+                <input (keyup)="dirty = true" placeholder="Edit Description">            
+            </div>
             <lessons-list [lessons]="lessons"></lessons-list>        
         </div>
         

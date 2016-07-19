@@ -232,3 +232,17 @@ img.dashboard-section  {
     margin: 0 auto 50px auto;
 
 }
+
+.toggle-buttons {
+    margin-bottom: 15px;
+}
+
+.graph-toggle {
+    width: 30px;
+    box-shadow: none;
+    vertical-align: bottom;
+
+
+
+
+}

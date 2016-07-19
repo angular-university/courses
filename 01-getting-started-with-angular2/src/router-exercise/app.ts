@@ -23,13 +23,22 @@ import {routeConfig} from "./router-config";
         <div class="main-container">
 
             <h1>Dashboard</h1>
-            <p>click on a checkbox to include a section</p>        
+            <p>click on a checkbox to include a section</p>  
+                  
+            <div class="toggle-buttons">
+                <input class="graph-toggle" type="checkbox">Graph 1  
+                <input class="graph-toggle" type="checkbox">Graph 2
+                <input class="graph-toggle" type="checkbox">Graph 3
+            </div>
+                          
+            <img class="card card-very-strong dashboard-section" 
+                src="/images/dashboard-section-1.png">
         
-            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-1.png">
-        
-            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-2.png">
+            <img class="card card-very-strong dashboard-section" 
+                src="/images/dashboard-section-2.png">
             
-            <img class="card card-very-strong dashboard-section" src="/images/dashboard-section-3.png">
+            <img class="card card-very-strong dashboard-section" 
+                src="/images/dashboard-section-3.png">
 
         </div>
     

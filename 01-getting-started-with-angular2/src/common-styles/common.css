@@ -206,10 +206,6 @@ ul.top-menu > li > a.menu-active {
     float: right;
 }
 
-.main-container {
-
-}
-
 .main-container .list {
     display: inline-block;
     max-width: 400px;

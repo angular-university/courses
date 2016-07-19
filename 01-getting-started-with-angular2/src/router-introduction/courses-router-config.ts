@@ -14,8 +14,7 @@ export const coursesRouterConfig: RouterConfig = [
         children: [
             {
                 path: '',
-                component: Courses,
-                pathMatch: 'full'
+                component: Courses
             },
             {
                 path: ':id',

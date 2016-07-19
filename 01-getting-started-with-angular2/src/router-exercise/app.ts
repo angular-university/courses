@@ -24,7 +24,7 @@ import {routeConfig} from "./router-config";
 
             <router-outlet></router-outlet>               
         
-            <router-outlet name="section1"></router-outlet>
+            <router-outlet name="section"></router-outlet>
                         
 
             
@@ -45,7 +45,7 @@ export class App {
 
 
 bootstrap(App, [
-    provideRouter(routeConfig)
+    provideRouter(routeConfig, {enableTracing:true})
 ]);
 
 

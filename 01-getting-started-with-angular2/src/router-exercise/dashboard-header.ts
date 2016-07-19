@@ -31,7 +31,7 @@ export class DashboardHeader {
 
     setGraphs(g1, g2, g3) {
         console.log(g1, g2, g3);
-        this.router.navigateByUrl('(section1:/section1)');
+        this.router.navigateByUrl('/home(section1:section1)');
     }
 
 }

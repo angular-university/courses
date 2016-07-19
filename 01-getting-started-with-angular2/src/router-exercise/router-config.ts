@@ -7,13 +7,17 @@ export const routeConfig:RouterConfig = [
 
     {
         path: '',
-        component: DashboardHeader,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        redirectTo: '/home'
     },
     {
-        path: 'section1',
+        path: 'home',
+        component: DashboardHeader,
+    },
+    {
+        path: 'section',
         component: DashboardSection,
-        outlet: 'section1'
+        outlet: 'section'
     }
 
 

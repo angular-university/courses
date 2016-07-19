@@ -30,15 +30,27 @@ import {routeConfig} from "./router-config";
                 <input class="graph-toggle" type="checkbox">Graph 2
                 <input class="graph-toggle" type="checkbox">Graph 3
             </div>
+               
+            <div>
+                <h2>Graph 1</h2>
+                <img class="card card-very-strong dashboard-section" 
+                    src="/images/dashboard-section-1.png">            
+            </div>                          
                           
-            <img class="card card-very-strong dashboard-section" 
-                src="/images/dashboard-section-1.png">
         
-            <img class="card card-very-strong dashboard-section" 
-                src="/images/dashboard-section-2.png">
-            
-            <img class="card card-very-strong dashboard-section" 
-                src="/images/dashboard-section-3.png">
+            <div>
+                <h2>Graph 2</h2>
+                <img class="card card-very-strong dashboard-section" 
+                    src="/images/dashboard-section-1.png">            
+            </div>                          
+
+
+            <div>
+                <h2>Graph 3</h2>
+                <img class="card card-very-strong dashboard-section" 
+                    src="/images/dashboard-section-1.png">            
+            </div>                          
+
 
         </div>
     

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Really Understanding Angular 2 - The Fundamentals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/src/router-exercise/">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet"  type="text/css">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://angular-academy.s3-us-west-1.amazonaws.com/styles/angular-academy-lessons-theme-v1.css">
+    <link rel="stylesheet" href="https://angular-academy.s3.amazonaws.com/bundles/bundle.20160714172956.min.css">
+    <link rel="stylesheet" href="/src/common-styles/common.css">
+    <link rel="stylesheet" href="/src/router-introduction/router.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
+
+    <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+
+    <script src="/system.config.js"></script>
+
+    <script>
+
+        document.SYSTEMJS_CONFIG.map.app = '.';
+
+        document.SYSTEMJS_CONFIG.packages.app = {main: 'app.ts', defaultExtension: 'ts'};
+
+        System.config(document.SYSTEMJS_CONFIG);
+
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <app></app>
+
+</body>
+
+</html>
+

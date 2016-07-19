@@ -5,6 +5,7 @@ import {provideRouter, ROUTER_DIRECTIVES} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 import {CanCourseDetailActivate} from "./course-detail-activate.guard";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 @Component({
@@ -64,7 +65,8 @@ export class App {
 bootstrap(App, [
     provideRouter(routeConfig),
     CanCourseDetailDeactivate,
-    CanCourseDetailActivate
+    CanCourseDetailActivate,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
 ]);
 
 

@@ -17,6 +17,11 @@ export const coursesRouterConfig: RouterConfig = [
                 component: Courses
             },
             {
+                path: 'legacy-list',
+                redirectTo: '/lessons',
+                pathMatch: 'full'
+            },
+            {
                 path: ':id',
                 canActivate: [CanCourseDetailActivate],
                 canDeactivate: [CanCourseDetailDeactivate],

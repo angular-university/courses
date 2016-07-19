@@ -7,12 +7,13 @@ export const routeConfig:RouterConfig = [
 
     {
         path: '',
-        component: DashboardHeader
+        component: DashboardHeader,
+        pathMatch: 'full'
     },
     {
-        path: 'playlist',
+        path: 'section1',
         component: DashboardSection,
-        outlet: 'playlist'
+        outlet: 'section1'
     }
 
 

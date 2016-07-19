@@ -24,7 +24,7 @@ import {routeConfig} from "./router-config";
 
             <router-outlet></router-outlet>               
         
-            <router-outlet name="playlist"></router-outlet>
+            <router-outlet name="section1"></router-outlet>
                         
 
             

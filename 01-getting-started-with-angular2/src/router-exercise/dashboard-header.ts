@@ -1,6 +1,7 @@
 
 
 import {Component} from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'dashboard',
@@ -24,12 +25,13 @@ import {Component} from "@angular/core";
 })
 export class DashboardHeader {
 
+    constructor(private router: Router) {
 
-
+    }
 
     setGraphs(g1, g2, g3) {
         console.log(g1, g2, g3);
+        this.router.navigateByUrl('(section1:/section1)');
     }
-
 
 }

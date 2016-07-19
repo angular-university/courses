@@ -22,35 +22,12 @@ import {routeConfig} from "./router-config";
     
         <div class="main-container">
 
-            <h1>Dashboard</h1>
-            <p>click on a checkbox to include a section</p>  
-                  
-            <div class="toggle-buttons">
-                <input class="graph-toggle" type="checkbox">Graph 1  
-                <input class="graph-toggle" type="checkbox">Graph 2
-                <input class="graph-toggle" type="checkbox">Graph 3
-            </div>
-               
-            <div>
-                <h2>Graph 1</h2>
-                <img class="card card-very-strong dashboard-section" 
-                    src="/images/dashboard-section-1.png">            
-            </div>                          
-                          
+            <router-outlet></router-outlet>               
         
-            <div>
-                <h2>Graph 2</h2>
-                <img class="card card-very-strong dashboard-section" 
-                    src="/images/dashboard-section-1.png">            
-            </div>                          
+            <router-outlet name="playlist"></router-outlet>
+                        
 
-
-            <div>
-                <h2>Graph 3</h2>
-                <img class="card card-very-strong dashboard-section" 
-                    src="/images/dashboard-section-1.png">            
-            </div>                          
-
+            
 
         </div>
     

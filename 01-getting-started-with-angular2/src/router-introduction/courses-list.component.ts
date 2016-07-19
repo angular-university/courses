@@ -1,6 +1,6 @@
 
 import {Component, Input} from "@angular/core";
-import {ROUTER_DIRECTIVES, Router} from "@angular/router";
+import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -17,8 +17,7 @@ import {ROUTER_DIRECTIVES, Router} from "@angular/router";
                         {{course.description}}    
                     </td>
                     <td>
-                        <button [routerLink]="course.id" 
-                            [queryParams]="{description:course.description}">View</button>
+                        <button (click)="openCourse(course)">View</button>
                     </td>
                 </tr>
            </table>
@@ -32,12 +31,24 @@ export class CoursesList {
     courses = [];
 
 
-    constructor(private router:Router) {
+    constructor(private router:Router, private route: ActivatedRoute) {
 
     }
 
 
-    
+    openCourse(course) {
+
+        this.router.navigate([course.id], {relativeTo: this.route});
+
+    }
     
 
 }
+
+
+
+
+
+
+
+

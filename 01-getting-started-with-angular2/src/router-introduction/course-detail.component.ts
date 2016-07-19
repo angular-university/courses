@@ -15,10 +15,8 @@ import {Subscription} from "rxjs/Rx";
         <div>
             <h2>{{description}} id = {{courseId}}</h2>
             <button [routerLink]="['/courses',previous()]" class="nav-button">Previous</button>
-            <button [routerLink]="['/courses', next()]" class="nav-button">Next</button>
-              
+            <button [routerLink]="['/courses', next()]" class="nav-button">Next</button>              
             <input (keyup)="dirty = true" placeholder="Edit Description">
-                        
             <lessons-list [lessons]="lessons"></lessons-list>        
         </div>
         

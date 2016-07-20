@@ -15,9 +15,19 @@ export const routeConfig:RouterConfig = [
         component: DashboardHeader,
     },
     {
-        path: 'section',
+        path: 'section1',
         component: DashboardSection,
-        outlet: 'section'
+        outlet: 'section1'
+    },
+    {
+        path: 'section2',
+        component: DashboardSection,
+        outlet: 'section2'
+    },
+    {
+        path: 'section3',
+        component: DashboardSection,
+        outlet: 'section3'
     }
 
 

@@ -24,10 +24,11 @@ import {routeConfig} from "./router-config";
 
             <router-outlet></router-outlet>               
         
-            <router-outlet name="section"></router-outlet>
+            <router-outlet name="section1"></router-outlet>
                         
-
+            <router-outlet name="section2"></router-outlet>
             
+            <router-outlet name="section3"></router-outlet>
 
         </div>
     
@@ -45,7 +46,7 @@ export class App {
 
 
 bootstrap(App, [
-    provideRouter(routeConfig, {enableTracing:true})
+    provideRouter(routeConfig)
 ]);
 
 

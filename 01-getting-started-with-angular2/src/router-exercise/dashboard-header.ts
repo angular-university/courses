@@ -1,5 +1,3 @@
-
-
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
 
@@ -25,13 +23,42 @@ import {Router} from "@angular/router";
 })
 export class DashboardHeader {
 
-    constructor(private router: Router) {
+    constructor(private router:Router) {
 
     }
 
     setGraphs(g1, g2, g3) {
         console.log(g1, g2, g3);
-        this.router.navigateByUrl('/home(section1:section1)');
+
+        let sections = "";
+
+        if (g1) {
+            sections += "section1:section1";
+        }
+
+        if (sections) {
+            sections += "//";
+        }
+
+        if (g2) {
+            sections += "section2:section2";
+        }
+
+        if (sections) {
+            sections += "//";
+        }
+
+        if (g3) {
+            sections += "section3:section3";
+        }
+        let url = '/home';
+
+        if (sections) {
+            url += `(${sections})`;
+        }
+
+        console.log(url);
+        this.router.navigateByUrl(url);
     }
 
 }

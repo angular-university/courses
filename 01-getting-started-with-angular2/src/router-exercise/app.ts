@@ -21,13 +21,13 @@ import {routeConfig} from "./router-config";
     <div>
     
         <div class="main-container">
-
-            <router-outlet></router-outlet>               
         
-            <router-outlet name="section1"></router-outlet>
-                        
-            <router-outlet name="section2"></router-outlet>
+            <router-outlet></router-outlet>
             
+            <router-outlet name="section1"></router-outlet>
+
+            <router-outlet name="section2"></router-outlet>
+
             <router-outlet name="section3"></router-outlet>
 
         </div>

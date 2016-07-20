@@ -9,12 +9,12 @@ export const routeConfig:RouterConfig = [
 
     {
         path: '',
-        pathMatch: 'full',
+        pathMatch:'full',
         redirectTo: '/home'
     },
     {
         path: 'home',
-        component: DashboardHeader,
+        component: DashboardHeader
     },
     {
         path: 'section1',

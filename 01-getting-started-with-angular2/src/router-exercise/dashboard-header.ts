@@ -23,7 +23,8 @@ import {Router} from "@angular/router";
 })
 export class DashboardHeader {
 
-    constructor(private router:Router) {
+
+    constructor(private router: Router) {
 
     }
 
@@ -57,6 +58,10 @@ export class DashboardHeader {
 
         console.log(url);
         this.router.navigateByUrl(url);
+
     }
+
+
+
 
 }

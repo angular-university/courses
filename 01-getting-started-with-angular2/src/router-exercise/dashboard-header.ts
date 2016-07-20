@@ -36,19 +36,17 @@ export class DashboardHeader {
             sections += "section1:section1";
         }
 
-        if (sections) {
-            sections += "//";
-        }
-
         if (g2) {
+            if (sections) {
+                sections += "//";
+            }
             sections += "section2:section2";
         }
 
-        if (sections) {
-            sections += "//";
-        }
-
         if (g3) {
+            if (sections) {
+                sections += "//";
+            }
             sections += "section3:section3";
         }
         let url = '/home';

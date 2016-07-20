@@ -7,13 +7,13 @@ import {Component} from "@angular/core";
     template: `
 
     <div>
-        <h2>Graph 1</h2>
+        <h2>Pages Views (Pie Chart)</h2>
         <img class="card card-very-strong dashboard-section" 
-            src="/images/dashboard-section-1.png">            
+            src="/images/dashboard-section-2.png">            
     </div>  
 
 `
 })
-export class DashboardSection {
+export class PageViewsPieChartWidget {
 
 }

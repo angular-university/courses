@@ -1,6 +1,8 @@
 import {RouterConfig} from "@angular/router";
-import {DashboardSection} from "./dashboard-section.component";
 import {DashboardHeader} from "./dashboard-header";
+import {PageViewsByBrowserWidget} from "./page-views-by-browser.component";
+import {PageViewsPieChartWidget} from "./page-views-pie-chart.component";
+import {ImpressionsByCountryWidget} from "./impresssions-by-country.component";
 
 
 export const routeConfig:RouterConfig = [
@@ -16,17 +18,17 @@ export const routeConfig:RouterConfig = [
     },
     {
         path: 'section1',
-        component: DashboardSection,
+        component: PageViewsByBrowserWidget,
         outlet: 'section1'
     },
     {
         path: 'section2',
-        component: DashboardSection,
+        component: PageViewsPieChartWidget,
         outlet: 'section2'
     },
     {
         path: 'section3',
-        component: DashboardSection,
+        component: ImpressionsByCountryWidget,
         outlet: 'section3'
     }
 

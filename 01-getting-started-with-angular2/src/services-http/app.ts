@@ -14,7 +14,6 @@ import {Lesson} from "./lesson";
 
 @Component({
     selector:'app',
-    directives: [LessonsList],
     template: `
 
         <div>
@@ -74,7 +73,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, LessonsList],
     imports: [BrowserModule, HttpModule],
     bootstrap: [App],
     providers: [LessonsService]

@@ -12,7 +12,6 @@ import {LessonsService} from "./lessons.service";
 
 @Component({
     selector:'app',
-    directives: [LessonsList], 
     template: `
 
         <input class="add-lesson" placeholder="Add Lesson"
@@ -31,7 +30,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, LessonsList],
     imports: [BrowserModule, HttpModule],
     bootstrap: [App],
     providers: [LessonsService]

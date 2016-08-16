@@ -9,7 +9,6 @@ import {SearchBox} from "./search-box/search-box.component";
 
 @Component({
     selector:'app',
-    directives: [SearchBox],
     template: `<search-box (search)="onSearch($event)"
                     text="Type Your Search Here">
                </search-box>`
@@ -23,7 +22,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, SearchBox],
     imports: [BrowserModule],
     bootstrap: [App]
 })

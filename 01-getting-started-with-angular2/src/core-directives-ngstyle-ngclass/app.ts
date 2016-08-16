@@ -10,7 +10,6 @@ import {Heroes} from "./heroes";
 
 @Component({ 
     selector: 'app',
-    directives: [Hero, Heroes],
     template: `
 
             <heroes>
@@ -31,7 +30,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, Hero, Heroes],
     imports: [BrowserModule],
     bootstrap: [App]
 })

@@ -8,7 +8,6 @@ import {ColorSample} from "./color-sample";
 
 @Component({
     selector:'app',
-    directives: [ColorSample],
     template: `<color-sample [color]="color"></color-sample>
                 <input (keyup)="onType(input.value)" #input
                     placeholder="Type Your Color Here">`
@@ -24,7 +23,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, ColorSample],
     imports: [BrowserModule],
     bootstrap: [App]
 })

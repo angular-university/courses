@@ -10,7 +10,6 @@ import {CollapseOnClick} from "./collapse-on-click.directive";
 
 @Component({
     selector:'app',
-    directives: [CollapseOnClick],
     template: `
         
         <div collapse-on-click #panel="cp" 
@@ -31,7 +30,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, CollapseOnClick],
     imports: [BrowserModule],
     bootstrap: [App]
 })

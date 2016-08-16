@@ -10,7 +10,6 @@ import {ColorPreviewer} from "./color_previewer";
 
 @Component({ 
     selector: 'app',
-    directives: [ColorPreviewer, ColorPicker],
     template: `
             
             <color-picker #picker [color]="color" (color)="color = $event">  
@@ -32,7 +31,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, ColorPreviewer, ColorPicker],
     imports: [BrowserModule],
     bootstrap: [App]
 })

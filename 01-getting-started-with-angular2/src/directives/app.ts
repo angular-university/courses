@@ -11,7 +11,6 @@ import {ShowOneTrigger} from "./show-one-trigger";
 
 @Component({ 
     selector: 'app',
-    directives: [ShowOne, ShowOneContainer, ShowOneTrigger],
     template: `
 
     <div class="tab-container" showOneContainer> 
@@ -43,7 +42,7 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, ShowOne, ShowOneContainer, ShowOneTrigger],
     imports: [BrowserModule],
     bootstrap: [App]
 })

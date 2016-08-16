@@ -11,7 +11,6 @@ import {DurationValidator} from "./validate-duration.directive";
 
 @Component({
     selector:'app',
-    directives: [DurationValidator],
     template: `
  
     <h3>Create Lesson Form - Template Driven</h3>
@@ -103,7 +102,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, DurationValidator],
     imports: [BrowserModule, FormsModule],
     bootstrap: [App]
 })

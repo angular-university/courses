@@ -1,11 +1,10 @@
 
 import {Component, Input} from "@angular/core";
-import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 
 @Component({
     selector:'courses-list',
-    directives: [ROUTER_DIRECTIVES],
     template: `
             <table class="courses-list card card-strong">
                 <tr class="course-summary" *ngFor="let course of courses" 

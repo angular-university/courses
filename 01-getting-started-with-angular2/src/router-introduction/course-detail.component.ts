@@ -3,13 +3,13 @@
 import {Component, OnDestroy} from "@angular/core";
 import {lessonsData} from "./lessonsData";
 import {LessonsList} from "./lessons-list.component";
-import {Router, ActivatedRoute, ROUTER_DIRECTIVES} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs/Rx";
 
 
 @Component({
     selector:'course-detail',
-    directives: [LessonsList, ROUTER_DIRECTIVES],
+    directives: [LessonsList],
     template: `
 
         <div>

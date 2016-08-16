@@ -4,7 +4,7 @@ import {NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
 
-import {provideRouter, RouterModule} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 import {CanCourseDetailActivate} from "./course-detail-activate.guard";
@@ -12,7 +12,6 @@ import {CanCourseDetailActivate} from "./course-detail-activate.guard";
 
 @Component({
     selector:'app',
-    directives: [ROUTER_DIRECTIVES],
     template: `
 
   <header class="l-header v-center-parent">
@@ -67,7 +66,7 @@ export class App {
 
 @NgModule({
     declarations: [App],
-    imports: [BrowserModule, RouterModule],
+    imports: [BrowserModule, RouterModule.forRoot(routeConfig)],
     bootstrap: [App],
     providers: [CanCourseDetailDeactivate, CanCourseDetailActivate]
 })

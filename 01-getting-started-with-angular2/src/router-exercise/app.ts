@@ -10,7 +10,6 @@ import {routeConfig} from "./router-config";
 
 @Component({
     selector:'app',
-    directives: [ROUTER_DIRECTIVES],
     template: `
 
   <header class="l-header v-center-parent">
@@ -50,7 +49,7 @@ export class App {
 
 @NgModule({
     declarations: [App],
-    imports: [BrowserModule, RouterModule],
+    imports: [BrowserModule, RouterModule.forRoot(routeConfig)],
     bootstrap: [App]
 })
 export class AppModule {

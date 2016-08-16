@@ -6,7 +6,6 @@ import {CoursesList} from "./courses-list.component";
 
 @Component({
     selector: 'courses',
-    directives: [CoursesList],
     template: `
 
         <h1>Courses</h1>

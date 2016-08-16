@@ -8,6 +8,8 @@ import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 import {CanCourseDetailActivate} from "./course-detail-activate.guard";
+import {LessonsList} from "./lessons-list.component";
+import {CoursesList} from "./courses-list.component";
 
 
 @Component({
@@ -65,7 +67,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, LessonsList, CoursesList],
     imports: [BrowserModule, RouterModule.forRoot(routeConfig)],
     bootstrap: [App],
     providers: [CanCourseDetailDeactivate, CanCourseDetailActivate]

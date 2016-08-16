@@ -9,7 +9,6 @@ import {Subscription} from "rxjs/Rx";
 
 @Component({
     selector:'course-detail',
-    directives: [LessonsList],
     template: `
 
         <div>

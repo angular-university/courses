@@ -6,7 +6,6 @@ import {lessonsData} from "./lessonsData";
 
 @Component({
     selector: 'home',
-    directives: [LessonsList],
     template: `
 
         <img class="youtube-logo card card-strong" 

@@ -8,7 +8,6 @@ import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'playlist',
-    directives: [LessonsList],
     template: `
 
         <div class="playlist">

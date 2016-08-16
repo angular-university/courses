@@ -6,7 +6,6 @@ import {lessonsData} from "./lessonsData";
 
 @Component({
     selector: 'all-lessons',
-    directives: [LessonsList],
     template: `
 
         <h1>All Lessons</h1>

@@ -1,8 +1,11 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
 import {LessonsList} from "./lessons-list.component";
-import {HTTP_PROVIDERS} from "@angular/http";
+import {HttpModule} from "@angular/http";
 import "rxjs/Rx";
 import {LessonsService} from "./lessons.service";
 import {initObservable} from "./init-observable";
@@ -68,4 +71,17 @@ export class App {
 
 }
 
-bootstrap(App, [LessonsService, ...HTTP_PROVIDERS]);
+
+
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule, HttpModule],
+    bootstrap: [App],
+    providers: [LessonsService]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+

@@ -1,24 +1,24 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
 import {
-    disableDeprecatedForms,
-    provideForms,
     FormGroup,
     FormControl,
-    REACTIVE_FORM_DIRECTIVES,
     Validators,
-    FormBuilder
+    FormBuilder,
+    ReactiveFormsModule
 } from "@angular/forms";
 import {Lesson, StudentLevel} from "./lesson";
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
 import {checkIfTitleExists} from './checkIfTitleExists';
-import {HTTP_PROVIDERS, Http} from "@angular/http";
+
 
 @Component({
     selector:'app',
-    directives: [REACTIVE_FORM_DIRECTIVES],
     template: `
 
     <h3>Model Driven Forms</h3>
@@ -71,7 +71,7 @@ export class App {
         StudentLevel.BEGINNER
     );
 
-    constructor(fb: FormBuilder, http:Http) {
+    constructor(fb: FormBuilder) {
 
         this.myForm = fb.group({
             title: ['This is the title', [
@@ -112,12 +112,15 @@ export class App {
 
 
 
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule, ReactiveFormsModule],
+    bootstrap: [App]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 
 
-
-
-
-bootstrap(App, [
-    disableDeprecatedForms(),
-    provideForms(),
-    ...HTTP_PROVIDERS]);

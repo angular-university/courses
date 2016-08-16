@@ -1,6 +1,9 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
 import {CollapseOnClick} from "./collapse-on-click.directive";
 
 
@@ -27,4 +30,13 @@ export class App {
 
 }
 
-bootstrap(App);
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule],
+    bootstrap: [App]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

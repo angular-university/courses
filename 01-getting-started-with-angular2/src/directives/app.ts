@@ -1,6 +1,9 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
 import {ShowOneContainer} from "./show-one-container";
 import {ShowOne} from "./show-one";
 import {ShowOneTrigger} from "./show-one-trigger";
@@ -39,5 +42,14 @@ export class App {
 
 }
 
-bootstrap(App);
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule],
+    bootstrap: [App]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 

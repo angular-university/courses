@@ -1,13 +1,14 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms, REACTIVE_FORM_DIRECTIVES, FormControl} from "@angular/forms";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+import {FormsModule, FormControl, ReactiveFormsModule} from "@angular/forms";
 import {confirmPassword} from "./confirmPassword";
 
 
 @Component({
     selector:'app',
-    directives: [REACTIVE_FORM_DIRECTIVES],
     template: `
 
     <h3>Sign Up To Our Website</h3>
@@ -84,7 +85,13 @@ export class App {
 
 
 
-bootstrap(App, [
-    disableDeprecatedForms(),
-    provideForms()
-]);
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+    bootstrap: [App]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

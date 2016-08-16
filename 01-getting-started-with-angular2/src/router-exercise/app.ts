@@ -1,7 +1,10 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {provideRouter, ROUTER_DIRECTIVES} from "@angular/router";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
+import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
 
 
@@ -45,9 +48,16 @@ export class App {
 }
 
 
-bootstrap(App, [
-    provideRouter(routeConfig)
-]);
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule, RouterModule],
+    bootstrap: [App]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 
 
 

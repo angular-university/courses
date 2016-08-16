@@ -1,7 +1,10 @@
 
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {disableDeprecatedForms, provideForms} from "@angular/forms";
+import {NgModule} from "@angular/core";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {BrowserModule} from "@angular/platform-browser";
+
+import {FormsModule} from "@angular/forms";
 import {Lesson, StudentLevel} from "./lesson";
 import {DurationValidator} from "./validate-duration.directive";
 
@@ -99,8 +102,13 @@ export class App {
 
 
 
+@NgModule({
+    declarations: [App],
+    imports: [BrowserModule, FormsModule],
+    bootstrap: [App]
+})
+export class AppModule {
 
-bootstrap(App, [
-    disableDeprecatedForms(),
-    provideForms()
-]);
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

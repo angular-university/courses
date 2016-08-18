@@ -49,7 +49,7 @@ import {DurationValidator} from "./validate-duration.directive";
         </fieldset>                    
             
         <p>
-            <button [disabled]="!f.valid" class="lesson-button" type="submit" (click)="createLesson(f)">
+            <button [disabled]="!f.valid" class="lesson-button" type="submit" (ngSubmit)="createLesson(f)">
             Create Lesson</button>
         </p>
         

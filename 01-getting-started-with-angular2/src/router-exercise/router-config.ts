@@ -1,11 +1,11 @@
-import {RouterConfig} from "@angular/router";
+import {Routes} from "@angular/router";
 import {DashboardHeader} from "./dashboard-header";
 import {PageViewsByBrowserWidget} from "./page-views-by-browser.component";
 import {PageViewsPieChartWidget} from "./page-views-pie-chart.component";
 import {ImpressionsByCountryWidget} from "./impresssions-by-country.component";
 
 
-export const routeConfig:RouterConfig = [
+export const routeConfig:Routes = [
 
     {
         path: '',

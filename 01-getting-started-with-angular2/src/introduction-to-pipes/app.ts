@@ -1,15 +1,12 @@
 
-import {Component} from "@angular/core";
-import {NgModule} from "@angular/core";
+import {Component, NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
-
 import {SortPipe} from "./sort.pipe";
 
 
 @Component({ 
     selector: 'app',
-    pipes: [SortPipe],
     template: `
 
             <div class="pipe-example">
@@ -68,8 +65,8 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
-    imports: [BrowserModule ],
+    declarations: [App, SortPipe],
+    imports: [BrowserModule],
     bootstrap: [App]
 })
 export class AppModule {

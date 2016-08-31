@@ -4,10 +4,7 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
-import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
-import {CanCourseDetailActivate} from "./course-detail-activate.guard";
-import {LessonsList} from "./lessons-list.component";
-import {CoursesModule} from "./courses.module";
+import {SharedModule} from "./shared.module";
 
 
 @Component({
@@ -65,14 +62,14 @@ export class App {
 
 
 @NgModule({
-    declarations: [App, LessonsList],
+    declarations: [App],
     imports: [
         BrowserModule,
         RouterModule.forRoot(routeConfig),
-        CoursesModule
+        SharedModule
     ],
-    bootstrap: [App],
-    providers: [CanCourseDetailDeactivate, CanCourseDetailActivate]
+    bootstrap: [App]
+
 })
 export class AppModule {
 

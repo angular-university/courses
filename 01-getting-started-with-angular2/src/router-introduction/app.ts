@@ -1,15 +1,13 @@
 
-import {Component, provide} from "@angular/core";
-import {NgModule} from "@angular/core";
+import {Component, NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
-
 import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {CanCourseDetailDeactivate} from "./course-detail-deactivate.guard";
 import {CanCourseDetailActivate} from "./course-detail-activate.guard";
 import {LessonsList} from "./lessons-list.component";
-import {CoursesList} from "./courses-list.component";
+import {CoursesModule} from "./courses.module";
 
 
 @Component({
@@ -67,8 +65,12 @@ export class App {
 
 
 @NgModule({
-    declarations: [App, LessonsList, CoursesList],
-    imports: [BrowserModule, RouterModule.forRoot(routeConfig)],
+    declarations: [App, LessonsList],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routeConfig),
+        CoursesModule
+    ],
     bootstrap: [App],
     providers: [CanCourseDetailDeactivate, CanCourseDetailActivate]
 })

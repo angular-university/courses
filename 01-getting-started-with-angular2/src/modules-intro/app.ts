@@ -5,7 +5,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
 import "rxjs/Rx";
 import {LessonsService} from "./lessons.service";
-import {LessonsModule} from "./lessons.module";
+import {LessonsList} from "./lessons-list.component";
 
 
 @Component({
@@ -28,13 +28,15 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App],
-    imports: [BrowserModule, HttpModule, LessonsModule],
-    bootstrap: [App]
+    declarations: [App, LessonsList],
+    imports: [BrowserModule, HttpModule],
+    bootstrap: [App],
+    providers: [LessonsService]
 })
 export class AppModule {
 
 }
+
 
 
 platformBrowserDynamic().bootstrapModule(AppModule);

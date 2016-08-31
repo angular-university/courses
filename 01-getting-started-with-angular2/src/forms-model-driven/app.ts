@@ -36,9 +36,7 @@ import {validateDuration} from "./validateDuration";
             <textarea formControlName="description"></textarea>
         </div>            
         <div class="form-field">
-            <button (click)="partialUpdate()">Partial Update</button>
-            <button (click)="fullUpdate()">Full Update</button>
-            <button (click)="reset()">Reset</button>
+            <button class="lesson-button" type="submit">Create Lesson</button>
         </div>
     </form>
    
@@ -66,8 +64,14 @@ export class App {
             title: ['This is the title', [
                     Validators.minLength(5) ]
                 ],
+            duration: this.duration,
             description: ['description goes here',[Validators.required]]
         });
+
+
+
+
+
 
         this.myForm.valueChanges
             .filter(() => this.myForm.valid)
@@ -80,23 +84,31 @@ export class App {
 
     }
 
+
+
+
+
+
+
+
     partialUpdate() {
         this.myForm.patchValue({
-            title: 'Set a form value',
-            duration: 20
+            title: "Set Form Values",
+            duration: 5
         });
     }
 
     fullUpdate() {
         this.myForm.setValue({
-            title: 'Set a form value',
-            duration: 20
+            title: "Set Form Values",
+            description: "new description"
         });
     }
 
     reset() {
         this.myForm.reset();
     }
+
 
 }
 

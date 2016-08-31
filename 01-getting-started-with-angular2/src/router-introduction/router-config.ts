@@ -1,6 +1,6 @@
 import {AllLessons} from "./all-lessons.component";
 import {Home} from "./home.component";
-import {RouterConfig, Route} from "@angular/router";
+import {Route} from "@angular/router";
 import {coursesRouterConfig} from "./courses-router-config";
 
 
@@ -14,7 +14,7 @@ const fallbackRoute:Route = {
     component: Home
 };
 
-export const routeConfig:RouterConfig = [
+export const routeConfig = [
     {
         path: 'home',
         component: Home

@@ -1,12 +1,8 @@
 
-import {Component} from "@angular/core";
-import {NgModule} from "@angular/core";
+import {Component, NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
-
-import {FormsModule} from "@angular/forms";
-import {Lesson, StudentLevel} from "./lesson";
-import {DurationValidator} from "./validate-duration.directive";
+import {Lesson} from "./lesson";
 
 
 @Component({
@@ -65,45 +61,19 @@ import {DurationValidator} from "./validate-duration.directive";
 })
 export class App {
 
-    lesson = new Lesson(
-        "Hello World !",
-        10,
-        "description goes here",
-        StudentLevel.BEGINNER
-    );
+    lesson = new Lesson();
 
     createLesson(form) {
         console.log("Lesson Value:", this.lesson, form);
         debugger;
     }
 
-    summaryStatus(summary) {
-        return {
-            color: !summary.valid && !summary.pristine ? 'red' : 'black'
-        }
-    }
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @NgModule({
-    declarations: [App, DurationValidator],
-    imports: [BrowserModule, FormsModule],
+    declarations: [App],
+    imports: [BrowserModule],
     bootstrap: [App]
 })
 export class AppModule {

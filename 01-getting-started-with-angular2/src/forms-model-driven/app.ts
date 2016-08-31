@@ -1,20 +1,11 @@
 
-import {Component} from "@angular/core";
-import {NgModule} from "@angular/core";
+import {Component, NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
-
-import {
-    FormGroup,
-    FormControl,
-    Validators,
-    FormBuilder,
-    ReactiveFormsModule
-} from "@angular/forms";
+import {FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule} from "@angular/forms";
 import {Lesson, StudentLevel} from "./lesson";
 import "rxjs/Rx";
 import {validateDuration} from "./validateDuration";
-import {checkIfTitleExists} from './checkIfTitleExists';
 
 
 @Component({
@@ -45,14 +36,12 @@ import {checkIfTitleExists} from './checkIfTitleExists';
             <textarea formControlName="description"></textarea>
         </div>            
         <div class="form-field">
-            <button class="lesson-button" type="submit">Create Lesson</button>
+            <button (click)="partialUpdate()">Partial Update</button>
+            <button (click)="fullUpdate()">Full Update</button>
+            <button (click)="reset()">Reset</button>
         </div>
     </form>
-    
-    <div class="debug">
-        <h3>Title Errors:</h3>
-        {{ myForm.controls.title?.errors | json }}
-    </div>    
+   
           
 
         `
@@ -91,7 +80,30 @@ export class App {
 
     }
 
+    partialUpdate() {
+        this.myForm.patchValue({
+            title: 'Set a form value',
+            duration: 20
+        });
+    }
+
+    fullUpdate() {
+        this.myForm.setValue({
+            title: 'Set a form value',
+            duration: 20
+        });
+    }
+
+    reset() {
+        this.myForm.reset();
+    }
+
 }
+
+
+
+
+
 
 
 

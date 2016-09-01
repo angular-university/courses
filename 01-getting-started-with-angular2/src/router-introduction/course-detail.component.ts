@@ -39,7 +39,7 @@ export class CourseDetail implements OnDestroy {
 
 
 
-    constructor(router: Router, route:ActivatedRoute) {
+    constructor(route:ActivatedRoute) {
 
         this.paramsSub = route.params.subscribe(
             params =>{
@@ -48,14 +48,14 @@ export class CourseDetail implements OnDestroy {
             }
         );
 
-        this.queryParamsSub = router.routerState.queryParams.subscribe(
+        this.queryParamsSub = route.queryParams.subscribe(
             params => {
                 this.description = params['description'];
             }
         );
 
         console.log('observers count',
-            router.routerState.queryParams['observers'].length);
+            route.queryParams['observers'].length);
 
     }
 

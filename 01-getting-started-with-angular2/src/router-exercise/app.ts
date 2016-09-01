@@ -6,6 +6,10 @@ import {BrowserModule} from "@angular/platform-browser";
 
 import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
+import {DashboardHeader} from "./dashboard-header";
+import {PageViewsByBrowserWidget} from "./page-views-by-browser.component";
+import {PageViewsPieChartWidget} from "./page-views-pie-chart.component";
+import {ImpressionsByCountryWidget} from "./impresssions-by-country.component";
 
 
 @Component({
@@ -48,7 +52,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, DashboardHeader, PageViewsByBrowserWidget, PageViewsPieChartWidget, ImpressionsByCountryWidget],
     imports: [BrowserModule, RouterModule.forRoot(routeConfig)],
     bootstrap: [App]
 })

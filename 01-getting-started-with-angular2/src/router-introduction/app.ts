@@ -5,6 +5,9 @@ import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
 import {SharedModule} from "./shared.module";
+import {Home} from "./home.component";
+import {Playlist} from "./playlist.component";
+import {AllLessons} from "./all-lessons.component";
 
 
 @Component({
@@ -62,7 +65,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, Home, Playlist, AllLessons],
     imports: [
         BrowserModule,
         RouterModule.forRoot(routeConfig),

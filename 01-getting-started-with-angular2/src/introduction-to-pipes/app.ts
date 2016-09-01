@@ -19,11 +19,7 @@ import {SortPipe} from "./sort.pipe";
 
             <div class="pipe-example">
                 <label>Slice Pipe: {{ message | slice:0:5 }}</label>
-            </div>            
-
-            <div class="pipe-example">
-                <label>Replace Pipe: {{ message | replace:'World':'Angular 2 World' }}</label>
-            </div>            
+            </div>                       
 
             <div class="pipe-example">
                 <label>Date Pipe: {{ date | date:'yyyy-MMM-dd' }}</label>

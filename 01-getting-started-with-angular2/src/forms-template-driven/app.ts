@@ -3,6 +3,7 @@ import {Component, NgModule} from "@angular/core";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
 import {Lesson} from "./lesson";
+import {FormsModule} from "@angular/forms";
 
 
 @Component({
@@ -68,12 +69,19 @@ export class App {
         debugger;
     }
 
+
+    summaryStatus(summary) {
+        return {
+            color: !summary.valid && !summary.pristine ? 'red' : 'black'
+        }
+    }
+
 }
 
 
 @NgModule({
     declarations: [App],
-    imports: [BrowserModule],
+    imports: [BrowserModule, FormsModule],
     bootstrap: [App]
 })
 export class AppModule {

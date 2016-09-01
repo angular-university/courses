@@ -6,3 +6,5 @@ dist/
 .idea
 .DS_Store
 tmp
+*.js
+*.map

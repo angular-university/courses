@@ -145,9 +145,16 @@ form button[type='submit'] {
 }
 
 
+
+
 .ng-dirty.ng-invalid {
     border: 2px solid #ff2118;
 }
+
+form.ng-dirty.ng-invalid {
+    border:none;
+}
+
 
 .l-header img {
     cursor: pointer;

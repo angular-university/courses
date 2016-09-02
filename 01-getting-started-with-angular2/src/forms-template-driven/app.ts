@@ -4,6 +4,7 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
 import {Lesson} from "./lesson";
 import {FormsModule} from "@angular/forms";
+import {DurationValidator} from "./validate-duration.directive";
 
 
 @Component({
@@ -80,7 +81,7 @@ export class App {
 
 
 @NgModule({
-    declarations: [App],
+    declarations: [App, DurationValidator],
     imports: [BrowserModule, FormsModule],
     bootstrap: [App]
 })

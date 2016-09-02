@@ -1,4 +1,4 @@
-# Angular 2 For Begginners Lessons Code
+# Angular 2 For Beginners Lessons Code
 Angular university lessons code.
 
 # Installation pre-requisites

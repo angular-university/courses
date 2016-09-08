@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(af: AngularFire) {
 
-    const data = af.database.object('/data');
+    const data = af.database.object('/courses');
 
     data.subscribe( val => console.log(val) );
 

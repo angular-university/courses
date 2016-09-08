@@ -1,0 +1,35 @@
+{
+  "courses": {
+    "1": {
+      "url": "getting-started-with-angular2",
+      "description": "Angular 2 Tutorial For Beginners",
+      "iconUrl": "https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners.jpg",
+      "courseListIcon": "https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png",
+      "longDescription": "Establish a solid layer of fundamentals, learn what's under the hood of Angular 2"
+    },
+    "2": {
+      "url": "angular2-http",
+      "description": "Angular 2 HTTP and Services",
+      "longDescription": "<p class='course-description'>Build Services using Observables, learn to use the HTTP module effectively.",
+      "iconUrl": "https://angular-academy.s3.amazonaws.com/thumbnails/services-and-http.jpg",
+      "courseListIcon": "https://angular-academy.s3.amazonaws.com/course-logos/observables_rxjs.png"
+    }
+  },
+  "lessons": {
+    "angular2-hello-world-write-first-application": {
+      "description": "Angular 2 Tutorial For Beginners - Build Your First App - Hello World Step By Step",
+      "duration": "2:49",
+      "tags": "BEGINNER",
+      "videoId": "do2r7udndo",
+      "longDescription": "This is step by step guide to create your first Angular 2 application. Its aimed at beginners just starting out with the framework.This lesson will show how to create a component, and how to link the component to a given custom HTML tag. It will show how to give the component a given template."
+    },
+    "angular2-build-your-first-component": {
+      "description": "Building Your First Angular 2 Component - Component Composition",
+      "duration": "2:07",
+      "tags": "BEGINNER",
+      "videoId": "izvg348ckx",
+      "seqNo": 1,
+      "longDescription": "In this lesson we are going to see how to include a component inside another component. We are going to create a simple search box component and include it in our main application."
+    }
+  }
+}

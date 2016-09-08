@@ -4,6 +4,9 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {AngularFireModule} from "angularfire2";
+import {CoursesComponent} from "./courses/courses.component";
+import {RouterModule} from "@angular/router";
+import {routerConfig} from "../router.config";
 
 var config = {
   apiKey: "AIzaSyBhuIkN2d6xNe7DwxzjCRhBIWiu1-mJ9vo",
@@ -15,13 +18,15 @@ var config = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    RouterModule.forRoot(routerConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,7 +30,24 @@
       "description": "Angular 2 HTTP and Services",
       "longDescription": "<p class='course-description'>Build Services using Observables, learn to use the HTTP module effectively.",
       "iconUrl": "https://angular-academy.s3.amazonaws.com/thumbnails/services-and-http.jpg",
-      "courseListIcon": "https://angular-academy.s3.amazonaws.com/course-logos/observables_rxjs.png"
+      "courseListIcon": "https://angular-academy.s3.amazonaws.com/course-logos/observables_rxjs.png",
+      "lessons": {
+        "17": true,
+        "18": true,
+        "19": true,
+        "20": true,
+        "21": true,
+        "22": true,
+        "23": true,
+        "24": true,
+        "25": true,
+        "26": true,
+        "27": true,
+        "28": true,
+        "29": true,
+        "30": true,
+        "31": true
+      }
     }
   },
   "lessons": {
@@ -159,6 +176,129 @@
       "tags": "BEGINNER",
       "pro": true,
       "longDescription": "In this video we are going to present the exercise solution for the Introduction To Directives section."
+    },
+    "17": {
+      "description": "What is an Observable ? Introduction to Streams and RxJs Observables",
+      "duration": "5:41",
+      "url": "angular2-what-is-an-observable",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to present a couple of baseline concepts that are essential for being able to build service layers in Angular 2: we will introduce the notions of stream and Observable. We are going to understand that these are two  different concepts: an Observable is not a stream. During the lesson we will write our first Observable and we will learn one of the main properties of Observables: that they are inherently inert, and that we need to subscribe to them in order for them to work. We are also going to introduce our first RxJs operator: the do operator which should only be used for debugging purposes as it introduces side effects."
+    },
+    "18": {
+      "description": "Observables Error Handling and Completion - How do Observables handle Errors?",
+      "duration": "5:28",
+      "url": "angular2-observables-error-handling-and-completion-network-calls-as-observables",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to present two other foundation concepts of Observables: error handling and completion. We are going to initially call our backend server using the browser Fetch API, which is promises based. We will then learn how to create an Observable from a promise, and see how and why an observable is a good way to model a network call. We will learn about some advantages of Observables vs Promises."
+    },
+    "19": {
+      "description": "How does Angular 2 HTTP use Observables ? The HTTP Response object",
+      "duration": "4:32",
+      "url": "how-does-angular2-use-observables-http-response-object",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to learn the relation between the Angular 2 HTTP module and Observables, and how its essential to understand Observables in order to do even the most common backend-communication tasks using the HTTP module. We are going to learn how Angular 2 HTTP models network responses using Observables, and how completion is handled. "
+    },
+    "20": {
+      "description": "How to use Observables and HTTP to build a Service Layer",
+      "duration": "4:32",
+      "url": "angular2-how-to-use-observables-and-http-to-build-a-servicelayer",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to learn how to use Angular 2 HTTP to build the service layer of our application. We are going to learn how to build strongly typed services and we are going to learn how the service layer can be designed around the notion of Observables."
+    },
+    "21": {
+      "description": "Introduction to Functional Reactive Programming - Using the Async Pipe - Pitfalls to Avoid",
+      "duration": "4:36",
+      "url": "angular2-how-to-use-the-async-pipe-to-pass-observables-into-a-template",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this lesson we are going to do an introduction to Functional Reactive Programming, and we are going to see how an application can be built around the notion of Observables. We are going to see how programs can be build with very little state variables, and how data can be passed on from Observables directly to templates by using the Async Pipe. We are going to learn also why in some cases its not a good idea to call the service layer directly from a template expression - this is a pitfall to avoid."
+    },
+    "22": {
+      "description": "The RxJs Map Operator - How to create an Observable from another Observable",
+      "duration": "3:04",
+      "url": "angular2-observable-map-operator-how-to-create-an-observable-from-another",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn one of the key concepts about Observables: we can easily derive new Observables from existing Observables using the many RxJs operators available to us. In this lesson we are going to create an Observable from another Observable by using the RxJs map operator."
+    },
+    "23": {
+      "description": "Observable Composition - combine multiple Observables Using combineLatest",
+      "duration": "5:59",
+      "url": "angular2-observable-composition-combine-latests",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn that Observables can be combined with other Observables. In this case we are going to create an Observable of mouse moves that only emits if the mouse is bellow a certain region of the page. We are also going to create an Observable of mouse clicks, that emits if the user clicks anywhere on the page - both of these Observables will be created using fromEvent. We will then combine these two Observables to create third Observable using the RxJs combineLatests operator. "
+    },
+    "24": {
+      "description": "Avoid the Biggest Pitfall of Angular 2 HTTP - Learn the RxJs Cache Operator",
+      "duration": "5:10",
+      "url": "angular2-how-to--aAvoid-duplicate-http-requests-rxjs-cache-operator",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to use the HTTP module to implement a modification operation: we are going to add a lesson to a lessons list via an HTTP POST call, and then reload the data from the server.  While implementing this simple use case, we are going to come across something that might be surprising at first: its really simple to do duplicate network calls accidentally while using Angular 2 HTTP. We are going to learn the reason why that is the case, and learn how we can avoid that using the RxJs Cache Operator."
+    },
+    "25": {
+      "description": "How to do multiple HTTP requests using the RxJs Concat Operator",
+      "duration": "4:19",
+      "url": "angular2-how-to-do-multiple-http-requests-using-the-rxjs-concat-operator",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how we make multiple sequential requests to the server by using the RxJs Concat operator. This is another example of how from the point of view of the Angular 2 HTTP module network requests are really just Observables that can be easily combined using the many RxJs operators available. We are going to implement the following concrete example: do a delete on the server, then a second delete and finally reload the new list from the server and display it on the screen."
+    },
+    "26": {
+      "description": "How to do two HTTP Requests in Parallel using the RxJs combineLatest Operator",
+      "duration": "3:58",
+      "url": "angular2-how-to-do-two-http-requests-in-parallel-using-the-rxjs-combinelatest-operator",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how to do two HTTP requests in parallel, wait for each to return and produce a result that contains the combination of the two HTTP calls. For that we are going to use an operator that we presented before, the combineLatest Operator which will in this time be used in a completely different context. This is a good example of the power of the approach that the Angular 2 HTTP module gives us, by modeling network calls as Observables; any RxJs operator can potentially by used to process network calls."
+    },
+    "27": {
+      "description": "How to setup an HTTP request sequence using the RxJs switchMap Operator",
+      "duration": "4:33",
+      "url": "angular2-how-to-setup-an-http-request-sequence-using-the-rxjs-switchmap-operator",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how we can build a chain of HTTP requests, but now we will be able to take the result of one request and then use it to build the next request. For this we are going to introduce a new RxJs Operator for combining Observables, the switchMap Operator. This lesson will give us a first contact with the more general Switch strategy of combining Observables."
+    },
+    "28": {
+      "description": "Retry HTTP requests in Error using the retry and retryWhen RxJs Operators",
+      "duration": "3:42",
+      "url": "angular2-retry-http-requests-in-error-using-the-retry-and-retrywhen-rxjs-operators",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how RxJs and Observables make it very simple to deal with certain uses cases that before might be challenging. For example, we are going to learn how to retry a network call in case of error. This is very useful in situations when the backend occasionally returns errors that are of an intermittent nature. In those scenarios a good strategy is to try to send the network call again a second time, usually after a certain delay has elapsed. In this lesson we are going to learn how we can use the RxJs Operators retry and retryWhen to implement service layers that are resilient to temporary errors."
+    },
+    "29": {
+      "description": "How to Cancel an HTTP Request using an RxJs Subscription",
+      "duration": "2:56",
+      "url": "angular2-how-to-cancel-an-http-request-using-an-rxjs-subscription",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how to implement a use case using RxJs and Observables that was very hard to do previously: the cancellation of an ongoing HTTP request. We are going to learn about the RxJs subscription object and how to use it to implement cancellation."
+    },
+    "30": {
+      "description": "Exercise - Improve a Search Service and Build a Typeahead",
+      "duration": "3:15",
+      "url": "angular2-exercise-improve-a-search-service-and-build-a-typeahead",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "This lesson is the setup for the exercise of the Services and HTTP series. We are going to implement a Typeahead that continuously retrieves from the backend new search results depending on what the use is typing. We are going to show how to use the Angular 2 HTTP API to pass a GET parameter request to the backend."
+    },
+    "31": {
+      "description": "Exercise Solution - Learn How to build a Typeahead that cancels obsolete search requests",
+      "duration": "5:07",
+      "url": "angular2-exercise-solution-learn-how-to-build-a-typeahead-that-cancels-obsolete-search-requests",
+      "tags": "INTERMEDIATE",
+      "pro": true,
+      "longDescription": "This is the solution for the HTTP and Services exercise, where we will build a Typeahead. For that we are going to use a couple of RxJs Operators that we have previously presented in this course. We are going to see how results from a previous search can be implicitly canceled."
     }
   }
 }
+
+
+
+
+
+
+

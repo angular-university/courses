@@ -16,20 +16,131 @@
     }
   },
   "lessons": {
-    "angular2-hello-world-write-first-application": {
+    "1": {
+      "url": "angular2-hello-world-write-first-application",
       "description": "Angular 2 Tutorial For Beginners - Build Your First App - Hello World Step By Step",
       "duration": "2:49",
       "tags": "BEGINNER",
       "videoId": "do2r7udndo",
       "longDescription": "This is step by step guide to create your first Angular 2 application. Its aimed at beginners just starting out with the framework.This lesson will show how to create a component, and how to link the component to a given custom HTML tag. It will show how to give the component a given template."
     },
-    "angular2-build-your-first-component": {
+    "2": {
+      "url": "angular2-build-your-first-component",
       "description": "Building Your First Angular 2 Component - Component Composition",
       "duration": "2:07",
       "tags": "BEGINNER",
       "videoId": "izvg348ckx",
-      "seqNo": 1,
       "longDescription": "In this lesson we are going to see how to include a component inside another component. We are going to create a simple search box component and include it in our main application."
+    },
+    "3": {
+      "url": "angular2-passing-data-to-component-using-input",
+      "description": "Component @Input - How To Pass Input Data To an Angular 2 Component",
+      "duration": "2:33",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to learn how to use the Angular 2 template syntax for properties, and learn how we can use it to pass input data to a component. We are going to see also a simplified input syntax for passing constant strings as component inputs."
+    },
+    "4": {
+      "url": "angular2-component-events",
+      "description": "Angular 2 Component Events - Using @Output to create custom events",
+      "duration": "4:44",
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to see how components can emit custom events via EventEmitter and the @Output decorator. We are going to see how we can subscribe to standard browser events, and how the syntax for that is exactly the same as in the case of custom component events. We will also learn how Typescript literals can be used to output variables inside template strings."
+    },
+    "5": {
+      "url": "angular2-component-templates-internal-vs-external",
+      "description": "Angular 2 Component Templates - Inline Vs External",
+      "duration": "2:55",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how a component template can be defined both inline and in an external file. We are going to learn how to configure the component so that Angular can find the template at the correct location, using the module commonjs variable. We are going to learn also some best practices for component naming, from the official Angular 2 Style Guide."
+    },
+    "6": {
+      "url": "angular2-components-styling-component-isolation",
+      "description": "Styling Angular 2 Components - Learn About Component Style Isolation",
+      "duration": "3:27",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this lesson we are going to learn how components can be styled using both inline styles and an external css file. We will learn some more best practices on file naming. We will learn how the mechanism for style isolation works in Angular 2."
+    },
+    "7": {
+      "url": "angular2-components-component-interaction",
+      "description": "Angular 2 Component Interaction - Extended Components Example",
+      "duration": "9:22",
+      "pro": true,
+      "tags": "BEGINNER",
+      "longDescription": "In this lesson we are going to put together all that we have learned so far about components to create a more complex example. We are going to create two components: a color picker and a color previewer and see how they can interact."
+    },
+    "8": {
+      "url": "angular2-components-exercise",
+      "description": "Angular 2 Components Tutorial For Beginners - Components Exercise !",
+      "duration": "1:26",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this video we are going to present an exercise for putting in practice the several concepts that we have learned so far about components."
+    },
+    "9": {
+      "url": "angular2-components-exercise-solution",
+      "description": "Angular 2 Components Tutorial For Beginners - Components Exercise Solution Inside",
+      "duration": "2:08",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "This video contains the solution for the introduction to components exercise."
+    },
+    "10": {
+      "url": "angular2-directives-inputs-outputs-event-emitters",
+      "description": "Angular 2 Directives - Inputs, Output Event Emitters and How To Export Template References",
+      "duration": "4:01",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "Angular 2 Components are actually simply just Directives. All the functionality that we have learned so far about Components also applies to Directives. In this lesson we are going to learn how to Directives can also have inputs and outputs, and how the use of the decorators @Input and @Output also applies to directives. We are also learn a new functionality for exporting a template reference for the directive itself into the template on which the directive is being used. "
+    },
+    "11": {
+      "description": "Angular 2 Core Directives  - ngFor",
+      "duration": "3:46",
+      "url": "angular2-core-directives-ngfor",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "This is an overview on the ngFor core directive, how it works and some common use cases on how it should be used to build templates. It demonstrates how ngFor can be used with any iterable and not only arrays, and how to use together with other mechanisms of the framework like @ContentChildren."
+    },
+    "12": {
+      "description": "Angular 2 Core Directives - ngClass and ngStyle",
+      "duration": "3:15",
+      "url": "angular2-core-directives-ngclass-ngstyle",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "This lesson is an overview on how to use the ngClass and ngStyle Directives, when to use which, and alternative syntax in case we only to modify one property/style."
+    },
+    "13": {
+      "description": "Angular 2 Core Directives - ngIf",
+      "duration": "3:56",
+      "url": "angular2-core-directives-ngIf",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "This lesson covers the use of the core directive ngIf, as well as two other alternative way of showing or hiding elements from the DOM: the hidden property and the visibility CSS property."
+    },
+    "14": {
+      "description": "Directives Guided Tour - Learn Why Directives Might be a Better Choice Than Components",
+      "url": "angular2-guided-tour-directives",
+      "duration": "7:58",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "This lesson is an extended tour on Angular 2 directives. This is an extremely powerful feature of Angular 2 that often remains underused. Its super powerful and and if used correctly can be used to create functionality that is much more reusable than components themselves."
+    },
+    "15": {
+      "description": "Introduction to Angular 2 Directives - Exercise - Improve the Collapsible Directive",
+      "duration": "1:30",
+      "url": "angular2-directives-exercise-improve-collapsible-directive",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this video we are going to present the exercise for the Introduction To Directives section. The goal of the exercise is to take the learned functionality about how to build a custom directive and how to use the standard Angular 2 Core directives to build an improved version of the collapse-on-click directive."
+    },
+    "16": {
+      "description": "Introduction to Angular 2 Directives - Exercise Solution",
+      "duration": "2:40",
+      "url": "angular2-directives-exercise-solution-improve-collapsible-directive",
+      "tags": "BEGINNER",
+      "pro": true,
+      "longDescription": "In this video we are going to present the exercise solution for the Introduction To Directives section."
     }
   }
 }

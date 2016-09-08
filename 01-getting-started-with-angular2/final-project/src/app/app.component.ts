@@ -1,6 +1,5 @@
 import {Component} from "@angular/core";
-
-declare const firebase;
+import {AngularFire} from "angularfire2";
 
 
 @Component({
@@ -12,11 +11,11 @@ export class AppComponent {
   title = 'Final Project ongoing !';
 
 
-  constructor() {
+  constructor(af: AngularFire) {
 
-    firebase.database().ref().on('value', (snap) => {
-      console.log(snap.val());
-    });
+    const data = af.database.object('/data');
+
+    data.subscribe( val => console.log(val) );
 
   }
 

@@ -5,7 +5,25 @@
       "description": "Angular 2 Tutorial For Beginners",
       "iconUrl": "https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners.jpg",
       "courseListIcon": "https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png",
-      "longDescription": "Establish a solid layer of fundamentals, learn what's under the hood of Angular 2"
+      "longDescription": "Establish a solid layer of fundamentals, learn what's under the hood of Angular 2",
+      "lessons": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true,
+        "10": true,
+        "11": true,
+        "12": true,
+        "13": true,
+        "14": true,
+        "15": true,
+        "16": true
+      }
     },
     "2": {
       "url": "angular2-http",

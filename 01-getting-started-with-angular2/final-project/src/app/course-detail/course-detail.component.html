@@ -4,14 +4,11 @@
 
 <div class="lessons-list-container v-h-center-block-parent">
 
-  <table class="table lessons-list">
+  <table class="table lessons-list card card-strong">
     <tbody>
     <tr *ngFor="let lesson of lessons$ | async">
-      <td class="course-icon"><img src="{{lesson.courseListIcon}}"></td>
+      <td class="course-icon"><img [src]="(course$ | async).courseListIcon"></td>
       <td class="lesson-title"> {{lesson.description}}</td>
-      <td class="pro-icon">
-        <i *ngIf="lesson.pro" class="md-icon">local_parking</i>
-      </td>
       <td class="duration">
         <i class="md-icon duration-icon">access_time</i>
         <span>{{lesson.duration}}</span>

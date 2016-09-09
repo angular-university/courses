@@ -6,28 +6,29 @@ import {Lesson} from "./shared/model";
 
 
 
-
-function buildLessonsObs(lessonIds: number[]) :Observable<Lesson[]> {
-  return null;
-}
-
-
-
 @Injectable()
 export class CoursesService {
 
   courses$: Observable<Course[]>;
 
-  constructor(af: AngularFire) {
+  constructor(private af: AngularFire) {
     this.courses$ = af.database.object('/courses')
             .map(array => array.slice(1))
             .map((res:any[]) =>
-              res.map(json => Course.fromJson(json, buildLessonsObs(json.lessons) )));
+              res.map(json => Course.fromJson(json, this.buildLessonsObs(Object.keys(json.lessons)) )));
   }
 
 
   findCourseByUrl(url:string) {
     return this.courses$.flatMap(x => x).filter(course => course.url === url);
+  }
+
+
+  buildLessonsObs(lessonIds) : Observable<Lesson[]> {
+
+    const lessons$ = lessonIds.map(lessonId => this.af.database.object(`/lessons/${lessonId}`));
+
+    return Observable.combineLatest(lessons$);
   }
 
 

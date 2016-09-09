@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import {AngularFire} from "angularfire2";
 import {Observable} from "rxjs/Rx";
-import {Course} from "./shared/model/course";
+import {Course} from "./shared/model";
+import {Lesson} from "./shared/model";
 
 
 
 
+function buildLessonsObs(lessonIds: number[]) :Observable<Lesson[]> {
+  return null;
+}
 
 
 
@@ -18,7 +22,7 @@ export class CoursesService {
     this.courses$ = af.database.object('/courses')
             .map(array => array.slice(1))
             .map((res:any[]) =>
-              res.map(json => Course.fromJson(json, null)));
+              res.map(json => Course.fromJson(json, buildLessonsObs(json.lessons) )));
   }
 
 

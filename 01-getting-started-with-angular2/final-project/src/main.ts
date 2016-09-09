@@ -4,6 +4,7 @@ import {enableProdMode} from "@angular/core";
 import {environment} from "./environments/environment";
 import {AppModule} from "./app/";
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
 
 
 if (environment.production) {

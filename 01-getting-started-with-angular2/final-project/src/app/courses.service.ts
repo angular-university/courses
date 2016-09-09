@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AngularFire} from "angularfire2";
 import {Observable} from "rxjs/Rx";
-import {Course} from "./shared/model";
+import {Course} from "./shared/model/course";
+
 
 
 @Injectable()
@@ -16,6 +17,10 @@ export class CoursesService {
               res.map(json => Course.fromJson(json, null)));
   }
 
+
+  findCourseByUrl(url:string) {
+    return this.courses$.flatMap(x => x).filter(course => course.url === url);
+  }
 
 
 }

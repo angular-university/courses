@@ -9,6 +9,8 @@ import {RouterModule} from "@angular/router";
 import {routerConfig} from "../router.config";
 import {CoursesService} from "./courses.service";
 import { MenuComponent } from './menu/menu.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { HomeComponent } from './home/home.component';
 
 var config = {
   apiKey: "AIzaSyBhuIkN2d6xNe7DwxzjCRhBIWiu1-mJ9vo",
@@ -22,7 +24,9 @@ var config = {
   declarations: [
     AppComponent,
     CoursesComponent,
-    MenuComponent
+    MenuComponent,
+    CourseDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

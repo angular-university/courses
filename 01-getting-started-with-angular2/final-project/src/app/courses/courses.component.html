@@ -1,3 +1,15 @@
-<p>
-  courses works!
-</p>
+<table class="courses-list card card-strong">
+  <tr class="course-summary" *ngFor="let course of coursesService.courses$ | async">
+    <td>
+      <img class="lesson-logo"
+           src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">
+    </td>
+    <td class="description">
+      {{course?.description}}
+    </td>
+    <td>
+      <button>View</button>
+    </td>
+  </tr>
+</table>
+

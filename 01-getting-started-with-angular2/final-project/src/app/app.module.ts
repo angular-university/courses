@@ -11,13 +11,9 @@ import {CoursesService} from "./courses.service";
 import { MenuComponent } from './menu/menu.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { HomeComponent } from './home/home.component';
+import {firebaseConfig} from "../environments/firebase.config";
 
-var config = {
-  apiKey: "AIzaSyBhuIkN2d6xNe7DwxzjCRhBIWiu1-mJ9vo",
-  authDomain: "final-project-ac645.firebaseapp.com",
-  databaseURL: "https://final-project-ac645.firebaseio.com",
-  storageBucket: "final-project-ac645.appspot.com",
-};
+
 
 
 @NgModule({
@@ -32,7 +28,7 @@ var config = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(routerConfig)
   ],
   providers: [CoursesService],

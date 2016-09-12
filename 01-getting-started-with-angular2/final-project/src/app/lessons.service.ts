@@ -11,8 +11,6 @@ export class LessonsService {
 
   constructor(private af:AngularFire) {
 
-
-
   }
 
   findLessonByKey(lessonKey: string): Observable<Lesson> {

@@ -1,5 +1,8 @@
 
 
+import {Course} from "./course";
+import {Observable} from "rxjs/Rx";
+
 export class Lesson {
 
 

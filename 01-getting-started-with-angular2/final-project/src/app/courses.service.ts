@@ -16,7 +16,7 @@ export class CoursesService {
 
     this.courses$ = af.database.list("courses")
       .map((res:any[]) =>
-        res.map((json:any) => Course.fromJson(json, this.oneToMayCourseLessons(json.$key) )));
+        res.map((json:any) => Course.fromJson(json )));
 
   }
 
@@ -26,7 +26,7 @@ export class CoursesService {
   }
 
 
-  oneToMayCourseLessons(courseKey) : Observable<Lesson[]> {
+  loadCourseLessons(courseKey) : Observable<Lesson[]> {
     return this.af.database.list(`lessonsPerCourse/${courseKey}`)
       .map(lessonKeys => lessonKeys.map(lessonKey => this.lessonsService.findLessonByKey(lessonKey.$value))  )
       .switchMap((lessons$: Observable<Lesson>[]) => Observable.combineLatest(lessons$));

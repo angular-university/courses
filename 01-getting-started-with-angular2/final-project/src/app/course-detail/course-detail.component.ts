@@ -21,11 +21,9 @@ export class CourseDetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe(params => {
-      this.course$ = this.coursesService.findCourseByUrl(params['id']);
-      this.lessons$ = this.course$.flatMap(course => course.lessons$);
-    });
+    this.course$ = this.route.params.switchMap(params =>  this.coursesService.findCourseByUrl(params['id']));
 
+    this.lessons$ = this.course$.switchMap(course => this.coursesService.loadCourseLessons(course.$key));
 
   }
 

@@ -14,16 +14,14 @@ export class Course {
     public description:string,
     public iconUrl: string,
     public courseListIcon:string,
-    public longDescription: string,
-    public lessons$: Observable<Lesson[]>) {
+    public longDescription: string) {
 
 
   }
 
 
-  static fromJson({$key, url, description, iconUrl, courseListIcon, longDescription},
-    lessons$: Observable<Lesson[]>) {
-    return new Course($key, url, description, iconUrl, courseListIcon, longDescription, lessons$);
+  static fromJson({$key, url, description, iconUrl, courseListIcon, longDescription}) {
+    return new Course($key, url, description, iconUrl, courseListIcon, longDescription);
   }
 
 

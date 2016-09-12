@@ -1,3 +1,11 @@
-<p>
-  lesson works!
-</p>
+
+
+<button>Previous</button>
+<button>Next</button>
+<h3>{{ (lesson$ | async)?.description }}</h3>
+<h5>Duration: {{ (lesson$ | async)?.duration  }}</h5>
+
+<iframe width="260" height="150" src="https://www.youtube.com/embed/z5ARCMJ24VE" frameborder="0" allowfullscreen></iframe>
+
+<h2>Description</h2>
+<p>{{ (lesson$ | async)?.longDescription }}</p>

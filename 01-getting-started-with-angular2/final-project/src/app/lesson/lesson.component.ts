@@ -23,7 +23,7 @@ export class LessonComponent implements OnInit {
 
       this.lesson$ = this.route.params.switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
 
-
   }
+
 
 }

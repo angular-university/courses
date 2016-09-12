@@ -15,6 +15,10 @@ export class LessonsService {
 
   }
 
+  findLessonByKey(lessonKey: string): Observable<Lesson> {
+    return this.af.database.object(`lessons/${lessonKey}`).map(json => Lesson.fromJson(json));
+  }
+
 
   findLessonByUrl(url) : Observable<Lesson> {
 

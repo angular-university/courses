@@ -3,6 +3,7 @@ import {AngularFire} from "angularfire2";
 import {Observable} from "rxjs/Rx";
 import {Course} from "./shared/model";
 import {Lesson} from "./shared/model";
+import {LessonsService} from "./lessons.service";
 
 
 
@@ -11,7 +12,7 @@ export class CoursesService {
 
   courses$: Observable<Course[]>;
 
-  constructor(private af: AngularFire) {
+  constructor(private af: AngularFire, private lessonsService: LessonsService) {
 
     this.courses$ = af.database.list("courses")
       .map((res:any[]) =>
@@ -26,8 +27,11 @@ export class CoursesService {
 
 
   oneToMayCourseLessons(courseKey) : Observable<Lesson[]> {
+
+
     return this.af.database.list(`lessonsPerCourse/${courseKey}`)
-      .switchMap(lessonKeys =>  Observable.combineLatest(lessonKeys.map(lessonKey => this.af.database.object(`lessons/${lessonKey.$value}`).map(json => Lesson.fromJson(json)) )));
+      .map(lessonKeys => lessonKeys.map(lessonKey => this.lessonsService.findLessonByKey(lessonKey.$value))  )
+      .switchMap((lessons$: Observable<Lesson>[]) => Observable.combineLatest(lessons$));
   }
 
 

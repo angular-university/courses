@@ -27,7 +27,7 @@ dbData.courses.forEach( course => {
 
   let lessonKeysPerCourse = [];
 
-  course.lessons.forEach(lesson =>  {
+  course.lessons.forEach((lesson:any) =>  {
 
     console.log('adding lesson ', lesson.url);
 
@@ -36,6 +36,7 @@ dbData.courses.forEach( course => {
         duration: lesson.duration,
         url: lesson.url,
         tags: lesson.tags,
+        videoUrl: lesson.videoUrl || null,
         longDescription: lesson.longDescription
       }).key);
 

@@ -6,7 +6,7 @@
 
   <table class="table lessons-list card card-strong">
     <tbody>
-    <tr *ngFor="let lesson of lessons$ | async" [routerLink]="lesson.url">
+    <tr *ngFor="let lesson of lessons$ | async" [routerLink]="['/lessons',lesson.url]">
       <td class="course-icon"><img [src]="(course$ | async).courseListIcon"></td>
       <td class="lesson-title"> {{lesson.description}}</td>
       <td class="duration">

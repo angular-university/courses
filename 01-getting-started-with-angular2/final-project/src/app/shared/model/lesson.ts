@@ -1,7 +1,5 @@
 
 
-import {Course} from "./course";
-import {Observable} from "rxjs/Rx";
 
 export class Lesson {
 
@@ -13,13 +11,14 @@ export class Lesson {
     public url: string,
     public tags: string,
     public pro: boolean,
-    public longDescription: string) {
+    public longDescription: string,
+    public courseId:string) {
 
   }
 
 
-  static fromJson({$key, description, duration, url,tags,pro,longDescription}) {
-    return new Lesson($key, description, duration, url,tags,pro,longDescription);
+  static fromJson({$key, description, duration, url,tags,pro,longDescription, courseId}) {
+    return new Lesson($key, description, duration, url, tags, pro, longDescription, courseId);
   }
 
 

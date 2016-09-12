@@ -30,13 +30,12 @@ export const routerConfig: Route[] = [
           {
             path: '',
             component: CourseDetailComponent
-          },
-          {
-            path: ':id',
-            component: LessonComponent
           }
         ]
-      }
-    ]
+      }]
+  },
+  {
+    path: 'lessons/:id',
+    component: LessonComponent
   }
 ];

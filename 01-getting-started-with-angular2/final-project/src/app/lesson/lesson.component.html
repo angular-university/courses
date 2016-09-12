@@ -1,7 +1,7 @@
 
 <div class="nav-bar">
-  <button [routerLink]="nextLessonUrl" [disabled]="isFirst">Previous</button>
-  <button [routerLink]="previousLessonUrl" [disabled]="isLast">Next</button>
+  <button [routerLink]="">Previous</button>
+  <button [routerLink]="[ '/lessons', (nextLessonUrl$ | async) ]">Next</button>
 </div>
 
 <h3>{{ (lesson$ | async)?.description }}</h3>

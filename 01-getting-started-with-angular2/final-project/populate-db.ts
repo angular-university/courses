@@ -10,6 +10,7 @@ initializeApp(firebaseConfig);
 
 const coursesRef = database().ref('courses');
 const lessonsRef = database().ref('lessons');
+const lessonsPerCourseRef = database().ref('lessonsPerCourse');
 
 
 dbData.courses.forEach( course => {
@@ -17,13 +18,11 @@ dbData.courses.forEach( course => {
   console.log('adding course', course.url);
 
   const courseRef = coursesRef.push({
-    props: {
       url: course.url,
       description: course.description,
       iconUrl: course.iconUrl,
       courseListIcon: course.courseListIcon,
       longDescription: course.longDescription
-    }
   });
 
   let lessonKeysPerCourse = [];
@@ -42,11 +41,11 @@ dbData.courses.forEach( course => {
 
   });
 
-  const lessonsPerCourseRef = courseRef.child('lessons');
+  const lessonsPerCourse = lessonsPerCourseRef.child(courseRef.key);
 
   lessonKeysPerCourse.forEach(lessonKey => {
     console.log('adding lesson to course ');
-    lessonsPerCourseRef.push(lessonKey);
+    lessonsPerCourse.push(lessonKey);
   });
 
 

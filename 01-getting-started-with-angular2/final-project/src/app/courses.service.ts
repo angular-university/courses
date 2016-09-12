@@ -13,14 +13,10 @@ export class CoursesService {
 
   constructor(private af: AngularFire) {
 
-    this.courses$ = af.database.list("courses");
+    this.courses$ = af.database.list("courses")
+      .map((res:any[]) =>
+        res.map(json => Course.fromJson(json, this.oneToMayCourseLessons(json.$key) )));
 
-/*
-    this.courses$ = af.database.object('/courses')
-            .map(array => array.slice(1))
-            .map((res:any[]) =>
-              res.map(json => Course.fromJson(json, this.buildLessonsObs(Object.keys(json.lessons)) )));
-*/
   }
 
 
@@ -29,11 +25,8 @@ export class CoursesService {
   }
 
 
-  buildLessonsObs(lessonIds) : Observable<Lesson[]> {
-
-    const lessons$ = lessonIds.map(lessonId => this.af.database.object(`/lessons/${lessonId}`));
-
-    return Observable.combineLatest(lessons$);
+  oneToMayCourseLessons(courseKey) : Observable<Lesson[]> {
+    return this.af.database.object(`lessonsPerCourse/${courseKey}`);
   }
 
 

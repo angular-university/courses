@@ -23,7 +23,7 @@ export class CourseDetailComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.course$ = this.coursesService.findCourseByUrl(params['id']);
-      this.lessons$ = this.course$.flatMap(course => course.lessons);
+      this.lessons$ = this.course$.flatMap(course => course.lessons$);
     });
 
 

@@ -14,7 +14,7 @@ export class Course {
     public iconUrl: string,
     public courseListIcon:string,
     public longDescription: string,
-    public lessons: Observable<Lesson>) {
+    public lessons$: Observable<Lesson>) {
 
 
   }
@@ -22,8 +22,8 @@ export class Course {
 
   static fromJson(
       {url, description, iconUrl, courseListIcon, longDescription},
-    lessons: Observable<Lesson>) {
-    return new Course(url, description, iconUrl, courseListIcon, longDescription, lessons);
+    lessons$: Observable<Lesson>) {
+    return new Course(url, description, iconUrl, courseListIcon, longDescription, lessons$);
   }
 
 

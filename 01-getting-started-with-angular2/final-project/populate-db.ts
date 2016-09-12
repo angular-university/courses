@@ -1,7 +1,7 @@
 import {database, initializeApp} from 'firebase';
 import {firebaseConfig} from "./src/environments/firebase.config";
 import {dbData} from "./db-data";
-import {Observable} from "rxjs/Rx";
+
 
 console.log('Initizalizing Firebase database ... ');
 
@@ -10,7 +10,6 @@ initializeApp(firebaseConfig);
 
 const coursesRef = database().ref('courses');
 const lessonsRef = database().ref('lessons');
-
 
 
 dbData.courses.forEach( course => {

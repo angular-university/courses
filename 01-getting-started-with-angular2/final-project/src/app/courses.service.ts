@@ -12,10 +12,15 @@ export class CoursesService {
   courses$: Observable<Course[]>;
 
   constructor(private af: AngularFire) {
+
+    this.courses$ = af.database.list("courses");
+
+/*
     this.courses$ = af.database.object('/courses')
             .map(array => array.slice(1))
             .map((res:any[]) =>
               res.map(json => Course.fromJson(json, this.buildLessonsObs(Object.keys(json.lessons)) )));
+*/
   }
 
 

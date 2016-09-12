@@ -1,4 +1,4 @@
-<table class="courses-list card card-strong">
+<!--<table class="courses-list card card-strong">
   <tr class="course-summary" *ngFor="let course of coursesService.courses$ | async">
     <td>
       <img class="lesson-logo"
@@ -11,5 +11,6 @@
       <button [routerLink]="course.url">View</button>
     </td>
   </tr>
-</table>
+</table>-->
 
+{{coursesService.courses$ | async | json }}

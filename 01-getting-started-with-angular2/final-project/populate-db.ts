@@ -37,7 +37,8 @@ dbData.courses.forEach( course => {
         url: lesson.url,
         tags: lesson.tags,
         videoUrl: lesson.videoUrl || null,
-        longDescription: lesson.longDescription
+        longDescription: lesson.longDescription,
+        courseId: courseRef.key
       }).key);
 
   });

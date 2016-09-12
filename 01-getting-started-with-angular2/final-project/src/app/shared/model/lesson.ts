@@ -4,13 +4,19 @@ export class Lesson {
 
 
   constructor(
-    description: string,
-    duration: string,
-    url: string,
-    tags: string,
-    pro: boolean,
-    longDescription: string) {
+    public $key:string,
+    public description: string,
+    public duration: string,
+    public url: string,
+    public tags: string,
+    public pro: boolean,
+    public longDescription: string) {
 
+  }
+
+
+  static fromJson({$key, description, duration, url,tags,pro,longDescription}) {
+    return new Lesson($key, description, duration, url,tags,pro,longDescription);
   }
 
 

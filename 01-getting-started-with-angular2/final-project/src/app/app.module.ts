@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { HomeComponent } from './home/home.component';
 import {firebaseConfig} from "../environments/firebase.config";
+import { LessonComponent } from './lesson/lesson.component';
 
 
 
@@ -22,7 +23,8 @@ import {firebaseConfig} from "../environments/firebase.config";
     CoursesComponent,
     MenuComponent,
     CourseDetailComponent,
-    HomeComponent
+    HomeComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,

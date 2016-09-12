@@ -4,6 +4,7 @@ import {Route} from "@angular/router";
 import {CoursesComponent} from "./app/courses/courses.component";
 import {HomeComponent} from "./app/home/home.component";
 import {CourseDetailComponent} from "./app/course-detail/course-detail.component";
+import {LessonComponent} from "./app/lesson/lesson.component";
 
 
 export const routerConfig: Route[] = [
@@ -25,7 +26,16 @@ export const routerConfig: Route[] = [
       },
       {
         path: ':id',
-        component: CourseDetailComponent
+        children: [
+          {
+            path: '',
+            component: CourseDetailComponent
+          },
+          {
+            path: ':id',
+            component: LessonComponent
+          }
+        ]
       }
     ]
   }

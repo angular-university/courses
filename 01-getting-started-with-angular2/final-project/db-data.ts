@@ -1,4 +1,4 @@
-{
+export const dbData = {
   "courses": [
     {
       "url": "getting-started-with-angular2",
@@ -28,8 +28,6 @@
           "tags": "BEGINNER",
           "longDescription": "In this lesson we are going to learn how to use the Angular 2 template syntax for properties, and learn how we can use it to pass input data to a component. We are going to see also a simplified input syntax for passing constant strings as component inputs."
         },
-        "4"
-        :
         {
           "url": "angular2-component-events",
           "description": "Angular 2 Component Events - Using @Output to create custom events",
@@ -261,7 +259,7 @@
       ]
     }
   ]
-}
+};
 
 
 

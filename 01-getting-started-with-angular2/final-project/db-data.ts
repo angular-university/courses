@@ -12,7 +12,7 @@ export const dbData = {
           "description": "Angular 2 Tutorial For Beginners - Build Your First App - Hello World Step By Step",
           "duration": "2:49",
           "tags": "BEGINNER",
-          videoUrl: "https://www.youtube.com/watch?v=du6sKwEFrhQ",
+          videoUrl: "https://www.youtube.com/embed/du6sKwEFrhQ",
           "longDescription": "This is step by step guide to create your first Angular 2 application. Its aimed at beginners just starting out with the framework.This lesson will show how to create a component, and how to link the component to a given custom HTML tag. It will show how to give the component a given template."
         },
         {
@@ -20,7 +20,7 @@ export const dbData = {
           "description": "Building Your First Angular 2 Component - Component Composition",
           "duration": "2:07",
           "tags": "BEGINNER",
-          videoUrl: "https://www.youtube.com/watch?v=VES1eTNxi1s",
+          videoUrl: "https://www.youtube.com/embed/VES1eTNxi1s",
           "longDescription": "In this lesson we are going to see how to include a component inside another component. We are going to create a simple search box component and include it in our main application."
         },
         {
@@ -28,7 +28,7 @@ export const dbData = {
           "description": "Component @Input - How To Pass Input Data To an Angular 2 Component",
           "duration": "2:33",
           "tags": "BEGINNER",
-          "videoUrl": "https://www.youtube.com/watch?v=Yfebo2mFrTU",
+          "videoUrl": "https://www.youtube.com/embed/Yfebo2mFrTU",
           "longDescription": "In this lesson we are going to learn how to use the Angular 2 template syntax for properties, and learn how we can use it to pass input data to a component. We are going to see also a simplified input syntax for passing constant strings as component inputs."
         },
         {
@@ -36,7 +36,7 @@ export const dbData = {
           "description": "Angular 2 Component Events - Using @Output to create custom events",
           "duration": "4:44",
           "tags": "BEGINNER",
-          videoUrl: "https://www.youtube.com/watch?v=dgyVrJ2XCq4",
+          videoUrl: "https://www.youtube.com/embed/dgyVrJ2XCq4",
           "longDescription": "In this lesson we are going to see how components can emit custom events via EventEmitter and the @Output decorator. We are going to see how we can subscribe to standard browser events, and how the syntax for that is exactly the same as in the case of custom component events. We will also learn how Typescript literals can be used to output variables inside template strings."
         },
         {
@@ -149,7 +149,7 @@ export const dbData = {
           "duration": "5:41",
           "url": "angular2-what-is-an-observable",
           "tags": "BEGINNER",
-          "videoUrl": "https://www.youtube.com/watch?v=Sol2uLolmUM",
+          "videoUrl": "https://www.youtube.com/embed/Sol2uLolmUM",
           "longDescription": "In this lesson we are going to present a couple of baseline concepts that are essential for being able to build service layers in Angular 2: we will introduce the notions of stream and Observable. We are going to understand that these are two  different concepts: an Observable is not a stream. During the lesson we will write our first Observable and we will learn one of the main properties of Observables: that they are inherently inert, and that we need to subscribe to them in order for them to work. We are also going to introduce our first RxJs operator: the do operator which should only be used for debugging purposes as it introduces side effects."
         },
         {
@@ -157,7 +157,7 @@ export const dbData = {
           "duration": "5:28",
           "url": "angular2-observables-error-handling-and-completion-network-calls-as-observables",
           "tags": "BEGINNER",
-          "videoUrl": "https://www.youtube.com/watch?v=ot_FrQbmEmU",
+          "videoUrl": "https://www.youtube.com/embed/ot_FrQbmEmU",
           "longDescription": "In this lesson we are going to present two other foundation concepts of Observables: error handling and completion. We are going to initially call our backend server using the browser Fetch API, which is promises based. We will then learn how to create an Observable from a promise, and see how and why an observable is a good way to model a network call. We will learn about some advantages of Observables vs Promises."
         },
         {

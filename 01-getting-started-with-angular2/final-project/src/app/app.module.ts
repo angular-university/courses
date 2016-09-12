@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import {firebaseConfig} from "../environments/firebase.config";
 import { LessonComponent } from './lesson/lesson.component';
 import {LessonsService} from "./lessons.service";
+import {SafePipe} from "./shared/safe.pipe";
 
 
 
@@ -25,7 +26,8 @@ import {LessonsService} from "./lessons.service";
     MenuComponent,
     CourseDetailComponent,
     HomeComponent,
-    LessonComponent
+    LessonComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,6 @@ export class CoursesService {
 
   oneToMayCourseLessons(courseKey) : Observable<Lesson[]> {
     return this.af.database.list(`lessonsPerCourse/${courseKey}`)
-      .do(val => console.log(val))
       .switchMap(lessonKeys =>  Observable.combineLatest(lessonKeys.map(lessonKey => this.af.database.object(`lessons/${lessonKey.$value}`))));
   }
 

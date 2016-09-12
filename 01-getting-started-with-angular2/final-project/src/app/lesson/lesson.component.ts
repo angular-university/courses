@@ -22,7 +22,7 @@ export class LessonComponent implements OnInit {
   ngOnInit() {
 
       this.route.params.subscribe(params => {
-        this.lesson$ = this.lessonsService.findLessonByUrl(params['id']).do(lesson => console.log(lesson));
+        this.lesson$ = this.lessonsService.findLessonByUrl(params['id']);
       });
 
   }

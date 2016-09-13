@@ -25,7 +25,7 @@ export class CourseDetailComponent implements OnInit {
 
     course$.subscribe(course => this.course = course);
 
-    course$.switchMap(course => this.coursesService.loadCourseLessons(course.$key))
+    course$.switchMap(course => this.coursesService.loadAllCourseLessons(course.$key))
       .subscribe(lessons => this.lessons = lessons);
 
   }

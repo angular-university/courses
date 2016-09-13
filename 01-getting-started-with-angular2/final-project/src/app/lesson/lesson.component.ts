@@ -42,7 +42,7 @@ export class LessonComponent implements OnInit {
 
 
   previous() {
-    this.coursesService.loadCourseLessons(this.lesson.courseId)
+    this.coursesService.loadAllCourseLessons(this.lesson.courseId)
       .subscribe(lessons => {
 
         const idx = _.findIndex(lessons, lesson => lesson.$key === this.lesson.$key);
@@ -58,7 +58,7 @@ export class LessonComponent implements OnInit {
 
 
   next() {
-    this.coursesService.loadCourseLessons(this.lesson.courseId)
+    this.coursesService.loadAllCourseLessons(this.lesson.courseId)
       .subscribe(lessons => {
 
         const idx = _.findIndex(lessons, lesson => lesson.$key === this.lesson.$key);

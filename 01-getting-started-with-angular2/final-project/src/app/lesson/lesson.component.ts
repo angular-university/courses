@@ -29,16 +29,22 @@ export class LessonComponent implements OnInit {
 
   ngOnInit() {
 
-    const lesson$ = this.route.params.switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
+    const lesson$ = this.route.params
+                      .do(params => console.log('lesson url',params['id']))
+                      .switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
 
     lesson$.subscribe(lesson => this.lesson = lesson);
 
     lesson$.switchMap(lesson => this.coursesService.loadLessonAfter(lesson.courseId, lesson))
+      .do(previous => console.log('next lesson', previous))
       .map(lesson => lesson ? lesson.url : null)
       .subscribe(url => this.nextLessonUrl = url);
 
 
-    lesson$.switchMap(lesson => this.coursesService.loadLessonBefore(lesson.courseId, lesson))
+    lesson$
+      .do(lesson => console.log("trying to find previous lesson",lesson))
+      .switchMap(lesson => this.coursesService.loadLessonBefore(lesson.courseId, lesson))
+      .do(previous => console.log('previous previous', previous))
       .map(lesson => lesson ? lesson.url : null)
       .subscribe(url => this.previousLessonUrl = url);
 

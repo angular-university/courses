@@ -52,6 +52,8 @@ export class CoursesService {
 
         const idx = _.findIndex(lessons, lesson => lesson.$key === currentLesson.$key);
 
+        debugger;
+
         return (idx > 0 && idx < lessons.length) ? lessons[idx - 1] : null;
 
       });

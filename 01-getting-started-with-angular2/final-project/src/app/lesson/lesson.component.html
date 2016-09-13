@@ -1,7 +1,7 @@
 
 <div class="nav-bar">
-  <button [routerLink]="[ '/lessons', previousLessonUrl ]">Previous</button>
-  <button [routerLink]="[ '/lessons', nextLessonUrl ]">Next</button>
+  <button (click)="previous()">Previous</button>
+  <button (click)="next()" >Next</button>
 </div>
 
 <h3>{{ lesson?.description }}</h3>

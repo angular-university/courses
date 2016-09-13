@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {Observable} from "rxjs/Rx";
 import {Course} from "./shared/model";
@@ -9,27 +9,29 @@ import {LessonsService} from "./lessons.service";
 @Injectable()
 export class CoursesService {
 
-  courses$: Observable<Course[]>;
+  courses$:Observable<Course[]>;
 
-  constructor(private af: AngularFire, private lessonsService: LessonsService) {
+  constructor(private af:AngularFire, private lessonsService:LessonsService) {
 
     this.courses$ = af.database.list("courses")
       .map((res:any[]) =>
-        res.map((json:any) => Course.fromJson(json )));
+        res.map((json:any) => Course.fromJson(json)));
 
   }
+
 
   findCourseById(courseId:string) {
     return this.courses$.flatMap(x => x).filter(course => course.$key === courseId);
   }
 
+
   findCourseByUrl(url:string) {
     return this.courses$.flatMap(x => x).filter(course => course.url === url);
   }
 
-  loadCourseLessonsPage(courseKey: string, pageSize:number, startAt:Lesson) {
 
-    const queryParams:any  = {
+  loadCourseLessonsPage(courseKey:string, pageSize:number, startAt:Lesson) {
+    const queryParams:any = {
       query: {
         orderByKey: true,
         limitToFirst: pageSize
@@ -40,21 +42,20 @@ export class CoursesService {
       queryParams.query.startAt = startAt;
     }
 
-    return  this.buildObservableLessonsList(
+    return this.buildObservableLessonsList(
       this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams));
-
-
-  }
-
-  loadAllCourseLessons(courseKey) : Observable<Lesson[]> {
-    return  this.buildObservableLessonsList(this.af.database.list(`lessonsPerCourse/${courseKey}`));
-
   }
 
 
-  buildObservableLessonsList(fblo: FirebaseListObservable<any>): Observable<Lesson[]> {
-    return fblo.map(lessonKeys => lessonKeys.map(lessonKey => this.lessonsService.findLessonByKey(lessonKey.$value))  )
-      .switchMap((lessons$: Observable<Lesson>[]) => Observable.combineLatest(lessons$));
+  loadAllCourseLessons(courseKey):Observable<Lesson[]> {
+    return this.buildObservableLessonsList(this.af.database.list(`lessonsPerCourse/${courseKey}`));
+
+  }
+
+
+  buildObservableLessonsList(fblo:FirebaseListObservable<any>):Observable<Lesson[]> {
+    return fblo.map(lessonKeys => lessonKeys.map(lessonKey => this.lessonsService.findLessonByKey(lessonKey.$value)))
+      .switchMap((lessons$:Observable<Lesson>[]) => Observable.combineLatest(lessons$));
   }
 
 

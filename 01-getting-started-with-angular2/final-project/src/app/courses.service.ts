@@ -32,10 +32,7 @@ export class CoursesService {
   }
 
   loadLessonAfter(courseKey:string , currentLesson:Lesson): Observable<Lesson> {
-
-    const courseLessons$: Observable<Lesson[]> = this.loadCourseLessons(courseKey);
-
-    return courseLessons$
+    return this.loadCourseLessons(courseKey)
                   .map( lessons => {
 
                     const idx = _.findIndex(lessons, lesson => lesson.$key === currentLesson.$key);
@@ -45,6 +42,17 @@ export class CoursesService {
                   });
   }
 
+
+  loadLessonBefore(courseKey:string , currentLesson:Lesson): Observable<Lesson> {
+    return this.loadCourseLessons(courseKey)
+      .map( lessons => {
+
+        const idx = _.findIndex(lessons, lesson => lesson.$key === currentLesson.$key);
+
+        return (idx > 0 && idx < lessons.length) ? lessons[idx - 1] : null;
+
+      });
+  }
 
 
 }

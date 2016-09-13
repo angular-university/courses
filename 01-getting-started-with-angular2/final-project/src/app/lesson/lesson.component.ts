@@ -12,9 +12,12 @@ import {CoursesService} from "../courses.service";
 })
 export class LessonComponent implements OnInit {
 
-  lesson$:Observable<Lesson>;
+  lesson:Lesson;
 
-  nextLessonUrl$:Observable<string>;
+  nextLessonUrl = '';
+
+  previousLessonUrl = '';
+
 
 
   constructor(private route:ActivatedRoute,
@@ -26,11 +29,19 @@ export class LessonComponent implements OnInit {
 
   ngOnInit() {
 
-    this.lesson$ = this.route.params.switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
+    const lesson$ = this.route.params.switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
 
-    this.nextLessonUrl$ = this.lesson$.switchMap(lesson => this.coursesService.loadLessonAfter(lesson.courseId, lesson))
-      .do(lesson => console.log(lesson))
-      .map(lesson => lesson.url);
+    lesson$.subscribe(lesson => this.lesson = lesson);
+
+    lesson$.switchMap(lesson => this.coursesService.loadLessonAfter(lesson.courseId, lesson))
+      .map(lesson => lesson ? lesson.url : null)
+      .subscribe(url => this.nextLessonUrl = url);
+
+
+    lesson$.switchMap(lesson => this.coursesService.loadLessonBefore(lesson.courseId, lesson))
+      .map(lesson => lesson ? lesson.url : null)
+      .subscribe(url => this.previousLessonUrl = url);
+
   }
 
 

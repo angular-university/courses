@@ -1,13 +1,13 @@
 
 <div class="nav-bar">
-  <button [routerLink]="">Previous</button>
-  <button [routerLink]="[ '/lessons', (nextLessonUrl$ | async) ]">Next</button>
+  <button [routerLink]="[ '/lessons', previousLessonUrl ]">Previous</button>
+  <button [routerLink]="[ '/lessons', nextLessonUrl ]">Next</button>
 </div>
 
-<h3>{{ (lesson$ | async)?.description }}</h3>
-<h5>Duration: {{ (lesson$ | async)?.duration  }}</h5>
+<h3>{{ lesson?.description }}</h3>
+<h5>Duration: {{ lesson?.duration  }}</h5>
 
-<iframe *ngIf="(lesson$ | async)?.videoUrl" width="260" height="150" [src]="(lesson$ | async)?.videoUrl | safe" frameborder="0" allowfullscreen></iframe>
+<iframe *ngIf="lesson?.videoUrl" width="260" height="150" [src]="lesson?.videoUrl | safe" frameborder="0" allowfullscreen></iframe>
 
 <h2>Description</h2>
-<p>{{ (lesson$ | async)?.longDescription }}</p>
+<p>{{ lesson?.longDescription }}</p>

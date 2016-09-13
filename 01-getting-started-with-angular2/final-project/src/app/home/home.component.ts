@@ -11,10 +11,10 @@ import {Observable} from "rxjs/Rx";
 })
 export class HomeComponent implements OnInit {
 
-  lessons$: Observable<Lesson[]>;
+  lessons:Lesson[];
 
 
-  constructor(private lessonsService: LessonsService, private coursesService: CoursesService) {
+  constructor(private lessonsService: LessonsService) {
 
 
   }
@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.lessons$ = this.lessonsService.findAllLessons();
+     this.lessonsService.findAllLessons()
+       .subscribe(lessons => this.lessons = lessons );
+
 
   }
 

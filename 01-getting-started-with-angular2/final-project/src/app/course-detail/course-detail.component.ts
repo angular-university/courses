@@ -12,8 +12,8 @@ import {Lesson} from "../shared/model/lesson";
 })
 export class CourseDetailComponent implements OnInit {
 
-  course$:Observable<Course>;
-  lessons$:Observable<Lesson[]>;
+  course:Course;
+  lessons:Lesson[];
 
   constructor(private route:ActivatedRoute, private coursesService:CoursesService) {
 
@@ -21,9 +21,12 @@ export class CourseDetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.course$ = this.route.params.switchMap(params =>  this.coursesService.findCourseByUrl(params['id']));
+    const course$ = this.route.params.switchMap(params =>  this.coursesService.findCourseByUrl(params['id']));
 
-    this.lessons$ = this.course$.switchMap(course => this.coursesService.loadCourseLessons(course.$key));
+    course$.subscribe(course => this.course = course);
+
+    course$.switchMap(course => this.coursesService.loadCourseLessons(course.$key))
+      .subscribe(lessons => this.lessons = lessons);
 
   }
 

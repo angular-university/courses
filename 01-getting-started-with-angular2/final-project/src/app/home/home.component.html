@@ -1,3 +1,25 @@
-<p>
-  home works!
-</p>
+
+
+<h2>All Lessons</h2>
+
+
+<div class="lessons-list-container v-h-center-block-parent">
+
+  <table class="table lessons-list card card-strong">
+    <tbody>
+    <tr *ngFor="let lesson of lessons$ | async" [routerLink]="['/lessons',lesson.url]">
+      <!--<td class="course-icon"><img [src]="(lesson.course$ | async).courseListIcon"></td>-->
+      <td class="lesson-title"> {{lesson.description}}</td>
+      <td class="duration">
+        <i class="md-icon duration-icon">access_time</i>
+        <span>{{lesson.duration}}</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+

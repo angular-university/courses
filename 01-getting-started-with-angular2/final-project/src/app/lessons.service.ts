@@ -31,4 +31,10 @@ export class LessonsService {
   }
 
 
+  findAllLessons(): Observable<Lesson[]> {
+    return this.af.database.list('lessons').map(lessons => lessons.map(json => Lesson.fromJson(json)) );
+  }
+
+
+
 }

@@ -4,6 +4,12 @@
 
 <div class="lessons-list-container v-h-center-block-parent">
 
+  <div class="nav-bar">
+    <button (click)="previous()">Previous Page</button>
+    <button (click)="next()" >Next Page</button>
+  </div>
+
+
   <table class="table lessons-list card card-strong" *ngIf="course && lessons">
     <tbody>
     <tr *ngFor="let lesson of lessons" [routerLink]="['/lessons',lesson.url]">

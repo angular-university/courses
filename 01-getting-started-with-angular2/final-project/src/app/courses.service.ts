@@ -30,7 +30,7 @@ export class CoursesService {
   }
 
 
-  loadCourseLessonsPage(courseKey:string, pageSize:number, startAt:Lesson) {
+  loadCourseLessonsPage(courseKey:string, pageSize:number, startAt:Lesson = null) {
     const queryParams:any = {
       query: {
         orderByKey: true,

@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   lessons$: Observable<Lesson[]>;
 
 
-  constructor(private lessonsService: LessonsService, private courseService: CoursesService) {
+  constructor(private lessonsService: LessonsService, private coursesService: CoursesService) {
 
 
   }

@@ -1,14 +1,16 @@
-
-
 <h2>All Lessons</h2>
 
+<h4>Total Lessons: {{(lessons$ | async)?.length}}</h4>
 
 <div class="lessons-list-container v-h-center-block-parent">
 
   <table class="table lessons-list card card-strong">
     <tbody>
     <tr *ngFor="let lesson of lessons$ | async" [routerLink]="['/lessons',lesson.url]">
-      <!--<td class="course-icon"><img [src]="(lesson.course$ | async).courseListIcon"></td>-->
+      <td class="course-icon">
+        <!--<img [src]="( coursesService.findCourseById(lesson.courseId) | async)?.courseListIcon">-->
+        <!--{{  coursesService.findCourseById(lesson.courseId) | async | json  }}-->
+      </td>
       <td class="lesson-title"> {{lesson.description}}</td>
       <td class="duration">
         <i class="md-icon duration-icon">access_time</i>

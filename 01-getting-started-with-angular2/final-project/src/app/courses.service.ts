@@ -19,6 +19,9 @@ export class CoursesService {
 
   }
 
+  findCourseById(courseId:string) {
+    return this.courses$.flatMap(x => x).filter(course => course.$key === courseId);
+  }
 
   findCourseByUrl(url:string) {
     return this.courses$.flatMap(x => x).filter(course => course.url === url);

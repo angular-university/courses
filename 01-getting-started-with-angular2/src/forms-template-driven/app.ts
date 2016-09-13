@@ -20,7 +20,7 @@ import {DurationValidator} from "./validate-duration.directive";
             <div class="form-field">
                 <label>Title:</label>
                 <input name="title" [(ngModel)]="lesson.title" required 
-                    minlength="10" maxlength="15" #title="ngModel">
+                    minlength="5" maxlength="15" #title="ngModel">
                 <div class="field-error-message" *ngIf="title?.dirty && title?.errors?.required">
                     field is mandatory</div>
                 <div class="field-error-message" *ngIf="title?.dirty && title?.errors?.minlength">min 5 chars</div>                    

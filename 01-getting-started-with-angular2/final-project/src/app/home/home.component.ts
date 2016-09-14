@@ -11,21 +11,24 @@ import {Observable} from "rxjs/Rx";
 })
 export class HomeComponent implements OnInit {
 
-  lessons:Lesson[];
+  allLessons:Lesson[];
 
+  filtered:Lesson[];
 
   constructor(private lessonsService: LessonsService) {
 
 
   }
 
-
-
   ngOnInit() {
-
      this.lessonsService.findAllLessons()
-       .subscribe(lessons => this.lessons = lessons );
+       .subscribe(lessons => this.allLessons = this.filtered = lessons );
+  }
 
+
+  search(search:string) {
+
+    this.filtered = this.allLessons.filter(lesson => lesson.description.includes(search)  );
 
   }
 

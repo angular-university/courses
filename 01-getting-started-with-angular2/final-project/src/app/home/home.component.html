@@ -2,13 +2,13 @@
 
 <h4>Total Lessons: {{lesson?.length}}</h4>
 
-<input class="search-bar" placeholder="Search">
+<input class="search-bar" placeholder="Search" (keyup)="search(input.value)" #input>
 
 <div class="lessons-list-container v-h-center-block-parent">
 
   <table class="table lessons-list card card-strong">
     <tbody>
-    <tr *ngFor="let lesson of lessons" [routerLink]="['/lessons',lesson.url]">
+    <tr *ngFor="let lesson of filtered" [routerLink]="['/lessons',lesson.url]">
       <td class="lesson-title"> {{lesson.description}}</td>
       <td class="duration">
         <i class="md-icon duration-icon">access_time</i>

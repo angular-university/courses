@@ -4,7 +4,7 @@
 
 <input class="search-bar" placeholder="Search" (keyup)="search(input.value)" #input>
 
-<div class="lessons-list-container v-h-center-block-parent">
+<div class="lessons-list-container v-h-center-block-parent" *ngIf="filtered">
 
   <table class="table lessons-list card card-strong">
     <tbody>

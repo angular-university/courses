@@ -6,6 +6,9 @@ import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
 import {FirebasePage} from "../shared/model/firebase-page";
 
+
+
+
 @Component({
   selector: 'app-course-detail',
   templateUrl: './course-detail.component.html',
@@ -18,6 +21,9 @@ export class CourseDetailComponent implements OnInit {
   course:Course;
   lessonsPage:FirebasePage<Lesson>;
 
+  savePage = (page) => this.lessonsPage = page;
+
+
   constructor(private route:ActivatedRoute, private coursesService:CoursesService) {
 
   }
@@ -29,21 +35,23 @@ export class CourseDetailComponent implements OnInit {
     course$.subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadFirstPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
-      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
+      .subscribe(this.savePage);
 
   }
 
   previous() {
     console.log("clicked previous");
     this.coursesService.loadPreviousPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
-      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
+      .subscribe(this.savePage);
 
   }
 
   next() {
     console.log("clicked next");
     this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
-      .subscribe(lessonsPage => this.lessonsPage = lessonsPage, () => {}, () => console.log('completed next page '));
+      .subscribe(this.savePage);
   }
+
+
 
 }

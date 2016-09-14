@@ -7,6 +7,10 @@ import {LessonsService} from "./lessons.service";
 import {FirebasePage} from "./shared/model/firebase-page";
 const _ = require('lodash');
 
+
+
+
+
 @Injectable()
 export class CoursesService {
 
@@ -18,22 +22,26 @@ export class CoursesService {
   }
 
 
-  findCourseById(courseId:string) {
+
+  findCourseById(courseId:string) : Observable<Course> {
     return this.courses$.flatMap(x => x).filter(course => course.$key === courseId);
   }
 
 
-  findCourseByUrl(url:string) {
+
+  findCourseByUrl(url:string) : Observable<Course> {
     return this.courses$.flatMap(x => x).filter(course => course.url === url);
   }
 
 
-  loadFirstPage(courseKey:string, pageSize:number) {
+
+  loadFirstPage(courseKey:string, pageSize:number) : Observable<FirebasePage<Lesson>> {
     return this.loadPageStartingAt(courseKey, pageSize, null);
   }
 
-  loadPageStartingAt(courseKey:string, pageSize:number, startAt:string): Observable<FirebasePage<Lesson>> {
 
+
+  loadPageStartingAt(courseKey:string, pageSize:number, startAt:string): Observable<FirebasePage<Lesson>> {
     const queryParams:any = {
       query: {
         orderByKey: true,
@@ -48,6 +56,9 @@ export class CoursesService {
     return this.loadPage(courseKey, queryParams);
   }
 
+
+
+
   loadNextPage(courseKey:string, pageSize:number, currentPage: FirebasePage<Lesson>) : Observable<FirebasePage<Lesson>> {
 
     const queryParams:any = {
@@ -58,13 +69,14 @@ export class CoursesService {
       }
     };
 
-    const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1)
-      .do(val => console.log('received next page from Firebase ...', val))
-      .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
+    const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+                                          .take(1)
+                                          .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
 
 
     return nextPageStartKey$.switchMap(nextPageKey => this.loadPageStartingAt(courseKey, pageSize, nextPageKey) );
   }
+
 
 
   loadPreviousPage(courseKey:string, pageSize:number, currentPage: FirebasePage<Lesson>) : Observable<FirebasePage<Lesson>> {
@@ -77,9 +89,9 @@ export class CoursesService {
       }
     };
 
-    const previousPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1)
-      .do(val => console.log(val))
-      .map(lessonsRef => lessonsRef.length > 0 ? lessonsRef[0].$key : null );
+    const previousPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+                                      .take(1)
+                                      .map(lessonsRef => lessonsRef.length > 0 ? lessonsRef[0].$key : null );
 
 
     return previousPageStartKey$.switchMap(pageKey => this.loadPageStartingAt(courseKey, pageSize, pageKey) );
@@ -88,6 +100,7 @@ export class CoursesService {
 
 
   loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
+
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1);
 
     const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )

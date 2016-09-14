@@ -1,3 +1,39 @@
-<p>
-  lesson-form works!
-</p>
+<form #f="ngForm" autocomplete="off" novalidate>
+
+  <fieldset ngModelGroup="summary" #summary="ngModelGroup">
+    <legend [ngStyle]="summaryStatus(summary)">Summary</legend>
+    <div class="form-field">
+      <label>Title:</label>
+      <input name="title" [(ngModel)]="lesson.title" required
+             minlength="5" maxlength="15" #title="ngModel">
+      <div class="field-error-message" *ngIf="title?.dirty && title?.errors?.required">
+        field is mandatory</div>
+      <div class="field-error-message" *ngIf="title?.dirty && title?.errors?.minlength">min 5 chars</div>
+    </div>
+    <div class="form-field">
+      <label>Duration:</label>
+      <input name="duration" [(ngModel)]="lesson.duration" duration>
+    </div>
+    <div class="form-field">
+      <label>Level:</label>
+      <input type="radio" name="level" value="BEGINNER" [(ngModel)]="lesson.level">
+      Beginner
+      <input type="radio" name="level" value="ADVANCED" [(ngModel)]="lesson.level">
+      Advanced
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Long Text Fields</legend>
+    <div class="form-field">
+      <label>Description:</label>
+      <textarea name="description" [(ngModel)]="lesson.description" required></textarea>
+    </div>
+  </fieldset>
+
+  <p>
+    <button [disabled]="!f.valid" class="lesson-button" type="submit" (ngSubmit)="createLesson(f)">
+      Create Lesson</button>
+  </p>
+
+</form>

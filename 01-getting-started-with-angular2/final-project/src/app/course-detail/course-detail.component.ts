@@ -29,6 +29,7 @@ export class CourseDetailComponent implements OnInit {
     course$.subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadCourseLessonsPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
+      .first()
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
@@ -38,7 +39,9 @@ export class CourseDetailComponent implements OnInit {
   }
 
   next() {
-
+    this.coursesService.loadCourseLessonsPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage.lastKey )
+      .first()
+      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
   }
 
 }

@@ -5,6 +5,7 @@ import {CoursesComponent} from "./app/courses/courses.component";
 import {HomeComponent} from "./app/home/home.component";
 import {CourseDetailComponent} from "./app/course-detail/course-detail.component";
 import {LessonComponent} from "./app/lesson/lesson.component";
+import {LessonFormComponent} from "./app/lesson-form/lesson-form.component";
 
 
 export const routerConfig: Route[] = [
@@ -30,6 +31,10 @@ export const routerConfig: Route[] = [
           {
             path: '',
             component: CourseDetailComponent
+          },
+          {
+            path: 'edit',
+            component: LessonFormComponent
           }
         ]
       }]

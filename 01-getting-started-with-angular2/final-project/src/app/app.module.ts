@@ -15,6 +15,7 @@ import {firebaseConfig} from "../environments/firebase.config";
 import { LessonComponent } from './lesson/lesson.component';
 import {LessonsService} from "./lessons.service";
 import {SafePipe} from "./shared/safe.pipe";
+import { LessonFormComponent } from './lesson-form/lesson-form.component';
 
 
 
@@ -27,7 +28,8 @@ import {SafePipe} from "./shared/safe.pipe";
     CourseDetailComponent,
     HomeComponent,
     LessonComponent,
-    SafePipe
+    SafePipe,
+    LessonFormComponent
   ],
   imports: [
     BrowserModule,

@@ -28,18 +28,18 @@ export class CourseDetailComponent implements OnInit {
 
     course$.subscribe(course => this.course = course);
 
-    course$.switchMap(course => this.coursesService.loadCourseLessonsPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
+    course$.switchMap(course => this.coursesService.loadFirstPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
 
   previous() {
+    this.coursesService.loadPreviousPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
+      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
 
   next() {
-
-    console.log('next page');
 
     this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);

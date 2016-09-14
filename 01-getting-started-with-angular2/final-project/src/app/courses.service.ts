@@ -29,7 +29,11 @@ export class CoursesService {
   }
 
 
-  loadCourseLessonsPage(courseKey:string, pageSize:number, startAt:string = null): Observable<FirebasePage<Lesson>> {
+  loadFirstPage(courseKey:string, pageSize:number) {
+    return this.loadPageStartingAt(courseKey, pageSize, null);
+  }
+
+  loadPageStartingAt(courseKey:string, pageSize:number, startAt:string): Observable<FirebasePage<Lesson>> {
 
     const queryParams:any = {
       query: {
@@ -42,11 +46,16 @@ export class CoursesService {
       queryParams.query.startAt = startAt;
     }
 
+    return this.loadPage(courseKey, queryParams);
+  }
+
+
+  loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams);
 
     const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
-                        .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
-                        .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
+      .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
+      .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
 
     const firstLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.first(lessonsRef).$key);
 
@@ -72,10 +81,27 @@ export class CoursesService {
       .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
 
 
-    return nextPageStartKey$.switchMap(nextPageKey => this.loadCourseLessonsPage(courseKey, pageSize, nextPageKey) ).first();
-
+    return nextPageStartKey$.switchMap(nextPageKey => this.loadPageStartingAt(courseKey, pageSize, nextPageKey) );
   }
 
+
+  loadPreviousPage(courseKey:string, pageSize:number, currentPage: FirebasePage<Lesson>) : Observable<FirebasePage<Lesson>> {
+
+    const queryParams:any = {
+      query: {
+        orderByKey: true,
+        limitToLast: pageSize + 1,
+        endAt: currentPage.firstKey
+      }
+    };
+
+    const previousPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+      .do(val => console.log(val))
+      .map(lessonsRef => lessonsRef.length > 0 ? lessonsRef[0].$key : null );
+
+
+    return previousPageStartKey$.switchMap(pageKey => this.loadPageStartingAt(courseKey, pageSize, pageKey) );
+  }
 
 
 }

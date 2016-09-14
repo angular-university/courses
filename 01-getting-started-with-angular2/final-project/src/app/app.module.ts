@@ -17,6 +17,7 @@ import {LessonsService} from "./lessons.service";
 import {SafePipe} from "./shared/safe.pipe";
 import { LessonFormComponent } from './lesson-form/lesson-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NewLessonComponent } from './new-lesson/new-lesson.component';
 
 
 
@@ -29,7 +30,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     LessonComponent,
     SafePipe,
-    LessonFormComponent
+    LessonFormComponent,
+    NewLessonComponent
   ],
   imports: [
     BrowserModule,

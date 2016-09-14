@@ -4,15 +4,13 @@ import {Injectable} from "@angular/core";
 import {AngularFire} from "angularfire2";
 import {Lesson} from "./shared/model/lesson";
 import {Observable} from "rxjs/Rx";
-import {database, initializeApp} from 'firebase';
-import {firebaseConfig} from "../environments/firebase.config";
 
 @Injectable()
 export class LessonsService {
 
 
   constructor(private af:AngularFire) {
-    initializeApp(firebaseConfig);
+
   }
 
   findLessonByKey(lessonKey: string): Observable<Lesson> {

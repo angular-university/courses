@@ -18,7 +18,7 @@ export class NewLessonComponent implements OnInit {
   }
 
   save(lesson) {
-
+    console.log(lesson);
   }
 
 }

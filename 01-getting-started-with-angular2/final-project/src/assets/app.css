@@ -140,6 +140,11 @@ form button[type='submit'] {
     cursor: not-allowed;
 }
 
+button[disabled] {
+  cursor: not-allowed;
+}
+
+
 .top-menu {
     margin-bottom: 30px;
 }

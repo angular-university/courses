@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LessonsService} from "../lessons.service";
 
 @Component({
   selector: 'app-new-lesson',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class NewLessonComponent implements OnInit {
 
 
-  constructor() {
+  constructor(private lessonsService: LessonsService) {
 
 
   }
@@ -19,6 +20,12 @@ export class NewLessonComponent implements OnInit {
 
   save(lesson) {
     console.log(lesson);
+    this.lessonsService.createNewLesson(lesson)
+      .subscribe(
+        () => {},
+        err => alert(err)
+      );
+
   }
 
 }

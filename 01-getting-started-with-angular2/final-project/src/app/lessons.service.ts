@@ -40,5 +40,9 @@ export class LessonsService {
   }
 
 
+  createNewLesson(lesson:any): Observable<any> {
+    return null;
+  }
+
 
 }

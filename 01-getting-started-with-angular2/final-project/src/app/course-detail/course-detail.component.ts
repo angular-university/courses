@@ -29,7 +29,6 @@ export class CourseDetailComponent implements OnInit {
     course$.subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadCourseLessonsPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
-      .first()
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
@@ -42,8 +41,7 @@ export class CourseDetailComponent implements OnInit {
 
     console.log('next page');
 
-    this.coursesService.loadCourseLessonsPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage.lastKey )
-      .first()
+    this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
   }
 

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AngularFire, FirebaseListObservable} from "angularfire2";
+import {AngularFire} from "angularfire2";
 import {Observable} from "rxjs/Rx";
 import {Course} from "./shared/model";
 import {Lesson} from "./shared/model";
@@ -52,8 +52,30 @@ export class CoursesService {
 
     const lastLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.last(lessonsRef).$key);
 
-    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) );
+    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) ).first();
   }
+
+
+
+  loadNextPage(courseKey:string, pageSize:number, currentPage: FirebasePage<Lesson>) : Observable<FirebasePage<Lesson>> {
+
+    const queryParams:any = {
+      query: {
+        orderByKey: true,
+        limitToFirst: 2,
+        startAt: currentPage.lastKey
+      }
+    };
+
+    const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+      .do(val => console.log(val))
+      .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
+
+
+    return nextPageStartKey$.switchMap(nextPageKey => this.loadCourseLessonsPage(courseKey, pageSize, nextPageKey) ).first();
+
+  }
+
 
 
 }

@@ -12,13 +12,13 @@ import {Observable} from "rxjs/Rx";
 export class HomeComponent implements OnInit {
 
   allLessons:Lesson[];
-
   filtered:Lesson[];
+
 
   constructor(private lessonsService: LessonsService) {
 
-
   }
+
 
   ngOnInit() {
      this.lessonsService.findAllLessons()
@@ -26,10 +26,10 @@ export class HomeComponent implements OnInit {
   }
 
 
+
   search(search:string) {
-
     this.filtered = this.allLessons.filter(lesson => lesson.description.includes(search)  );
-
   }
+
 
 }

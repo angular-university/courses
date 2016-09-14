@@ -49,23 +49,6 @@ export class CoursesService {
     return this.loadPage(courseKey, queryParams);
   }
 
-
-  loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
-    const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams);
-
-    const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
-      .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
-      .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
-
-    const firstLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.first(lessonsRef).$key);
-
-    const lastLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.last(lessonsRef).$key);
-
-    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) ).first();
-  }
-
-
-
   loadNextPage(courseKey:string, pageSize:number, currentPage: FirebasePage<Lesson>) : Observable<FirebasePage<Lesson>> {
 
     const queryParams:any = {
@@ -101,6 +84,20 @@ export class CoursesService {
 
 
     return previousPageStartKey$.switchMap(pageKey => this.loadPageStartingAt(courseKey, pageSize, pageKey) );
+  }
+
+  loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
+    const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams);
+
+    const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
+      .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
+      .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
+
+    const firstLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.first(lessonsRef).$key);
+
+    const lastLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.last(lessonsRef).$key);
+
+    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) ).first();
   }
 
 

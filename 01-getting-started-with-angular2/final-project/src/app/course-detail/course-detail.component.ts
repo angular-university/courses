@@ -46,7 +46,7 @@ export class CourseDetailComponent implements OnInit {
     console.log("clicked next");
     this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
       .do(val => console.log('next page'))
-      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
+      .subscribe(lessonsPage => this.lessonsPage = lessonsPage, () => {}, () => console.log('completed next page '));
   }
 
 }

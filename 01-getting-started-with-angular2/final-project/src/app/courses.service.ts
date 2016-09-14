@@ -86,6 +86,8 @@ export class CoursesService {
     return previousPageStartKey$.switchMap(pageKey => this.loadPageStartingAt(courseKey, pageSize, pageKey) );
   }
 
+
+
   loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1);
 

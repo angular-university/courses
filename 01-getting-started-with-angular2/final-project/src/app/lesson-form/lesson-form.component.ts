@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {Lesson} from "../shared/model/lesson";
+import {validateUrl} from "../shared/validators/validateUrl";
 
 @Component({
   selector: 'lesson-form',
@@ -21,7 +22,7 @@ export class LessonFormComponent implements OnInit {
     this.form = this.fb.group({
       description: ['',Validators.required],
       url: ['',Validators.required],
-      videoUrl: ['',Validators.required],
+      videoUrl: ['',[Validators.required, validateUrl]],
       tags: ['',Validators.required],
       longDescription: ['']
     });

@@ -156,10 +156,18 @@ button[disabled] {
     border: 2px solid #ff2118;
 }
 
+.ng-touched.ng-invalid {
+  border: 1px solid #cccccc !important;
+}
+
+
 form.ng-dirty.ng-invalid {
     border:none;
 }
 
+form.ng-touched.ng-invalid {
+  border:none !important;
+}
 
 .l-header img {
     cursor: pointer;

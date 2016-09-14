@@ -33,7 +33,7 @@ export const routerConfig: Route[] = [
             component: CourseDetailComponent
           },
           {
-            path: 'edit',
+            path: 'new',
             component: LessonFormComponent
           }
         ]

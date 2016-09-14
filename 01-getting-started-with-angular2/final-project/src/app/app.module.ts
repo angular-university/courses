@@ -16,7 +16,7 @@ import { LessonComponent } from './lesson/lesson.component';
 import {LessonsService} from "./lessons.service";
 import {SafePipe} from "./shared/safe.pipe";
 import { LessonFormComponent } from './lesson-form/lesson-form.component';
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -36,7 +36,8 @@ import { LessonFormComponent } from './lesson-form/lesson-form.component';
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    RouterModule.forRoot(routerConfig)
+    RouterModule.forRoot(routerConfig),
+    ReactiveFormsModule
   ],
   providers: [CoursesService, LessonsService],
   bootstrap: [AppComponent]

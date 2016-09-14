@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-lesson-form',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonFormComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(fb: FormBuilder) {
+
+  }
 
   ngOnInit() {
+
+  }
+
+  save() {
+
   }
 
 }
+
+

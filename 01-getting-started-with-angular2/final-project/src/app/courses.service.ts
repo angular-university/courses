@@ -60,7 +60,7 @@ export class CoursesService {
     };
 
     const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
-      .do(val => console.log(val))
+      .do(val => console.log('received next page from Firebase ...', val))
       .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
 
 

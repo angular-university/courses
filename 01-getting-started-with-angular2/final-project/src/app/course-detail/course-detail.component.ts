@@ -29,19 +29,23 @@ export class CourseDetailComponent implements OnInit {
     course$.subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadFirstPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
+      .do(val => console.log('first page'))
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
 
   previous() {
+    console.log("clicked previous");
     this.coursesService.loadPreviousPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
+      .do(val => console.log('previous page'))
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
 
   next() {
-
+    console.log("clicked next");
     this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
+      .do(val => console.log('next page'))
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
   }
 

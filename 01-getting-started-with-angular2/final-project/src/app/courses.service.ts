@@ -59,7 +59,7 @@ export class CoursesService {
       }
     };
 
-    const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+    const nextPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1)
       .do(val => console.log('received next page from Firebase ...', val))
       .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
 
@@ -78,7 +78,7 @@ export class CoursesService {
       }
     };
 
-    const previousPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams)
+    const previousPageStartKey$ =  this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1)
       .do(val => console.log(val))
       .map(lessonsRef => lessonsRef.length > 0 ? lessonsRef[0].$key : null );
 
@@ -87,7 +87,7 @@ export class CoursesService {
   }
 
   loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
-    const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams);
+    const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1);
 
     const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
       .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
@@ -97,7 +97,7 @@ export class CoursesService {
 
     const lastLessonKey$ = lessonRefsPerCourse$.map(lessonsRef => _.last(lessonsRef).$key);
 
-    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) ).first();
+    return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) );
   }
 
 

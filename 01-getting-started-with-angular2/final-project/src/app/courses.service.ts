@@ -15,7 +15,7 @@ export class CoursesService {
   constructor(private af:AngularFire, private lessonsService:LessonsService) {
     this.courses$ = af.database.list("courses")
       .map((res:any[]) =>
-        res.map((json:any) => Course.fromJson(json)));
+        res.map(  Course.fromJson  ));
   }
 
 

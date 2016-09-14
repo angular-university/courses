@@ -4,6 +4,7 @@ import {CoursesService} from "../courses.service";
 import {Observable} from "rxjs/Rx";
 import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
+import {FirebasePage} from "../shared/model/firebase-page";
 
 @Component({
   selector: 'app-course-detail',
@@ -12,8 +13,10 @@ import {Lesson} from "../shared/model/lesson";
 })
 export class CourseDetailComponent implements OnInit {
 
+  static PAGE_SIZE = 3;
+
   course:Course;
-  lessons:Lesson[];
+  lessonsPage:FirebasePage<Lesson>;
 
   constructor(private route:ActivatedRoute, private coursesService:CoursesService) {
 
@@ -25,8 +28,8 @@ export class CourseDetailComponent implements OnInit {
 
     course$.subscribe(course => this.course = course);
 
-    course$.switchMap(course => this.coursesService.loadCourseLessonsPage(course.$key, 3))
-      .subscribe(lessons => this.lessons = lessons);
+    course$.switchMap(course => this.coursesService.loadCourseLessonsPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
+      .subscribe(lessonsPage => this.lessonsPage = lessonsPage);
 
   }
 

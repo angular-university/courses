@@ -30,6 +30,7 @@ export class CoursesService {
 
 
   loadCourseLessonsPage(courseKey:string, pageSize:number, startAt:string = null): Observable<FirebasePage<Lesson>> {
+
     const queryParams:any = {
       query: {
         orderByKey: true,
@@ -43,7 +44,6 @@ export class CoursesService {
 
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams);
 
-
     const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
                         .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
                         .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
@@ -54,8 +54,6 @@ export class CoursesService {
 
     return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) );
   }
-
-
 
 
 }

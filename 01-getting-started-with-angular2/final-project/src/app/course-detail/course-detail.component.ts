@@ -39,6 +39,9 @@ export class CourseDetailComponent implements OnInit {
   }
 
   next() {
+
+    console.log('next page');
+
     this.coursesService.loadCourseLessonsPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage.lastKey )
       .first()
       .subscribe(lessonsPage => this.lessonsPage = lessonsPage);

@@ -24,6 +24,10 @@ export class Course {
     return new Course($key, url, description, iconUrl, courseListIcon, longDescription);
   }
 
+  static fromJsonArray(json : any[]) : Course[] {
+    return json.map(Course.fromJson);
+  }
+
 
 }
 

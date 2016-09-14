@@ -42,12 +42,34 @@ export class LessonComponent implements OnInit {
 
 
   previous() {
+    this.coursesService.loadAllCourseLessons(this.lesson.courseId)
+      .subscribe(lessons => {
 
+        const idx = _.findIndex(lessons, lesson => lesson.$key === this.lesson.$key);
+
+        const previousLesson = (idx > 0 && idx < lessons.length) ? lessons[idx - 1] : null;
+
+        if (previousLesson) {
+          this.router.navigate(['lessons', previousLesson.url]);
+        }
+
+      });
   }
 
 
   next() {
+    this.coursesService.loadAllCourseLessons(this.lesson.courseId)
+      .subscribe(lessons => {
 
+        const idx = _.findIndex(lessons, lesson => lesson.$key === this.lesson.$key);
+
+        const nextLesson = (idx >= 0 && idx < lessons.length - 1) ? lessons[idx + 1] : null;
+
+        if (nextLesson) {
+          this.router.navigate(['lessons', nextLesson.url]);
+        }
+
+      });
   }
 
 

@@ -22,7 +22,6 @@ export class CoursesService {
   }
 
 
-
   findCourseById(courseId:string) : Observable<Course> {
     return this.courses$.flatMap(x => x).filter(course => course.$key === courseId);
   }
@@ -99,7 +98,7 @@ export class CoursesService {
 
 
 
-  loadPage(courseKey, queryParams) :Observable<FirebasePage<Lesson>> {
+  loadPage(courseKey, queryParams = {}) :Observable<FirebasePage<Lesson>> {
 
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1);
 
@@ -113,6 +112,15 @@ export class CoursesService {
 
     return Observable.combineLatest(lessons$, firstLessonKey$, lastLessonKey$).map((res:any[]) => new FirebasePage(<Lesson[]>res[0], res[1], res[2] ) );
   }
+
+
+
+
+  loadAllCourseLessons(courseKey: string) : Observable<Lesson[]> {
+    return this.loadPage(courseKey)
+      .map(page => page.pagedData);
+  }
+
 
 
 }

@@ -31,14 +31,24 @@ export const routerConfig: Route[] = [
         children: [
           {
             path: '',
-            component: CourseDetailComponent
+            children: [
+              {
+                path: '',
+                component: CourseDetailComponent
+              },
+              {
+                path: ':id',
+                component: LessonComponent
+              }
+            ]
           },
           {
             path: 'new',
             component: NewLessonComponent
           }
         ]
-      }]
+      }
+    ]
   },
   {
     path: 'lessons/:id',

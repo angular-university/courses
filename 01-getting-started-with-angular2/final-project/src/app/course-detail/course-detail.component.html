@@ -12,7 +12,7 @@
 
   <table class="table lessons-list card card-strong" *ngIf="course && lessonsPage">
     <tbody>
-    <tr *ngFor="let lesson of lessonsPage.pagedData" [routerLink]="['/lessons',lesson.url]">
+    <tr *ngFor="let lesson of lessonsPage.pagedData" [routerLink]="[lesson.url]">
       <td class="course-icon"><img [src]="course.courseListIcon"></td>
       <td class="lesson-title"> {{lesson.description}}</td>
       <td class="duration">

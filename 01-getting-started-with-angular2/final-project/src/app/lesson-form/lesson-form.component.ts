@@ -41,6 +41,10 @@ export class LessonFormComponent implements OnInit {
     return this.form.valid;
   }
 
+  reset() {
+    this.form.reset();
+  }
+
 
 }
 

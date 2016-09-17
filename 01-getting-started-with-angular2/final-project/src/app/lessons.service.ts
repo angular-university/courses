@@ -49,7 +49,7 @@ export class LessonsService {
 
 
 
-  createNewLesson(courseId:string, lesson:any) {
+  createNewLesson(courseId:string, lesson:any): Observable<any> {
 
     const lessonToSave = Object.assign({}, lesson, {courseId});
 
@@ -62,14 +62,29 @@ export class LessonsService {
     dataToSave["lessons/" + newLessonKey] = lessonToSave;
     dataToSave[`lessonsPerCourse/${courseId}/${newLessonKey}`] = true;
 
-    this.dbRef.update(dataToSave)
-      .then(
-        val => console.log("lesson saved", val),
-        err => console.error("error", err)
-      );
+    return firebaseUpdateToObs(this.dbRef, dataToSave);
 
   }
 
 
 }
+
+
+function firebaseUpdateToObs(dbRef, data) {
+
+  const subject = new Subject();
+
+  dbRef.update(data)
+    .then(
+      val => subject.next(val),
+      err => subject.error(err)
+    );
+
+  return subject.asObservable();
+
+}
+
+
+
+
 

@@ -23,7 +23,11 @@ export class NewLessonComponent implements OnInit {
 
   save(lesson) {
     console.log(lesson);
-    this.lessonsService.createNewLesson(this.courseId, lesson);
+    this.lessonsService.createNewLesson(this.courseId, lesson)
+      .subscribe(
+        () => alert("lesson created succesfuly"),
+        err => alert(`error creating lesson ${err}`)
+      );
 
   }
 

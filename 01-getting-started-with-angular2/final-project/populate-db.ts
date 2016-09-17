@@ -10,7 +10,7 @@ initializeApp(firebaseConfig);
 
 const coursesRef = database().ref('courses');
 const lessonsRef = database().ref('lessons');
-const lessonsPerCourseRef = database().ref('lessonsPerCourse');
+
 
 
 dbData.courses.forEach( course => {
@@ -43,11 +43,17 @@ dbData.courses.forEach( course => {
 
   });
 
-  const lessonsPerCourse = lessonsPerCourseRef.child(courseRef.key);
+
+  const association = database().ref('lessonsPerCourse');
+
+  const lessonsPerCourse = association.child(courseRef.key);
 
   lessonKeysPerCourse.forEach(lessonKey => {
     console.log('adding lesson to course ');
-    lessonsPerCourse.push(lessonKey);
+
+    const lessonCourseAssociation = lessonsPerCourse.child(lessonKey);
+
+    lessonCourseAssociation.set(true);
   });
 
 

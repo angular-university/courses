@@ -72,9 +72,9 @@ export class CoursesService {
                                           .take(1)
                                           .map(lessonsRef => lessonsRef.length == 2 ? lessonsRef[1].$key : null );
 
-
     return nextPageStartKey$.switchMap(nextPageKey => this.loadPageStartingAt(courseKey, pageSize, nextPageKey) );
   }
+
 
 
 
@@ -102,7 +102,7 @@ export class CoursesService {
 
     const lessonRefsPerCourse$ = this.af.database.list(`lessonsPerCourse/${courseKey}`, queryParams).take(1);
 
-    const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$value)) )
+    const lessons$ = lessonRefsPerCourse$.map(lessonsRef => lessonsRef.map(ref => this.lessonsService.findLessonByKey(ref.$key)) )
       .switchMap( firebaseObjectObservables => Observable.combineLatest(firebaseObjectObservables) )
       .map(lessonsAsJson => lessonsAsJson.map(json => Lesson.fromJson(json)) );
 

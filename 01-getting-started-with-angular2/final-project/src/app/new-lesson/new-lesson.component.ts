@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LessonsService} from "../lessons.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-new-lesson',
@@ -8,9 +9,11 @@ import {LessonsService} from "../lessons.service";
 })
 export class NewLessonComponent implements OnInit {
 
+  courseId:string;
 
-  constructor(private lessonsService: LessonsService) {
+  constructor(private lessonsService: LessonsService,  route: ActivatedRoute) {
 
+    this.courseId = route.snapshot.queryParams['courseId'];
 
   }
 
@@ -20,11 +23,7 @@ export class NewLessonComponent implements OnInit {
 
   save(lesson) {
     console.log(lesson);
-    this.lessonsService.createNewLesson(lesson)
-      .subscribe(
-        () => {},
-        err => alert(err)
-      );
+    this.lessonsService.createNewLesson(this.courseId, lesson);
 
   }
 

@@ -24,7 +24,7 @@
   </table>
 
   <div class="tools-bar">
-    <button routerLink="new">New Lesson</button>
+    <button routerLink="new" [queryParams]="{courseId:course?.$key}">New Lesson</button>
   </div>
 
 </div>

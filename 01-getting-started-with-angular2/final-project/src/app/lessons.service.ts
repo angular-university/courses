@@ -1,16 +1,21 @@
 
 
-import {Injectable} from "@angular/core";
-import {AngularFire} from "angularfire2";
+import {Injectable, Inject} from "@angular/core";
+import {AngularFire, FirebaseRef} from "angularfire2";
 import {Lesson} from "./shared/model/lesson";
-import {Observable} from "rxjs/Rx";
+import {Observable, Subject} from "rxjs/Rx";
+
+
+
+
 
 @Injectable()
 export class LessonsService {
 
+  dbRef: any;
 
-  constructor(private af:AngularFire) {
-
+  constructor(private af:AngularFire,  @Inject(FirebaseRef) dbRef) {
+    this.dbRef = dbRef.database().ref();
   }
 
   findLessonByKey(lessonKey: string): Observable<Lesson> {
@@ -36,17 +41,35 @@ export class LessonsService {
       query: {
         orderByKey: true
       }
-    }).map(lessons => lessons.map(json => Lesson.fromJson(json)) );
+    })
+      .do(console.log)
+      .map(lessons => lessons.map(json => Lesson.fromJson(json)) );
   }
 
 
-  createNewLesson(lesson:any): Observable<any> {
 
 
+  createNewLesson(courseId:string, lesson:any) {
 
+    const lessonToSave = Object.assign({}, lesson, {courseId});
 
-    return null;
+    const pushKey = this.dbRef.child('lessons').push();
+
+    const newLessonKey = pushKey.key;
+
+    const dataToSave = {};
+
+    dataToSave["lessons/" + newLessonKey] = lessonToSave;
+    dataToSave[`lessonsPerCourse/${courseId}/${newLessonKey}`] = true;
+
+    this.dbRef.update(dataToSave)
+      .then(
+        val => console.log("lesson saved", val),
+        err => console.error("error", err)
+      );
+
   }
 
 
 }
+

@@ -32,7 +32,7 @@ export class CourseDetailComponent implements OnInit {
 
     const course$ = this.route.params.switchMap(params =>  this.coursesService.findCourseByUrl(params['id']));
 
-    course$.subscribe(course => this.course = course);
+    course$.do(console.log.bind(this, "course$")).subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadFirstPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
       .subscribe(this.savePage);

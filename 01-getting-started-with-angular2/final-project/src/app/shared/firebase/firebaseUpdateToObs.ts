@@ -8,8 +8,14 @@ export default function firebaseUpdateToObs(dbRef, data) {
 
   dbRef.update(data)
     .then(
-      val => subject.next(val),
-      err => subject.error(err)
+      val => {
+        subject.next(val);
+        subject.complete();
+      },
+      err => {
+        subject.error(err);
+        subject.complete();
+      }
     );
 
   return subject.asObservable();

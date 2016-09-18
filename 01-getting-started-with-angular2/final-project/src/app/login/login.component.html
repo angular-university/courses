@@ -1,3 +1,20 @@
-<p>
-  login works!
-</p>
+
+
+
+<form autocomplete="off" novalidate class="lesson-form" [formGroup]="form">
+
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-field">
+      <label>Username:</label>
+      <input name="title" formControlName="username">
+    </div>
+    <div class="form-field">
+      <label>Password:</label>
+      <input name="title" formControlName="password">
+    </div>
+  </fieldset>
+
+  <button (click)="login()">Login</button>
+
+</form>

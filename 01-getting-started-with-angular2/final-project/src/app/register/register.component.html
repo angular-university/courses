@@ -1,3 +1,25 @@
-<p>
-  register works!
-</p>
+
+
+
+<form autocomplete="off" novalidate class="login-form" [formGroup]="form">
+
+  <fieldset>
+    <legend>Register</legend>
+
+    <div class="form-field">
+      <label>email:</label>
+      <input name="email" formControlName="email">
+    </div>
+    <div class="form-field">
+      <label>Password:</label>
+      <input name="password" formControlName="password" type="password">
+    </div>
+    <div class="form-field">
+      <label>Confirm Password:</label>
+      <input name="confirm" formControlName="confirm" type="password">
+    </div>
+  </fieldset>
+
+  <button (click)="signUp()" [disabled]="!isPasswordMatch()">Create User</button>
+
+</form>

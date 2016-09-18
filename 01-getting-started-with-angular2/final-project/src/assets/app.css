@@ -286,3 +286,7 @@ img.dashboard-section  {
   text-align: right;
   margin-top: 30px;
 }
+
+.login-form {
+  width: 350px;
+}

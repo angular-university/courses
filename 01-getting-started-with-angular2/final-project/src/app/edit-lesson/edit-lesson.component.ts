@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {Lesson} from "../shared/model/lesson";
 
 
 
@@ -10,10 +11,11 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class EditLessonComponent implements OnInit {
 
+  lesson: Lesson;
 
   constructor(private route:ActivatedRoute) {
 
-    route.data.subscribe(console.log);
+    route.data.subscribe(data => this.lesson = data['lesson']);
 
 
 

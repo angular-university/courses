@@ -9,6 +9,8 @@ import {LessonFormComponent} from "./app/lesson-form/lesson-form.component";
 import {NewLessonComponent} from "./app/new-lesson/new-lesson.component";
 import {EditLessonComponent} from "./app/edit-lesson/edit-lesson.component";
 import {LessonResolver} from "./app/shared/resolvers/lesson.resolver";
+import {LoginComponent} from "./app/login/login.component";
+import {RegisterComponent} from "./app/register/register.component";
 
 
 export const routerConfig: Route[] = [
@@ -66,5 +68,13 @@ export const routerConfig: Route[] = [
   {
     path: 'lessons/:id',
     component: LessonComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];

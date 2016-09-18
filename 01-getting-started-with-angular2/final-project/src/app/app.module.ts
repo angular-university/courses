@@ -19,6 +19,7 @@ import { LessonFormComponent } from './lesson-form/lesson-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { NewLessonComponent } from './new-lesson/new-lesson.component';
 import { EditLessonComponent } from './edit-lesson/edit-lesson.component';
+import {LessonResolver} from "./shared/resolvers/lesson.resolver";
 
 
 
@@ -43,7 +44,7 @@ import { EditLessonComponent } from './edit-lesson/edit-lesson.component';
     RouterModule.forRoot(routerConfig),
     ReactiveFormsModule
   ],
-  providers: [CoursesService, LessonsService],
+  providers: [LessonResolver, CoursesService, LessonsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

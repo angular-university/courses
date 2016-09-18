@@ -8,6 +8,7 @@ import {LessonComponent} from "./app/lesson/lesson.component";
 import {LessonFormComponent} from "./app/lesson-form/lesson-form.component";
 import {NewLessonComponent} from "./app/new-lesson/new-lesson.component";
 import {EditLessonComponent} from "./app/edit-lesson/edit-lesson.component";
+import {LessonResolver} from "./app/shared/resolvers/lesson.resolver";
 
 
 export const routerConfig: Route[] = [
@@ -45,14 +46,16 @@ export const routerConfig: Route[] = [
                 path: ':id',
                 children: [
                   {
-                    path: '',
-                    component: LessonComponent
+                    path: 'edit',
+                    component: EditLessonComponent,
+                    resolve: {
+                      lesson: LessonResolver
+                    }
                   },
                   {
-                    path: 'edit',
-                    component: EditLessonComponent
-                  }
-                ]
+                    path: '',
+                    component: LessonComponent
+                  }]
               }
             ]
           }

@@ -20,20 +20,19 @@ export class LessonsService {
   }
 
   findLessonByKey(lessonKey: string): Observable<Lesson> {
-    return this.af.database.object(`lessons/${lessonKey}`).map(json => Lesson.fromJson(json));
+    return this.af.database.object(`lessons/${lessonKey}`).map(json => Lesson.fromJson(json)).first();
   }
 
 
   findLessonByUrl(url) : Observable<Lesson> {
-
     return this.af.database.list('lessons', {
       query: {
         orderByChild: 'url',
         equalTo: url
       }
     })
-    .map(results => results[0]);
-
+    .map(results => results[0])
+    .first();
   }
 
 
@@ -43,7 +42,8 @@ export class LessonsService {
         orderByKey: true
       }
     })
-      .map(lessons => lessons.map(json => Lesson.fromJson(json)) );
+    .map(lessons => lessons.map(json => Lesson.fromJson(json)) )
+    .first();
   }
 
 

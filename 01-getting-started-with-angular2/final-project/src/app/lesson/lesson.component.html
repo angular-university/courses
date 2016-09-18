@@ -11,3 +11,7 @@
 
 <h2>Description</h2>
 <p>{{ lesson?.longDescription }}</p>
+
+<div class="tools-bar">
+  <button routerLink="edit" [queryParams]="{id:lesson?.$key}">Edit Lesson</button>
+</div>

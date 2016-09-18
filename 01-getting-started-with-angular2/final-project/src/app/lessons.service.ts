@@ -43,7 +43,6 @@ export class LessonsService {
         orderByKey: true
       }
     })
-      .do(console.log)
       .map(lessons => lessons.map(json => Lesson.fromJson(json)) );
   }
 

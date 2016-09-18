@@ -280,3 +280,8 @@ img.dashboard-section  {
 .l-sample-app {
   text-align: center;
 }
+
+.tools-bar {
+  text-align: right;
+  margin-top: 30px;
+}

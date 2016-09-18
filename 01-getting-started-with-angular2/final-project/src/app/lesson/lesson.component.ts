@@ -33,7 +33,6 @@ export class LessonComponent implements OnInit {
   ngOnInit() {
 
     const lesson$ = this.route.params
-                      .do(params => console.log('lesson url',params['id']))
                       .switchMap(params => this.lessonsService.findLessonByUrl(params['id']));
 
     lesson$.subscribe(lesson => this.lesson = lesson);

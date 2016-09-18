@@ -32,7 +32,7 @@ export class CourseDetailComponent implements OnInit {
 
     const course$ = this.route.params.switchMap(params =>  this.coursesService.findCourseByUrl(params['id']));
 
-    course$.do(console.log.bind(this, "course$")).subscribe(course => this.course = course);
+    course$.subscribe(course => this.course = course);
 
     course$.switchMap(course => this.coursesService.loadFirstPage(course.$key, CourseDetailComponent.PAGE_SIZE ))
       .subscribe(this.savePage);
@@ -40,14 +40,12 @@ export class CourseDetailComponent implements OnInit {
   }
 
   previous() {
-    console.log("clicked previous");
     this.coursesService.loadPreviousPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
       .subscribe(this.savePage);
 
   }
 
   next() {
-    console.log("clicked next");
     this.coursesService.loadNextPage(this.course.$key, CourseDetailComponent.PAGE_SIZE, this.lessonsPage )
       .subscribe(this.savePage);
   }

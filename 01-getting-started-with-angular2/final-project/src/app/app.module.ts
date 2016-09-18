@@ -11,7 +11,7 @@ import {CoursesService} from "./courses.service";
 import { MenuComponent } from './menu/menu.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { HomeComponent } from './home/home.component';
-import {firebaseConfig} from "../environments/firebase.config";
+import {firebaseConfig, authConfig} from "../environments/firebase.config";
 import { LessonComponent } from './lesson/lesson.component';
 import {LessonsService} from "./lessons.service";
 import {SafePipe} from "./shared/safe.pipe";
@@ -22,6 +22,7 @@ import { EditLessonComponent } from './edit-lesson/edit-lesson.component';
 import {LessonResolver} from "./shared/resolvers/lesson.resolver";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {AuthService} from "./auth.service";
 
 
 
@@ -44,11 +45,11 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, authConfig),
     RouterModule.forRoot(routerConfig),
     ReactiveFormsModule
   ],
-  providers: [LessonResolver, CoursesService, LessonsService],
+  providers: [LessonResolver, CoursesService, LessonsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

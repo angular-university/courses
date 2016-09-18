@@ -1,4 +1,5 @@
 
+import {AuthProviders, AuthMethods} from "angularfire2";
 
 
 export const firebaseConfig = {
@@ -7,3 +8,10 @@ export const firebaseConfig = {
   databaseURL: "https://final-project-ac645.firebaseio.com",
   storageBucket: "final-project-ac645.appspot.com",
 };
+
+
+export const authConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+};
+

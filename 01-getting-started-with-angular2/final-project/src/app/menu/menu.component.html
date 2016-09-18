@@ -21,8 +21,8 @@
       <a routerLinkActive="menu-active"
          routerLink="register">Register</a>
     </li>
-    <li *ngIf="authInfo?.isLoggedIn()" (click)="logout()">
-      <a>Logout</a>
+    <li *ngIf="authInfo?.isLoggedIn()">
+      <a (click)="logout()">Logout</a>
     </li>
   </ul>
 

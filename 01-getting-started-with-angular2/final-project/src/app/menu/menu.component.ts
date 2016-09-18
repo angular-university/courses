@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit {
 
 
   logout() {
+    console.log('logout');
     this.authService.logout();
   }
 

@@ -18,6 +18,7 @@ export class AuthService {
 
   constructor(private af:AngularFire) {
 
+    this.af.auth.subscribe(val => console.log('auth state',val));
 
   }
 
@@ -33,8 +34,15 @@ export class AuthService {
 
   logout() {
     this.af.auth.logout();
+    this.authInfo$.next(AuthService.UNKNOWN_USER);
   }
 
+  /*
+  *
+  * This is just a demo on how we can 'Observify' any asynchronous interaction
+  *
+  *
+  * */
 
   fromFirebaseAuthPromise(promise):Observable<any> {
 

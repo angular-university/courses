@@ -4,7 +4,7 @@ import {Injectable, Inject} from "@angular/core";
 import {AngularFire, FirebaseRef} from "angularfire2";
 import {Lesson} from "./shared/model/lesson";
 import {Observable, Subject} from "rxjs/Rx";
-import firebaseUpdateObs from "./shared/firebase/firebaseUpdateToObs";
+import firebaseUpdate from "./shared/firebase/firebaseUpdateToObs";
 
 
 
@@ -55,12 +55,24 @@ export class LessonsService {
 
     const newLessonKey = this.dbRef.child('lessons').push().key;
 
-    const dataToSave = {};
+    let dataToSave = {};
 
     dataToSave["lessons/" + newLessonKey] = lessonToSave;
     dataToSave[`lessonsPerCourse/${courseId}/${newLessonKey}`] = true;
 
-    return firebaseUpdateObs(this.dbRef, dataToSave);
+    return firebaseUpdate(this.dbRef, dataToSave);
+  }
+
+
+  saveLesson(lessonId:string, lesson): Observable<any> {
+
+    const lessonToSave = Object.assign({}, lesson);
+    delete(lessonToSave.$key);
+
+    let dataToSave = {};
+    dataToSave[`lessons/${lessonId}`] = lessonToSave;
+
+    return firebaseUpdate(this.dbRef, dataToSave);
   }
 
 

@@ -2,5 +2,5 @@
 
 <lesson-form #form [initialValue]="lesson"></lesson-form>
 
-<button (click)="save(form)">Save Changes</button>
+<button (click)="save(form.value)" [disabled]="!form.valid">Save Changes</button>
 

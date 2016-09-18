@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {Lesson} from "../shared/model/lesson";
+import { Component } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Lesson } from "../shared/model/lesson";
+import { LessonsService } from "../lessons.service";
 
 
 
@@ -9,11 +10,11 @@ import {Lesson} from "../shared/model/lesson";
   templateUrl: './edit-lesson.component.html',
   styleUrls: ['./edit-lesson.component.css']
 })
-export class EditLessonComponent implements OnInit {
+export class EditLessonComponent {
 
   lesson: Lesson;
 
-  constructor(private route:ActivatedRoute) {
+  constructor(private route:ActivatedRoute, private lessonsService: LessonsService) {
 
     route.data.subscribe(data => this.lesson = data['lesson']);
 
@@ -22,9 +23,15 @@ export class EditLessonComponent implements OnInit {
   }
 
 
+  save(json) {
 
-
-  ngOnInit() {
+    this.lessonsService.saveLesson(this.lesson.$key, json)
+      .subscribe(
+        () => {
+          alert("lesson saved succesfully.");
+        },
+        err => alert(`error saving lesson ${err}`)
+      );
 
   }
 

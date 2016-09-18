@@ -13,15 +13,15 @@
       <a routerLinkActive="menu-active"
          routerLink="courses">Courses</a>
     </li>
-    <li>
+    <li *ngIf="!authInfo?.isLoggedIn()">
       <a routerLinkActive="menu-active"
          routerLink="login">Login</a>
     </li>
-    <li>
+    <li *ngIf="!authInfo?.isLoggedIn()">
       <a routerLinkActive="menu-active"
          routerLink="register">Register</a>
     </li>
-    <li *ngIf="authInfo?.isLoggedIn()">
+    <li *ngIf="authInfo?.isLoggedIn()" (click)="logout()">
       <a>Logout</a>
     </li>
   </ul>

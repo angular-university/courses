@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Lesson} from "../shared/model/lesson";
 import {LessonsService} from "../shared/model/lessons.service";
 import {CoursesService} from "../shared/model/courses.service";
+import {LessonsRestService} from "../shared/model/lessons-rest.service";
 const _ = require('lodash');
 
 
@@ -24,7 +25,8 @@ export class LessonComponent implements OnInit {
   constructor(private route:ActivatedRoute,
               private lessonsService:LessonsService,
               private coursesService:CoursesService,
-              private router: Router) {
+              private router: Router,
+              private lessonsRestService: LessonsRestService) {
 
   }
 
@@ -72,7 +74,13 @@ export class LessonComponent implements OnInit {
 
 
   delete() {
-
+    this.lessonsRestService.deleteLesson(this.lesson.$key)
+      .subscribe(
+        () => {
+          alert("lesson deleted !");
+          this.router.navigate(['/home']);
+        }
+      )
   }
 
 }

@@ -6,6 +6,7 @@ import {Lesson} from "./shared/model";
 import {LessonsService} from "./lessons.service";
 import {FirebasePage} from "./shared/model/firebase-page";
 import {AuthInfo} from "./shared/security/auth-info";
+import {Router} from "@angular/router";
 
 
 @Injectable()
@@ -16,7 +17,7 @@ export class AuthService {
   authInfo$:BehaviorSubject<AuthInfo> = new BehaviorSubject<AuthInfo>(AuthService.UNKNOWN_USER);
 
 
-  constructor(private af:AngularFire) {
+  constructor(private af:AngularFire, private router: Router) {
 
     this.af.auth.subscribe(val => console.log('auth state',val));
 
@@ -35,6 +36,7 @@ export class AuthService {
   logout() {
     this.af.auth.logout();
     this.authInfo$.next(AuthService.UNKNOWN_USER);
+    this.router.navigate(['/home']);
   }
 
   /*

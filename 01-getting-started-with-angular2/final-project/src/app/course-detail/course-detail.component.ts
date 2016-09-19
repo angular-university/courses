@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CoursesService} from "../courses.service";
-import {Observable} from "rxjs/Rx";
 import {Course} from "../shared/model/course";
 import {Lesson} from "../shared/model/lesson";
-import {FirebasePage} from "../shared/model/firebase-page";
+import {FirebasePage} from "../shared/firebase/firebase-page";
+import {CoursesService} from "../shared/model/courses.service";
 
 
 

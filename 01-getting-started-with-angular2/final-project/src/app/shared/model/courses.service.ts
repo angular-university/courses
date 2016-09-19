@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {AngularFire} from "angularfire2";
 import {Observable} from "rxjs/Rx";
-import {Course} from "./shared/model";
-import {Lesson} from "./shared/model";
 import {LessonsService} from "./lessons.service";
-import {FirebasePage} from "./shared/model/firebase-page";
+import {FirebasePage} from "../firebase/firebase-page";
+import {Course} from "./course";
+import {Lesson} from "./lesson";
 const _ = require('lodash');
 
 

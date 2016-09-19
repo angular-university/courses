@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Lesson} from "../shared/model/lesson";
 import {Observable} from "rxjs/Rx";
-import {LessonsService} from "../lessons.service";
-import {CoursesService} from "../courses.service";
+import {LessonsService} from "../shared/model/lessons.service";
+import {CoursesService} from "../shared/model/courses.service";
 const _ = require('lodash');
 
 
@@ -71,5 +71,9 @@ export class LessonComponent implements OnInit {
       });
   }
 
+
+  delete() {
+
+  }
 
 }

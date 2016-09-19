@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LessonsService} from "../lessons.service";
 import {ActivatedRoute} from "@angular/router";
+import {LessonsService} from "../shared/model/lessons.service";
 
 @Component({
   selector: 'app-new-lesson',

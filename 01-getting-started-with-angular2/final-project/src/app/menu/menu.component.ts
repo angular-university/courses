@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../auth.service";
 import {AuthInfo} from "../shared/security/auth-info";
+import {AuthService} from "../shared/security/auth.service";
 
 @Component({
   selector: 'app-menu',

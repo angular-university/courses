@@ -2,9 +2,9 @@
 
 import {Injectable, Inject} from "@angular/core";
 import {AngularFire, FirebaseRef} from "angularfire2";
-import {Lesson} from "./shared/model/lesson";
+import {Lesson} from "./lesson";
 import {Observable, Subject} from "rxjs/Rx";
-import firebaseUpdate from "./shared/firebase/firebaseUpdateToObs";
+import firebaseUpdate from "../firebase/firebaseUpdateToObs";
 
 
 

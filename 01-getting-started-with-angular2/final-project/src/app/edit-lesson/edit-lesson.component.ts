@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Lesson } from "../shared/model/lesson";
-import { LessonsService } from "../lessons.service";
+import {LessonsService} from "../shared/model/lessons.service";
+
 
 
 

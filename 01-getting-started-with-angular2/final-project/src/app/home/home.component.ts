@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LessonsService} from "../lessons.service";
-import {CoursesService} from "../courses.service";
+import {LessonsService} from "../shared/model/lessons.service";
+import {CoursesService} from "../shared/model/courses.service";
 import {Lesson} from "../shared/model/lesson";
 import {Observable} from "rxjs/Rx";
 

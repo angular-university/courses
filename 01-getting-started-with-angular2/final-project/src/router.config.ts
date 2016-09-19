@@ -11,7 +11,9 @@ import {EditLessonComponent} from "./app/edit-lesson/edit-lesson.component";
 import {LessonResolver} from "./app/shared/resolvers/lesson.resolver";
 import {LoginComponent} from "./app/login/login.component";
 import {RegisterComponent} from "./app/register/register.component";
-import {AuthGuard} from "./app/shared/guards/auth.guard";
+import {AuthGuard} from "./app/shared/security/auth.guard";
+
+
 
 
 export const routerConfig: Route[] = [

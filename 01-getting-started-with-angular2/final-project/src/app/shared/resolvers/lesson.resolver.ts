@@ -2,9 +2,8 @@
 
 import {Resolve, RouterStateSnapshot, ActivatedRouteSnapshot} from "@angular/router";
 import {Lesson} from "../model/lesson";
-import {Observable} from "rxjs/Rx";
-import {LessonsService} from "../../lessons.service";
 import {Injectable} from "@angular/core";
+import {LessonsService} from "../model/lessons.service";
 
 
 @Injectable()

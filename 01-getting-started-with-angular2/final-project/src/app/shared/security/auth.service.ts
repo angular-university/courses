@@ -1,11 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFire} from "angularfire2";
 import {Observable, BehaviorSubject, Subject} from "rxjs/Rx";
-import {Course} from "./shared/model";
-import {Lesson} from "./shared/model";
-import {LessonsService} from "./lessons.service";
-import {FirebasePage} from "./shared/model/firebase-page";
-import {AuthInfo} from "./shared/security/auth-info";
+import {AuthInfo} from "./auth-info";
 import {Router} from "@angular/router";
 
 

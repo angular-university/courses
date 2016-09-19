@@ -11,7 +11,7 @@ export class AuthInfo {
 
 
   isLoggedIn() {
-    return this.$uid;
+    return !!this.$uid;
   }
 
 }

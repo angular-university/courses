@@ -23,6 +23,7 @@ import {LessonResolver} from "./shared/resolvers/lesson.resolver";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AuthService} from "./auth.service";
+import {AuthGuard} from "./shared/guards/auth.guard";
 
 
 
@@ -49,7 +50,7 @@ import {AuthService} from "./auth.service";
     RouterModule.forRoot(routerConfig),
     ReactiveFormsModule
   ],
-  providers: [LessonResolver, CoursesService, LessonsService, AuthService],
+  providers: [LessonResolver, CoursesService, LessonsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

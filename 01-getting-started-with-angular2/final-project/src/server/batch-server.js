@@ -31,8 +31,6 @@ var queue = new Queue(queueRef, function(data, progress, resolve, reject) {
 
   const deleteLessonPromise = lessonsRef.child(data.lessonId).remove();
 
-  console.log('removed lesson ref');
-
   const deleteLessonPerCourseRef = lessonsPerCourseRef.child(data.courseId + '/' + data.lessonId).remove();
 
 
@@ -43,7 +41,7 @@ var queue = new Queue(queueRef, function(data, progress, resolve, reject) {
         resolve();
       }
     ).catch(function() {
-    console.log("lesson in error");
+    console.log("lesson deletion in error");
       reject();
   });
 

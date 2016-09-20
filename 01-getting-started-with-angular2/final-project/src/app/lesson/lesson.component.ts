@@ -83,4 +83,10 @@ export class LessonComponent implements OnInit {
       )
   }
 
+  deleteUsingFirestack() {
+    this.lessonsService.deleteLesson(this.lesson.$key);
+  }
+
+
+
 }

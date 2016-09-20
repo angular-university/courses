@@ -3,11 +3,9 @@
 import {Injectable, Inject} from "@angular/core";
 import {AngularFire, FirebaseRef} from "angularfire2";
 import {Lesson} from "./lesson";
-import {Observable, Subject} from "rxjs/Rx";
+import {Observable} from "rxjs/Rx";
 import firebaseUpdate from "../firebase/firebaseUpdateToObs";
-
-
-
+import {DeleteLessonRequest} from "./delete-lesson-request";
 
 
 @Injectable()
@@ -75,6 +73,16 @@ export class LessonsService {
     return firebaseUpdate(this.dbRef, dataToSave);
   }
 
+
+
+  deleteLesson(lessonId:string) {
+
+    this.dbRef.child('queues/requests/deleteLesson').push(new DeleteLessonRequest(lessonId))
+      .then(
+        console.log, console.error
+      );
+
+  }
 
 
 }

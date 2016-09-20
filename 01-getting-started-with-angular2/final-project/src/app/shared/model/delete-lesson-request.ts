@@ -3,10 +3,9 @@
 
 export class DeleteLessonRequest {
 
-  status = 'NEW';
-
   constructor(
-    public lessonId:string
+    public lessonId:string,
+    public courseId:string
   ) {
 
   }

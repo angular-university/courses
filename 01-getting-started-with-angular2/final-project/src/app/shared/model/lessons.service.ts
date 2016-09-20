@@ -75,13 +75,8 @@ export class LessonsService {
 
 
 
-  deleteLesson(lessonId:string) {
-
-    this.dbRef.child('queue/tasks').push(new DeleteLessonRequest(lessonId))
-      .then(
-        console.log, console.error
-      );
-
+  requestLessonDeletion(lessonId:string, courseId:string) {
+     this.dbRef.child('queue/tasks').push(new DeleteLessonRequest(lessonId, courseId));
   }
 
 

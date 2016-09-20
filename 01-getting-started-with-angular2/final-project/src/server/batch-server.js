@@ -7,18 +7,8 @@ var firebaseConfig = {
   storageBucket: "final-project-ac645.appspot.com"
 };
 
-/*
-
-var authConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-};
-
-*/
 
 console.log('Initializing FIREStack server ...');
-
-
 
 
 var firebase = require('firebase');
@@ -30,11 +20,23 @@ var root = app.database();
 var Queue = require('firebase-queue');
 var queueRef = root.ref('queue');
 
+var lessonsRef = root.ref("lessons");
+var lessonsPerCourseRef = root.ref("lessonsPerCourse");
+
+
 
 var queue = new Queue(queueRef, function(data, progress, resolve, reject) {
 
-  // Read and process task data
-  console.log(data);
+  console.log('received delete request ...',data);
+
+  lessonsRef.child(data.lessonId).remove();
+
+  console.log('removed lesson ref');
+
+  lessonsPerCourseRef.child(data.courseId + '/' + data.lessonId).remove();
+
+
+  console.log('removed lesson per course ref');
 
   // Update the progress state of the task
   setTimeout(function() {

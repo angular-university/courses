@@ -83,9 +83,11 @@ export class LessonComponent implements OnInit {
       )
   }
 
-  deleteUsingFirestack() {
-    this.lessonsService.deleteLesson(this.lesson.$key);
+  requestLessonDeletion() {
+    this.lessonsService.requestLessonDeletion(this.lesson.$key, this.lesson.courseId);
   }
+
+
 
 
 

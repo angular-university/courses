@@ -29,24 +29,24 @@ var queue = new Queue(queueRef, function(data, progress, resolve, reject) {
 
   console.log('received delete request ...',data);
 
-  lessonsRef.child(data.lessonId).remove();
+  const deleteLessonPromise = lessonsRef.child(data.lessonId).remove();
 
   console.log('removed lesson ref');
 
-  lessonsPerCourseRef.child(data.courseId + '/' + data.lessonId).remove();
+  const deleteLessonPerCourseRef = lessonsPerCourseRef.child(data.courseId + '/' + data.lessonId).remove();
 
 
-  console.log('removed lesson per course ref');
+  Promise.all([deleteLessonPromise, deleteLessonPerCourseRef])
+    .then(
+      function() {
+        console.log("lesson deleted");
+        resolve();
+      }
+    ).catch(function() {
+    console.log("lesson in error");
+      reject();
+  });
 
-  // Update the progress state of the task
-  setTimeout(function() {
-    console.log('50%');
-    progress(50);
-  }, 500);
 
-  // Finish the job asynchronously
-  setTimeout(function() {
-    console.log('100%');
-    resolve();
-  }, 1000);
+
 });

@@ -10,7 +10,7 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
     "populate-db": "./node_modules/.bin/ts-node ./populate-db.ts",
-    "server": "ts-node src/server/firestack-server.ts"
+    "server": "node src/server/firestack-server.js"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "angularfire2": "^2.0.0-beta.4",
     "core-js": "^2.4.0",
     "firebase": "^3.3.1",
+    "firebase-queue": "^1.5.0",
     "lodash": "^4.15.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",

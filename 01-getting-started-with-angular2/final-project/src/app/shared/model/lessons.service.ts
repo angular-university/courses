@@ -77,7 +77,7 @@ export class LessonsService {
 
   deleteLesson(lessonId:string) {
 
-    this.dbRef.child('queues/requests/deleteLesson').push(new DeleteLessonRequest(lessonId))
+    this.dbRef.child('queue/tasks').push(new DeleteLessonRequest(lessonId))
       .then(
         console.log, console.error
       );

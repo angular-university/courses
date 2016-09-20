@@ -60,13 +60,7 @@ dbData.courses.forEach( course => {
 });
 
 
-const adminsRef = database().ref('admins');
 
-dbData.admins.forEach(admin => {
-
-  adminsRef.push(admin.email);
-
-});
 
 
 

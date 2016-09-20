@@ -1,9 +1,4 @@
 export const dbData = {
-  "admins": [
-    {
-      email:"BooMcGee@mailinator.com"
-    }
-  ],
   "courses": [
     {
       "url": "getting-started-with-angular2",

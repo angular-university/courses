@@ -1,4 +1,4 @@
-import {FinalProjectPage} from "./app.po";
+import { FinalProjectPage } from './app.po';
 
 describe('final-project App', function() {
   let page: FinalProjectPage;

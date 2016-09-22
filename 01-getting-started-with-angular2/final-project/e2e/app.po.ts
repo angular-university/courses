@@ -1,4 +1,4 @@
-import {browser, element, by} from "protractor/globals";
+import { browser, element, by } from 'protractor/globals';
 
 export class FinalProjectPage {
   navigateTo() {

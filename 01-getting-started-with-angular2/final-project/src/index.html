@@ -25,14 +25,13 @@
     };
     firebase.initializeApp(config);
 
-    var root = firebase.database().ref();
+    var root = firebase.database().ref('messages/2');
 
     root.on('value', function(snap) {
 
       console.log(snap.key, snap.val());
 
     });
-
 
   </script>
 

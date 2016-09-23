@@ -75,6 +75,14 @@ export const routerConfig: Route[] = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'lessons/:id/edit',
+    component: EditLessonComponent,
+    resolve: {
+      lesson: LessonResolver
+    },
+    canActivate: [AuthGuard]
+  },
+  {
     path: "login",
     component: LoginComponent
   },

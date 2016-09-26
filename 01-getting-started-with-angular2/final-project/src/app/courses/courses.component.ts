@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CoursesService} from "../shared/model/courses.service";
+import {Observable} from "rxjs/Rx";
+import {Course} from "../shared/model/course";
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  courses$: Observable<Course[]>;
+
+  constructor(private coursesService: CoursesService) {
+
+  }
 
   ngOnInit() {
+
+      this.courses$ = this.coursesService.findAllCourses();
+
   }
 
 }

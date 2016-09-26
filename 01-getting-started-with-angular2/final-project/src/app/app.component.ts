@@ -12,7 +12,7 @@ export class AppComponent {
     title = 'app works!';
 
     courses$:FirebaseListObservable<any>;
-    course$:FirebaseObjectObservable<any>;
+    lesson$:FirebaseObjectObservable<any>;
 
     firstCourse: any;
 
@@ -22,8 +22,8 @@ export class AppComponent {
         this.courses$ = af.database.list('courses');
         this.courses$.subscribe(console.log);
 
-        this.course$ = af.database.object('courses/-KSH8w9CsbBMvt0uxxM_');
-        this.course$.subscribe(console.log);
+        this.lesson$ = af.database.object('lessons/-KSH8w9OnJMNzIGUW98c');
+        this.lesson$.subscribe(console.log);
 
         this.courses$
             .map(courses => courses[0])
@@ -57,11 +57,13 @@ export class AppComponent {
 
     objUpdate() {
 
+        this.lesson$.update({description:'TEST'});
 
     }
 
     objSet() {
 
+        this.lesson$.set({description:'TEST'});
 
     }
 

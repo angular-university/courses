@@ -26,10 +26,18 @@ export class AppComponent {
 
 
     listPush() {
+        this.courses$.push({description: 'TEST'});
+    }
 
-        this.courses$.push({description:'Text'});
+
+    listRemove() {
 
     }
+
+    listSet() {
+
+    }
+
 
 
 

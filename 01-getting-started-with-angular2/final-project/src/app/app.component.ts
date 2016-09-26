@@ -1,37 +1,36 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from "angularfire2";
 
-import {initializeApp, database} from 'firebase';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+    title = 'app works!';
+
+    courses$:FirebaseListObservable<any>;
+    course$:FirebaseObjectObservable<any>;
 
 
-  constructor() {
+    constructor(private af:AngularFire) {
 
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyA0BcUcu4V8aHT_gM-32BhRcmqji4z-lts",
-      authDomain: "final-project-recording.firebaseapp.com",
-      databaseURL: "https://final-project-recording.firebaseio.com",
-      storageBucket: "final-project-recording.appspot.com",
-      messagingSenderId: "290354329688"
-    };
+        this.courses$ = af.database.list('courses');
+        this.courses$.subscribe(console.log);
 
-    initializeApp(config);
+        this.course$ = af.database.object('courses/-KSH8w9CsbBMvt0uxxM_');
+        this.course$.subscribe(console.log);
+    }
 
-    var root = database().ref('testArray');
 
-    root.on('value', function(snap) {
+    listPush() {
 
-      console.log(snap.val());
+        this.courses$.push({description:'Text'});
 
-    });
+    }
 
-  }
+
 
 }

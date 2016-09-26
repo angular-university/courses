@@ -13,12 +13,16 @@ import {LessonsService} from "./shared/model/lessons.service";
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import {RouterModule} from "@angular/router";
 import {routerConfig} from "./router.config";
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LessonsListComponent
+    LessonsListComponent,
+    TopMenuComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,

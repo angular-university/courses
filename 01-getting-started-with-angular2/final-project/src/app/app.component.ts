@@ -49,11 +49,21 @@ export class AppComponent {
     }
 
 
-    listSet() {
-
+    listUpdate() {
+        this.courses$.update(this.firstCourse, {description: 'Test'});
     }
 
 
+
+    objUpdate() {
+
+
+    }
+
+    objSet() {
+
+
+    }
 
 
 }

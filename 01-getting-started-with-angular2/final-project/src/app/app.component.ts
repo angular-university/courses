@@ -14,6 +14,8 @@ export class AppComponent {
     courses$:FirebaseListObservable<any>;
     course$:FirebaseObjectObservable<any>;
 
+    firstCourse: any;
+
 
     constructor(private af:AngularFire) {
 
@@ -22,6 +24,10 @@ export class AppComponent {
 
         this.course$ = af.database.object('courses/-KSH8w9CsbBMvt0uxxM_');
         this.course$.subscribe(console.log);
+
+        this.courses$
+            .map(courses => courses[0])
+            .subscribe(course => this.firstCourse = course);
     }
 
 
@@ -35,8 +41,13 @@ export class AppComponent {
 
 
     listRemove() {
-
+        this.courses$.remove(this.firstCourse)
+            .then(
+                () => console.log('List Remove Done'),
+                console.error
+            );
     }
+
 
     listSet() {
 

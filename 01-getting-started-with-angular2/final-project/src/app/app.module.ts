@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {firebaseConfig} from "../environments/firebase.config";
 import {AngularFireModule} from "angularfire2/index";
 
+import 'rxjs/add/operator/map';
 
 @NgModule({
   declarations: [

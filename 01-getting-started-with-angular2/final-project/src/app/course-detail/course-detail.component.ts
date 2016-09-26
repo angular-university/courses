@@ -25,7 +25,7 @@ export class CourseDetailComponent implements OnInit {
 
       const courseUrl = this.route.snapshot.params['id'];
 
-      this.lessons$ = this.coursesService.findLessonsForCourse(courseUrl);
+      this.lessons$ = this.coursesService.findAllLessonsForCourse(courseUrl);
 
   }
 

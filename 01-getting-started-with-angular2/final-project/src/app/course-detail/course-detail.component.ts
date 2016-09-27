@@ -5,6 +5,7 @@ import {Observable} from "rxjs/Rx";
 import {ActivatedRoute} from "@angular/router";
 import {Course} from "../shared/model/course";
 
+
 @Component({
   selector: 'app-course-detail',
   templateUrl: './course-detail.component.html',

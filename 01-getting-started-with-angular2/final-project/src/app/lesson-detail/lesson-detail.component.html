@@ -1,3 +1,16 @@
-<p>
-  lesson-detail works!
-</p>
+<div class="nav-bar">
+    <button (click)="previous()">Previous</button>
+    <button (click)="next()" >Next</button>
+</div>
+
+<h3>{{ lesson?.description }}</h3>
+<h5>Duration: {{ lesson?.duration  }}</h5>
+
+
+<h2>Description</h2>
+<p>{{ lesson?.longDescription }}</p>
+
+<div class="tools-bar">
+    <button>Edit Lesson</button>
+    <button>Delete</button>
+</div>

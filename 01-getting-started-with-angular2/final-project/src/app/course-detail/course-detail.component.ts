@@ -56,7 +56,7 @@ export class CourseDetailComponent implements OnInit {
             this.lessons[0].$key,
             3
         )
-        .subscribe(lessons => this.lessons = lessons);
+            .subscribe(lessons => this.lessons = lessons);
 
     }
 

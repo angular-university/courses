@@ -85,7 +85,8 @@ export class CoursesService {
     }
 
     loadPreviousPage(courseUrl:string,
-                 lessonKey:string, pageSize:number): Observable<Lesson[]> {
+                     lessonKey:string, pageSize:number): Observable<Lesson[]> {
+
 
         const lessonKeys$ = this.findLessonKeysPerCourseUrl(courseUrl,
             {
@@ -98,7 +99,6 @@ export class CoursesService {
 
         return this.findLessonsForLessonKeys(lessonKeys$)
             .map(lessons => lessons.slice(0, lessons.length - 1));
-
 
     }
 

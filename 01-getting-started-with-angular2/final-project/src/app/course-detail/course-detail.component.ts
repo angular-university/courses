@@ -36,11 +36,6 @@ export class CourseDetailComponent implements OnInit {
 
     }
 
-    previous() {
-
-    }
-
-
     next() {
 
         this.coursesService.loadNextPage(
@@ -48,11 +43,18 @@ export class CourseDetailComponent implements OnInit {
             this.lessons[this.lessons.length - 1].$key,
             3
         )
-        .subscribe(lessons => this.lessons = lessons );
-
+        .subscribe(lessons => this.lessons = lessons);
 
 
     }
+
+
+    previous() {
+
+    }
+
+
+
 
 }
 

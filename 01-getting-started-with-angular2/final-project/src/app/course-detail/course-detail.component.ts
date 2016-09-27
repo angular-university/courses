@@ -3,6 +3,7 @@ import {CoursesService} from "../shared/model/courses.service";
 import {Lesson} from "../shared/model/lesson";
 import {Observable} from "rxjs/Rx";
 import {ActivatedRoute} from "@angular/router";
+import {Course} from "../shared/model/course";
 
 @Component({
   selector: 'app-course-detail',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class CourseDetailComponent implements OnInit {
 
+  course$ : Observable<Course>;
   lessons$: Observable<Lesson[]>;
 
   constructor(
@@ -24,6 +26,8 @@ export class CourseDetailComponent implements OnInit {
   ngOnInit() {
 
       const courseUrl = this.route.snapshot.params['id'];
+
+      this.course$ = this.coursesService.findCourseByUrl(courseUrl);
 
       this.lessons$ = this.coursesService.findAllLessonsForCourse(courseUrl);
 

@@ -1,6 +1,6 @@
 
 
-<h2>TODO</h2>
+<h2>{{(course$ | async)?.description}}</h2>
 
 
 <div class="lessons-list-container v-h-center-block-parent">
@@ -10,7 +10,7 @@
         <button>Next Page</button>
     </div>
 
-    <lessons-list></lessons-list>
+    <lessons-list [lessons]="lessons$ | async"></lessons-list>
 
     <div class="tools-bar">
         <button >New Lesson</button>

@@ -6,6 +6,12 @@
 <h3>{{ lesson?.description }}</h3>
 <h5>Duration: {{ lesson?.duration  }}</h5>
 
+<iframe *ngIf="lesson?.videoUrl"
+        width="260" height="150" frameborder="0" allowfullscreen
+        [src]="lesson?.videoUrl">
+
+</iframe>
+
 
 <h2>Description</h2>
 <p>{{ lesson?.longDescription }}</p>

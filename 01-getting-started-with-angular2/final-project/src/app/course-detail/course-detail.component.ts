@@ -31,10 +31,21 @@ export class CourseDetailComponent implements OnInit {
 
       this.lessons$ = this.coursesService.loadFirstLessonsPage(courseUrl, 3);
 
-      //this.lessons$ = this.coursesService.findAllLessonsForCourse(courseUrl);
-
-      this.lessons$.do(console.log).subscribe();
-
   }
 
+    previous() {
+
+    }
+
+    next() {
+
+    }
+
 }
+
+
+
+
+
+
+

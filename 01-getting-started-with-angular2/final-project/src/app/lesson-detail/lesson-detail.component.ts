@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {LessonsService} from "../shared/model/lessons.service";
 import {Lesson} from "../shared/model/lesson";
+import * as _ from 'lodash';
+
 
 @Component({
   selector: 'app-lesson-detail',

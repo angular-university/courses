@@ -77,7 +77,8 @@ export class CoursesService {
                 }
             });
 
-        return this.findLessonsForLessonKeys(lessonKeys$);
+        return this.findLessonsForLessonKeys(lessonKeys$)
+            .map(lessons => lessons.slice(1, lessons.length));
     }
 
 

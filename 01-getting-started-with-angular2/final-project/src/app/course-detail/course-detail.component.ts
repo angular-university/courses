@@ -30,8 +30,7 @@ export class CourseDetailComponent implements OnInit {
 
         this.course$ = this.coursesService.findCourseByUrl(this.courseUrl);
 
-        const lessons$ = this.coursesService.loadFirstLessonsPage(this.courseUrl, 3)
-            .do(val => console.log("load first page",val));
+        const lessons$ = this.coursesService.loadFirstLessonsPage(this.courseUrl, 3);
 
         lessons$.subscribe(lessons => this.lessons = lessons);
 
@@ -49,7 +48,6 @@ export class CourseDetailComponent implements OnInit {
             this.lessons[this.lessons.length - 1].$key,
             3
         )
-        .do(val => console.log("next page received", val))
         .subscribe(lessons => this.lessons = lessons );
 
 

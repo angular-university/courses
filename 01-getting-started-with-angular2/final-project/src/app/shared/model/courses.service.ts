@@ -31,6 +31,8 @@ export class CoursesService {
     findLessonKeysPerCourseUrl(courseUrl:string,
                                query: FirebaseListFactoryOpts = {}): Observable<string[]> {
         return this.findCourseByUrl(courseUrl)
+            .do(val => console.log("course",val))
+            .filter(course => !!course)
             .switchMap(course => this.db.list(`lessonsPerCourse/${course.$key}`,query))
             .map( lspc => lspc.map(lpc => lpc.$key) );
     }
@@ -59,7 +61,23 @@ export class CoursesService {
             });
 
         return this.findLessonsForLessonKeys(firstPageLessonKeys$);
+    }
 
+
+
+
+    loadNextPage(courseUrl:string, lessonKey:string, pageSize:number): Observable<Lesson[]> {
+
+        const lessonKeys$ = this.findLessonKeysPerCourseUrl(courseUrl,
+            {
+                query: {
+                    orderByKey:true,
+                    limitToFirst:pageSize + 1,
+                    startAt: lessonKey
+                }
+            });
+
+        return this.findLessonsForLessonKeys(lessonKeys$);
     }
 
 

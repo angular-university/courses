@@ -1,5 +1,5 @@
 # Angular University Lessons Code
-Contains the code for courses in the Angular University.
+Contains the code for all the Angular University courses.
 
 # Installation pre-requisites
 

@@ -12,6 +12,20 @@ These are some tutorials to install node in different operating systems.
 - [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
 - [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
 
+
+# Which Course are You Looking For ?
+
+If you are looking for the code of the following courses, see further the installation instructions on this page:
+
+- Angular 2 For Beginners
+- Angular 2 Services and HTTP
+- Angular 2 Router
+- Angular 2 Forms
+
+If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, follow the instructions in the following page:
+
+[Angular 2 and Firebase - Build a Web Application](https://github.com/angular-university/courses/tree/master/01-getting-started-with-angular2/final-project)
+
 # Installation Instructions
 
 First clone or download as a Zip file using the green "Clone Or Download" button on the top right of the document.
@@ -30,7 +44,7 @@ To start the server, run the following command:
 
     npm start
 
-If you now go to [http://localhost:8080](http://localhost:8080), there should be a running application there. Again please do not hesitate to post a question in Udemy if its not.
+If you now go to [http://localhost:8080](http://localhost:8080), there will be a running application at this url. 
 
 # Making changes
 

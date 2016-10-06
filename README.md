@@ -3,8 +3,7 @@ Contains the code for all the Angular University courses.
 
 # Installation pre-requisites
 
-This project has minimal dependencies, you only need node and npm installed on your machine. 
-These are some tutorials to install node in different operating systems. 
+This project has minimal dependencies, you only need node and npm installed on your machine.  These are some tutorials to install node in different operating systems. 
 
 *Make sure to install the latest version of Node 6*
 
@@ -22,9 +21,9 @@ If you are looking for the code of the following courses, see further the instal
 - Angular 2 Router
 - Angular 2 Forms
 
-If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, follow the instructions in the following page:
+If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, the repo with the full code can be found here:
 
-[Angular 2 and Firebase - Build a Web Application](https://github.com/angular-university/courses/tree/master/01-getting-started-with-angular2/final-project)
+[Angular 2 and Firebase - Build a Web Application](https://github.com/angular-university/angular-firebase-app)
 
 # Installation Instructions
 

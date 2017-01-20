@@ -1,6 +1,8 @@
 # Angular University Lessons Code
 Contains the code for all the Angular University courses.
 
+![Angular for Beginners course](https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small.png)
+
 # Installation pre-requisites
 
 This project has minimal dependencies, you only need node and npm installed on your machine.  These are some tutorials to install node in different operating systems. 

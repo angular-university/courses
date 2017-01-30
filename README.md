@@ -3,17 +3,6 @@ Contains the code for all the Angular University courses.
 
 ![Angular for Beginners course](https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small.png)
 
-# Installation pre-requisites
-
-This project has minimal dependencies, you only need node and npm installed on your machine.  These are some tutorials to install node in different operating systems. 
-
-*Make sure to install the latest version of Node 6*
-
-- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
-- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
-- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
-
-
 # Which Course are You Looking For ?
 
 If you are looking for the code of the following courses, see further the installation instructions on this page:
@@ -41,8 +30,25 @@ If you are looking for the Complete Typescript 2 Course - Build a REST API, the 
 ![Complete Typescript Course](https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png)
 
 
+# Angular Ngrx Reactive Extensions Architecture Course 
+
+If you are looking for the Angular Ngrx Reactive Extensions Architecture Course code, the repo with the full code can be found here:
+
+[Angular Ngrx Reactive Extensions Architecture Course](https://github.com/angular-university/ngrx-course)
+
+![Angular Ngrx Course](https://angular-academy.s3.amazonaws.com/thumbnails/ngrx-angular.png)
 
 
+
+# Installation pre-requisites
+
+This project has minimal dependencies, you only need node and npm installed on your machine.  These are some tutorials to install node in different operating systems. 
+
+*Make sure to install the latest version of Node 6*
+
+- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
+- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
+- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
 
 
 # Installation Instructions

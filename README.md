@@ -1,5 +1,7 @@
 # Angular University Lessons Code
-Contains the code for all the Angular University courses.
+Contains the code for all the [Angular University](https://angular-university.io) courses.
+
+[Angular for Beginners Course](https://angular-university.io/course/getting-started-with-angular2)
 
 ![Angular for Beginners course](https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small.png)
 
@@ -7,14 +9,16 @@ Contains the code for all the Angular University courses.
 
 If you are looking for the code of the following courses, see further the installation instructions on this page:
 
-- Angular 2 For Beginners
-- Angular 2 Services and HTTP
-- Angular 2 Router
-- Angular 2 Forms
+- [Angular 2 For Beginners](https://angular-university.io/course/getting-started-with-angular2)
+- [Angular 2 Services and HTTP](https://angular-university.io/course/angular2-http)
+- [Angular 2 Router](https://angular-university.io/course/angular2-routing)
+- [Angular 2 Forms](https://angular-university.io/course/angular2-forms)
 
 # Angular 2 and Firebase - Build a Web Application Course
 
 If you are looking for the Angular 2 and Firebase - Build a Web Application Course code, the repo with the full code can be found here:
+
+[Angular 2 and Firebase - Build a Web Application](https://angular-university.io/course/build-an-application-with-angular2)
 
 [Angular 2 and Firebase - Build a Web Application](https://github.com/angular-university/angular-firebase-app)
 

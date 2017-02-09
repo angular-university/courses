@@ -3,7 +3,7 @@ Contains the code for all the [Angular University](https://angular-university.io
 
 [Angular for Beginners Course](https://angular-university.io/course/getting-started-with-angular2)
 
-![Angular for Beginners course](https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small.png)
+![Angular for Beginners course](https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png)
 
 # Which Course are You Looking For ?
 
@@ -22,7 +22,7 @@ If you are looking for the Angular 2 and Firebase - Build a Web Application Cour
 
 [Github Repo For this course](https://github.com/angular-university/angular-firebase-app)
 
-![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small.jpg)
+![Angular firebase course](https://angular-academy.s3.amazonaws.com/thumbnails/angular_app-firebase-small-v2.png)
 
 
 # Complete Typescript 2 Course - Build A REST API

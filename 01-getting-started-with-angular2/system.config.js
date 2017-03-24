@@ -27,6 +27,8 @@
         'platform-browser-dynamic',
         'router-deprecated',
         'upgrade',
+        'forms',
+        'router'
     ];
 
     // Add map entries for each angular package
@@ -43,12 +45,6 @@
         // Individual files (~300 requests):
         //packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
     });
-
-    // No umd for router yet
-    packages['@angular/router'] = {main: 'index.js', defaultExtension: 'js'};
-
-    // Forms not on rc yet
-    packages['@angular/forms'] = {main: 'index.js', defaultExtension: 'js'};
 
     var config = {
         // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER

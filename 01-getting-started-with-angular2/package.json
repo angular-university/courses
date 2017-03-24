@@ -1,32 +1,32 @@
 {
   "name": "angular2-for-beginnners",
-  "description":"Angular 2 For Beginners - Course Lessons",
+  "description": "Angular For Beginners - Course Lessons",
   "version": "1.0.0",
   "scripts": {
-    "clean": "rimraf dist",
-    "start": "npm run clean && ts-node lessons-server.ts"
+    "clean": "./node_modules/.bin/rimraf dist",
+    "start": "npm run clean && ./node_modules/.bin/ts-node lessons-server.ts"
   },
   "devDependencies": {
     "http-server": "^0.9.0",
     "rimraf": "~2.5.2"
   },
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/http": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/forms": "2.0.0",
-    "@angular/router": "3.0.0",
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "lodash": "^4.13.1",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "^0.19.27",
-    "zone.js": "^0.6.17",
-    "ts-node": "^0.7.3",
-    "typescript": "^1.8.10"    
+    "@angular/common": "4.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/core": "4.0.0",
+    "@angular/forms": "4.0.0",
+    "@angular/http": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "4.0.0",
+    "body-parser": "1.15.1",
+    "express": "4.13.4",
+    "lodash": "4.13.1",
+    "rxjs": "5.1.0",
+    "systemjs": "0.19.27",
+    "ts-node": "3.0.2",
+    "typescript": "2.2.0",
+    "zone.js": "0.8.4"
   },
   "engines": {
     "node": "4.2.1",

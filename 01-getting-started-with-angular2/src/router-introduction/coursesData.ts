@@ -5,22 +5,22 @@ export const coursesData = {
     courses: [
         {
             id:1,
-            description: "Angular 2 For Beginners",
+            description: "Angular For Beginners",
             pro:false
         },
         {
             id:2,
-            description: "Angular 2 HTTP",
+            description: "Angular HTTP",
             pro:false
         },
         {
             id:3,
-            description: "Angular 2 Forms",
+            description: "Angular Forms",
             pro:false
         },
         {
             id:4,
-            description: "Angular 2 Router",
+            description: "Angular Router",
             pro:true
         },
         {

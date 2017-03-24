@@ -51,6 +51,17 @@ If you are looking for the Angular Ngrx Reactive Extensions Architecture Course 
 ![Angular Ngrx Course](https://angular-academy.s3.amazonaws.com/thumbnails/ngrx-angular.png)
 
 
+# RxJs And Reactive Patterns Angular Architecture Course
+
+If you are looking for the RxJs And Reactive Patterns Angular Architecture Course code, the repo with the full code can be found here:
+
+[RxJs and Reactive Patterns Angular Architecture Course](https://angular-university.io/course/reactive-angular-architecture-course)
+
+[Github repo for this course](https://github.com/angular-university/reactive-patterns-course)
+
+![RxJs and Reactive Patterns Angular Architecture Course](https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png)
+
+
 
 # Installation pre-requisites
 

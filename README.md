@@ -77,7 +77,7 @@ If you prefer the Yarn package manager, you can also run:
 
     yarn
 
-Although nom install would also work, its recommended to use Yarn to install the course dependencies. Yarn has the big advantage that if you use it you will be
+Although npm install would also work, its recommended to use Yarn to install the course dependencies. Yarn has the big advantage that if you use it you will be
 installing the exact same dependencies than I installed in my machine, so you wont run into issues caused by semantic versioning updates.
     
 This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.

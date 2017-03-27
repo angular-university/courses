@@ -3,12 +3,10 @@
   "description": "Angular For Beginners - Course Lessons",
   "version": "1.0.0",
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf dist",
-    "start": "npm run clean && ./node_modules/.bin/ts-node lessons-server.ts"
+    "start": "./node_modules/.bin/ts-node lessons-server.ts"
   },
   "devDependencies": {
-    "http-server": "^0.9.0",
-    "rimraf": "~2.5.2"
+    "http-server": "^0.9.0"
   },
   "dependencies": {
     "@angular/common": "4.0.0",

@@ -1,7 +1,7 @@
 # Angular University Lessons Code
 Contains the code for several of the [Angular University](https://angular-university.io) courses.
 
-This course repository is updated to Angular 4, there is a Yarn lock file available.
+This course repository is updated to Angular 5, there is a Yarn lock file available.
 
 
 [Angular for Beginners Course](https://angular-university.io/course/getting-started-with-angular2)
